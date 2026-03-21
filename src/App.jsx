@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { createClient } from "@supabase/supabase-js";
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || "https://lscxxjiqridkdpggxkiv.supabase.co";
@@ -39,7 +39,7 @@ const T = {
     notStarted: "NOT STARTED", inProgress: "IN PROGRESS", complete: "✓ COMPLETE",
     signOut: "SIGN OUT",
     aiDisclaimer: "This is preparation guidance only, not legal advice. For complex situations, consult a licensed immigration attorney.",
-    generating: "Generating your personalized analysis...",
+    generating: "Generating your personalized analysis...", thinking: "Evaluating your answer...",
     docTitle: "YOUR DOCUMENT CHECKLIST", formTitle: "N-400 FORM WALKTHROUGH",
     riskTitle: "YOUR RISK ASSESSMENT", interviewTitle: "INTERVIEW PREP",
     yourAnswer: "Type your answer here...", practiced: "✓ PRACTICED", practice: "PRACTICE THIS",
@@ -48,7 +48,8 @@ const T = {
     action: "WHAT TO DO:", selectCountry: "Select your country...",
     docsComplete: "All documents gathered! Your checklist is complete.",
     progressOf: "of", questionsCompleted: "questions practiced",
-    aiPowered: "AI-POWERED", personalized: "PERSONALIZED TO YOU",
+    aiFeedback: "AI FEEDBACK",
+    interviewNote: "Questions are in English because your USCIS interview will be in English. AI feedback will be in your selected language.",
   },
   es: {
     tagline: "TU SOLICITUD DE CIUDADANÍA —\nPREPARADA, NO ADIVINADA.",
@@ -57,14 +58,13 @@ const T = {
     t1: "GUÍA EN ESPAÑOL CLARO", t2: "PERSONALIZADO A TU SITUACIÓN", t3: "NO ES ASESORÍA LEGAL — SOLO PREPARACIÓN",
     disclaimer: "LEGALIAI proporciona orientación de preparación únicamente. Esto no es asesoramiento legal. Para situaciones complejas, consulta a un abogado de inmigración.",
     emailTitle: "INGRESA TU CORREO PARA COMENZAR", emailSub: "Te enviaremos un enlace de acceso seguro. Sin contraseña.",
-    sendLink: "ENVIAR ENLACE MÁGICO", checkEmail: "REVISA TU CORREO", checkEmailSub: "Tu enlace fue enviado. Haz clic en él en tu correo para continuar.",
+    sendLink: "ENVIAR ENLACE MÁGICO", checkEmail: "REVISA TU CORREO", checkEmailSub: "Tu enlace fue enviado. Haz clic en él para continuar.",
     q1: "¿CUÁNTO TIEMPO LLEVAS SIENDO RESIDENTE PERMANENTE?", q2: "¿ESTÁS CASADO/A CON UN/A CIUDADANO/A AMERICANO/A?",
     q3: "¿HAS VIAJADO FUERA DE EE.UU. POR MÁS DE 6 MESES SEGUIDOS?",
     q4: "¿TIENES ANTECEDENTES PENALES, INCLUSO INFRACCIONES MENORES?", q5: "¿EN QUÉ PAÍS NACISTE?",
     yes: "SÍ", no: "NO", next: "SIGUIENTE", finish: "FINALIZAR",
     q1opts: ["Menos de 3 años", "3–5 años", "5–10 años", "Más de 10 años"],
-    paywallTitle: "TU PREPARACIÓN PERSONALIZADA N-400 ESTÁ LISTA.",
-    paywallSub: "Desbloquea todo por $49 pago único.",
+    paywallTitle: "TU PREPARACIÓN PERSONALIZADA N-400 ESTÁ LISTA.", paywallSub: "Desbloquea todo por $49 pago único.",
     unlock: "DESBLOQUEAR AHORA", paywallNote: "Pago seguro. Acceso inmediato. Sin suscripción.",
     dashTitle: "TU PANEL DE PREPARACIÓN",
     modules: ["LISTA DE DOCUMENTOS", "GUÍA DEL FORMULARIO", "EVALUACIÓN DE RIESGOS", "PREPARACIÓN PARA ENTREVISTA"],
@@ -73,7 +73,7 @@ const T = {
     notStarted: "NO INICIADO", inProgress: "EN PROGRESO", complete: "✓ COMPLETO",
     signOut: "CERRAR SESIÓN",
     aiDisclaimer: "Esta es solo orientación de preparación, no asesoramiento legal. Para situaciones complejas, consulta a un abogado de inmigración.",
-    generating: "Generando tu análisis personalizado...",
+    generating: "Generando tu análisis personalizado...", thinking: "Evaluando tu respuesta...",
     docTitle: "TU LISTA DE DOCUMENTOS", formTitle: "GUÍA DEL FORMULARIO N-400",
     riskTitle: "TU EVALUACIÓN DE RIESGOS", interviewTitle: "PREPARACIÓN PARA ENTREVISTA",
     yourAnswer: "Escribe tu respuesta aquí...", practiced: "✓ PRACTICADO", practice: "PRACTICAR ESTA",
@@ -82,7 +82,8 @@ const T = {
     action: "QUÉ HACER:", selectCountry: "Selecciona tu país...",
     docsComplete: "¡Todos los documentos reunidos! Tu lista está completa.",
     progressOf: "de", questionsCompleted: "preguntas practicadas",
-    aiPowered: "CON IA", personalized: "PERSONALIZADO PARA TI",
+    aiFeedback: "RETROALIMENTACIÓN DE IA",
+    interviewNote: "Las preguntas están en inglés porque tu entrevista USCIS será en inglés. La retroalimentación de la IA estará en español.",
   },
   zh: {
     tagline: "您的美国公民申请 —\n准备充分，而非猜测。",
@@ -106,7 +107,7 @@ const T = {
     notStarted: "未开始", inProgress: "进行中", complete: "✓ 已完成",
     signOut: "退出登录",
     aiDisclaimer: "这仅是准备指导，不是法律建议。对于复杂情况，请咨询持牌移民律师。",
-    generating: "正在生成您的个性化分析...",
+    generating: "正在生成您的个性化分析...", thinking: "正在评估您的答案...",
     docTitle: "您的文件清单", formTitle: "N-400表格指南",
     riskTitle: "您的风险评估", interviewTitle: "面试准备",
     yourAnswer: "在此输入您的答案...", practiced: "✓ 已练习", practice: "练习这道题",
@@ -115,7 +116,8 @@ const T = {
     action: "建议行动：", selectCountry: "选择您的国家...",
     docsComplete: "所有文件已收集！您的清单已完成。",
     progressOf: "/", questionsCompleted: "道题已练习",
-    aiPowered: "AI驱动", personalized: "为您个性化定制",
+    aiFeedback: "AI反馈",
+    interviewNote: "问题用英文显示，因为您的USCIS面试将用英文进行。AI反馈将用中文显示。",
   },
   tl: {
     tagline: "ANG IYONG APLIKASYON SA PAGKAMAMAMAYAN —\nHANDA, HINDI NAHULAAN.",
@@ -126,7 +128,7 @@ const T = {
     emailTitle: "ILAGAY ANG IYONG EMAIL PARA MAGSIMULA", emailSub: "Magpapadala kami ng secure na link. Walang password.",
     sendLink: "MAGPADALA NG MAGIC LINK", checkEmail: "SURIIN ANG IYONG EMAIL", checkEmailSub: "Naipadala na ang iyong magic link. I-click ang link sa email mo para magpatuloy.",
     q1: "GAANO KATAGAL KA NANG PERMANENTENG RESIDENTE?", q2: "IKA'Y KASAL BA SA ISANG MAMAMAYANG AMERIKANO?",
-    q3: "NAGLAKBAY KA BA SA LABAS NG U.S. NG HIGIT SA 6 NA BUWAN NANG SABAY-SABAY?",
+    q3: "NAGLAKBAY KA BA SA LABAS NG U.S. NG HIGIT SA 6 NA BUWAN?",
     q4: "MAY KASAYSAYAN BA NG KRIMEN, KASAMA ANG MALILIIT NA PAGKAKASALA?", q5: "SA ANONG BANSA KA IPINANGANAK?",
     yes: "OO", no: "HINDI", next: "SUSUNOD", finish: "TAPUSIN",
     q1opts: ["Wala pang 3 taon", "3–5 taon", "5–10 taon", "Higit sa 10 taon"],
@@ -139,7 +141,7 @@ const T = {
     notStarted: "HINDI PA SINIMULAN", inProgress: "ISINASAGAWA", complete: "✓ TAPOS NA",
     signOut: "MAG-SIGN OUT",
     aiDisclaimer: "Ito ay gabay sa paghahanda lamang, hindi legal na payo. Para sa mga kumplikadong sitwasyon, kumonsulta sa isang lisensyadong abogado.",
-    generating: "Ginagawa ang iyong personalisadong pagsusuri...",
+    generating: "Ginagawa ang iyong personalisadong pagsusuri...", thinking: "Sinusuri ang iyong sagot...",
     docTitle: "ANG IYONG LISTAHAN NG DOKUMENTO", formTitle: "GABAY SA FORM N-400",
     riskTitle: "ANG IYONG PAGTATASA NG PANGANIB", interviewTitle: "PAGHAHANDA SA PANAYAM",
     yourAnswer: "I-type ang iyong sagot dito...", practiced: "✓ NASANAY NA", practice: "ISANAY ITO",
@@ -148,7 +150,8 @@ const T = {
     action: "ANO ANG GAGAWIN:", selectCountry: "Piliin ang iyong bansa...",
     docsComplete: "Lahat ng dokumento ay nakolekta na! Kumpleto na ang iyong listahan.",
     progressOf: "sa", questionsCompleted: "mga tanong ang nasanay",
-    aiPowered: "PINAPAGANA NG AI", personalized: "PERSONALISADO PARA SA IYO",
+    aiFeedback: "FEEDBACK NG AI",
+    interviewNote: "Ang mga tanong ay nasa Ingles dahil ang iyong panayam sa USCIS ay isasagawa sa Ingles. Ang feedback ng AI ay nasa Tagalog.",
   },
   vi: {
     tagline: "ĐƠN XIN QUỐC TỊCH HOA KỲ CỦA BẠN —\nĐƯỢC CHUẨN BỊ, KHÔNG PHẢI ĐỐN MÒ.",
@@ -172,7 +175,7 @@ const T = {
     notStarted: "CHƯA BẮT ĐẦU", inProgress: "ĐANG TIẾN HÀNH", complete: "✓ HOÀN THÀNH",
     signOut: "ĐĂNG XUẤT",
     aiDisclaimer: "Đây chỉ là hướng dẫn chuẩn bị, không phải tư vấn pháp lý. Với các trường hợp phức tạp, hãy tham khảo luật sư di trú có giấy phép.",
-    generating: "Đang tạo phân tích cá nhân hóa của bạn...",
+    generating: "Đang tạo phân tích cá nhân hóa của bạn...", thinking: "Đang đánh giá câu trả lời của bạn...",
     docTitle: "DANH SÁCH TÀI LIỆU CỦA BẠN", formTitle: "HƯỚNG DẪN MẪU ĐƠN N-400",
     riskTitle: "ĐÁNH GIÁ RỦI RO CỦA BẠN", interviewTitle: "CHUẨN BỊ PHỎNG VẤN",
     yourAnswer: "Nhập câu trả lời của bạn tại đây...", practiced: "✓ ĐÃ LUYỆN TẬP", practice: "LUYỆN TẬP CÂU NÀY",
@@ -181,14 +184,15 @@ const T = {
     action: "PHẢI LÀM GÌ:", selectCountry: "Chọn quốc gia của bạn...",
     docsComplete: "Đã thu thập tất cả tài liệu! Danh sách của bạn đã hoàn thành.",
     progressOf: "/", questionsCompleted: "câu hỏi đã luyện tập",
-    aiPowered: "ĐƯỢC ĐIỀU KHIỂN BỞI AI", personalized: "CÁ NHÂN HÓA CHO BẠN",
+    aiFeedback: "PHẢN HỒI AI",
+    interviewNote: "Câu hỏi bằng tiếng Anh vì buổi phỏng vấn USCIS sẽ bằng tiếng Anh. Phản hồi AI sẽ bằng tiếng Việt.",
   },
   hi: {
     tagline: "आपका अमेरिकी नागरिकता आवेदन —\nतैयार, अनुमान नहीं।",
     sub: "आपके N-400 के लिए AI-संचालित चरण-दर-चरण तैयारी। कोई वकील नहीं। एकमुश्त $49।",
     cta: "मेरी तैयारी शुरू करें",
     t1: "सरल हिंदी में मार्गदर्शन", t2: "आपकी स्थिति के अनुसार व्यक्तिगत", t3: "कानूनी सलाह नहीं — केवल तैयारी",
-    disclaimer: "LEGALIAI केवल तैयारी मार्गदर्शन प्रदान करता है। यह कानूनी सलाह नहीं है। जटिल मामलों के लिए, लाइसेंस प्राप्त वकील से परामर्श करें।",
+    disclaimer: "LEGALIAI केवल तैयारी मार्गदर्शन प्रदान करता है। यह कानूनी सलाह नहीं है। जटिल मामलों के लिए लाइसेंस प्राप्त वकील से परामर्श करें।",
     emailTitle: "शुरू करने के लिए अपना ईमेल दर्ज करें", emailSub: "हम एक सुरक्षित लॉगिन लिंक भेजेंगे। कोई पासवर्ड नहीं।",
     sendLink: "मैजिक लिंक भेजें", checkEmail: "अपना ईमेल जांचें", checkEmailSub: "आपका मैजिक लिंक भेज दिया गया है। जारी रखने के लिए ईमेल में लिंक पर क्लिक करें।",
     q1: "आप कितने समय से स्थायी निवासी हैं?", q2: "क्या आप किसी अमेरिकी नागरिक से विवाहित हैं?",
@@ -204,8 +208,8 @@ const T = {
     start: "शुरू करें", resume: "जारी रखें", review: "समीक्षा करें",
     notStarted: "शुरू नहीं हुआ", inProgress: "प्रगति में", complete: "✓ पूर्ण",
     signOut: "साइन आउट",
-    aiDisclaimer: "यह केवल तैयारी मार्गदर्शन है, कानूनी सलाह नहीं।",
-    generating: "आपका व्यक्तिगत विश्लेषण तैयार हो रहा है...",
+    aiDisclaimer: "यह केवल तैयारी मार्गदर्शन है, कानूनी सलाह नहीं। जटिल मामलों के लिए लाइसेंस प्राप्त वकील से परामर्श करें।",
+    generating: "आपका व्यक्तिगत विश्लेषण तैयार हो रहा है...", thinking: "आपके उत्तर का मूल्यांकन हो रहा है...",
     docTitle: "आपकी दस्तावेज़ चेकलिस्ट", formTitle: "N-400 फॉर्म वॉकथ्रू",
     riskTitle: "आपका जोखिम मूल्यांकन", interviewTitle: "साक्षात्कार तैयारी",
     yourAnswer: "यहाँ अपना उत्तर टाइप करें...", practiced: "✓ अभ्यास किया", practice: "इसका अभ्यास करें",
@@ -214,7 +218,8 @@ const T = {
     action: "क्या करें:", selectCountry: "अपना देश चुनें...",
     docsComplete: "सभी दस्तावेज़ इकट्ठे हो गए! आपकी चेकलिस्ट पूरी हो गई।",
     progressOf: "में से", questionsCompleted: "प्रश्नों का अभ्यास किया",
-    aiPowered: "AI-संचालित", personalized: "आपके लिए व्यक्तिगत",
+    aiFeedback: "AI प्रतिक्रिया",
+    interviewNote: "प्रश्न अंग्रेजी में हैं क्योंकि USCIS साक्षात्कार अंग्रेजी में होगा। AI प्रतिक्रिया हिंदी में होगी।",
   },
   pt: {
     tagline: "SUA SOLICITAÇÃO DE CIDADANIA AMERICANA —\nPREPARADA, NÃO ADIVINHADA.",
@@ -238,7 +243,7 @@ const T = {
     notStarted: "NÃO INICIADO", inProgress: "EM ANDAMENTO", complete: "✓ CONCLUÍDO",
     signOut: "SAIR",
     aiDisclaimer: "Isto é apenas orientação de preparação, não assessoria jurídica. Para situações complexas, consulte um advogado de imigração licenciado.",
-    generating: "Gerando sua análise personalizada...",
+    generating: "Gerando sua análise personalizada...", thinking: "Avaliando sua resposta...",
     docTitle: "SUA LISTA DE DOCUMENTOS", formTitle: "GUIA DO FORMULÁRIO N-400",
     riskTitle: "SUA AVALIAÇÃO DE RISCOS", interviewTitle: "PREPARAÇÃO PARA ENTREVISTA",
     yourAnswer: "Digite sua resposta aqui...", practiced: "✓ PRATICADO", practice: "PRATICAR ESTA",
@@ -247,13 +252,67 @@ const T = {
     action: "O QUE FAZER:", selectCountry: "Selecione seu país...",
     docsComplete: "Todos os documentos reunidos! Sua lista está completa.",
     progressOf: "de", questionsCompleted: "perguntas praticadas",
-    aiPowered: "MOVIDO POR IA", personalized: "PERSONALIZADO PARA VOCÊ",
+    aiFeedback: "FEEDBACK DA IA",
+    interviewNote: "As perguntas estão em inglês porque sua entrevista no USCIS será em inglês. O feedback da IA estará em português.",
   },
 };
 
 const g = (lang, key) => {
   const langT = T[lang] || T["en"];
   return langT[key] !== undefined ? langT[key] : (T["en"][key] || key);
+};
+
+// Fallback document lists in each language
+const FALLBACK_DOCS = {
+  en: [
+    { name: "Permanent Resident Card (Green Card)", source: "Your physical card", reason: "Proves your immigration status to USCIS" },
+    { name: "Passport from birth country", source: "Home country embassy or your files", reason: "Confirms your identity and nationality" },
+    { name: "Tax returns (last 5 years)", source: "IRS.gov or your tax preparer", reason: "Proves continuous U.S. residence" },
+    { name: "Travel records", source: "Passport stamps or personal calendar", reason: "Documents all trips outside the U.S." },
+    { name: "Marriage certificate (if applicable)", source: "Vital records office where you married", reason: "Required if married to a U.S. citizen" },
+  ],
+  es: [
+    { name: "Tarjeta de Residente Permanente (Green Card)", source: "Tu tarjeta física", reason: "Prueba tu estatus migratorio ante USCIS" },
+    { name: "Pasaporte del país de nacimiento", source: "Embajada de tu país o tus archivos", reason: "Confirma tu identidad y nacionalidad" },
+    { name: "Declaraciones de impuestos (últimos 5 años)", source: "IRS.gov o tu contador", reason: "Prueba residencia continua en EE.UU." },
+    { name: "Registros de viajes", source: "Sellos del pasaporte o calendario personal", reason: "Documenta todos los viajes fuera de EE.UU." },
+    { name: "Acta de matrimonio (si aplica)", source: "Registro civil donde te casaste", reason: "Requerido si estás casado/a con ciudadano/a americano/a" },
+  ],
+  pt: [
+    { name: "Cartão de Residente Permanente (Green Card)", source: "Seu cartão físico", reason: "Comprova seu status de imigração ao USCIS" },
+    { name: "Passaporte do país de nascimento", source: "Embaixada do seu país ou seus arquivos", reason: "Confirma sua identidade e nacionalidade" },
+    { name: "Declarações de imposto de renda (últimos 5 anos)", source: "IRS.gov ou seu contador", reason: "Comprova residência contínua nos EUA" },
+    { name: "Registros de viagem", source: "Carimbos do passaporte ou calendário pessoal", reason: "Documenta todas as viagens fora dos EUA" },
+    { name: "Certidão de casamento (se aplicável)", source: "Cartório onde se casou", reason: "Necessário se casado/a com cidadão/ã americano/a" },
+  ],
+  zh: [
+    { name: "永久居民卡（绿卡）", source: "您的实体卡", reason: "向USCIS证明您的移民身份" },
+    { name: "出生国护照", source: "本国大使馆或您的文件", reason: "确认您的身份和国籍" },
+    { name: "纳税申报表（过去5年）", source: "IRS.gov或您的税务师", reason: "证明在美国的连续居住" },
+    { name: "旅行记录", source: "护照印章或个人日历", reason: "记录所有出境旅行" },
+    { name: "结婚证（如适用）", source: "结婚登记的民政局", reason: "若与美国公民结婚则需要" },
+  ],
+  tl: [
+    { name: "Permanent Resident Card (Green Card)", source: "Ang iyong pisikal na card", reason: "Nagpapatunay ng iyong status sa imigrasyon sa USCIS" },
+    { name: "Pasaporte mula sa bansang pinanganak", source: "Embahada ng iyong bansa o iyong mga file", reason: "Nagpapatunay ng iyong pagkakakilanlan at nasyonalidad" },
+    { name: "Mga tax return (nakaraang 5 taon)", source: "IRS.gov o iyong tax preparer", reason: "Nagpapatunay ng tuloy-tuloy na tirahan sa U.S." },
+    { name: "Mga rekord ng paglalakbay", source: "Mga selyo ng pasaporte o personal na kalendaryo", reason: "Nagdodokumento ng lahat ng mga biyahe sa labas ng U.S." },
+    { name: "Sertipiko ng kasal (kung naaangkop)", source: "Opisyal na talaan kung saan kayo ikinasal", reason: "Kinakailangan kung kasal sa isang mamamayang Amerikano" },
+  ],
+  vi: [
+    { name: "Thẻ Thường Trú Nhân (Green Card)", source: "Thẻ vật lý của bạn", reason: "Chứng minh tình trạng nhập cư với USCIS" },
+    { name: "Hộ chiếu từ nước sinh quán", source: "Đại sứ quán nước bạn hoặc hồ sơ của bạn", reason: "Xác nhận danh tính và quốc tịch của bạn" },
+    { name: "Khai thuế (5 năm gần nhất)", source: "IRS.gov hoặc người làm thuế của bạn", reason: "Chứng minh cư trú liên tục tại Hoa Kỳ" },
+    { name: "Hồ sơ đi lại", source: "Dấu hộ chiếu hoặc lịch cá nhân", reason: "Ghi lại tất cả các chuyến đi ngoài Hoa Kỳ" },
+    { name: "Giấy đăng ký kết hôn (nếu có)", source: "Cơ quan hộ tịch nơi bạn kết hôn", reason: "Bắt buộc nếu kết hôn với công dân Hoa Kỳ" },
+  ],
+  hi: [
+    { name: "स्थायी निवासी कार्ड (ग्रीन कार्ड)", source: "आपका भौतिक कार्ड", reason: "USCIS को आपकी आव्रजन स्थिति साबित करता है" },
+    { name: "जन्म देश का पासपोर्ट", source: "अपने देश का दूतावास या आपकी फाइलें", reason: "आपकी पहचान और राष्ट्रीयता की पुष्टि करता है" },
+    { name: "टैक्स रिटर्न (पिछले 5 साल)", source: "IRS.gov या आपके टैक्स प्रिपेरर", reason: "अमेरिका में निरंतर निवास साबित करता है" },
+    { name: "यात्रा रिकॉर्ड", source: "पासपोर्ट स्टैम्प या व्यक्तिगत कैलेंडर", reason: "अमेरिका से बाहर सभी यात्राओं का दस्तावेज़ीकरण" },
+    { name: "विवाह प्रमाण पत्र (यदि लागू हो)", source: "जहाँ शादी हुई वहाँ का महत्वपूर्ण रिकॉर्ड कार्यालय", reason: "यदि अमेरिकी नागरिक से विवाहित हैं तो आवश्यक" },
+  ],
 };
 
 const COUNTRIES = ["Afghanistan","Albania","Algeria","Argentina","Australia","Bangladesh","Bolivia","Brazil","Cambodia","Canada","Chile","China","Colombia","Cuba","Dominican Republic","Ecuador","Egypt","El Salvador","Ethiopia","France","Germany","Ghana","Guatemala","Haiti","Honduras","India","Indonesia","Iran","Iraq","Jamaica","Japan","Jordan","Kenya","Laos","Lebanon","Liberia","Malaysia","Mexico","Morocco","Myanmar","Nepal","Nicaragua","Nigeria","Pakistan","Panama","Peru","Philippines","Russia","Senegal","Sierra Leone","Somalia","South Korea","Sri Lanka","Sudan","Syria","Taiwan","Thailand","Trinidad and Tobago","Ukraine","Venezuela","Vietnam","Yemen","Zimbabwe","Other"];
@@ -318,6 +377,7 @@ export default function App() {
   const [currentQ, setCurrentQ] = useState(0);
   const [aiContent, setAiContent] = useState({});
   const [loadingAI, setLoadingAI] = useState(false);
+  const [loadingFeedback, setLoadingFeedback] = useState({});
   const [formAnswers, setFormAnswers] = useState({});
   const [formFeedback, setFormFeedback] = useState({});
   const [interviewAnswers, setInterviewAnswers] = useState({});
@@ -329,28 +389,22 @@ export default function App() {
   const t = (key) => g(lang, key);
   const langName = LANGUAGES.find(l => l.code === lang)?.label || "English";
 
-  // ── AUTO COMPLETE: check if all docs checked ──
+  // Auto-complete documents when all checked
   useEffect(() => {
     if (!aiContent.documents || aiContent.documents.length === 0) return;
-    const allChecked = aiContent.documents.every((_,i) => docChecks[i]);
+    const allChecked = aiContent.documents.every((_, i) => docChecks[i]);
     if (allChecked && moduleProgress[0] !== "COMPLETE") {
       setModuleProgress(prev => ({ ...prev, 0: "COMPLETE" }));
-      if (user) {
-        supabase.from("progress").upsert(
-          { user_id: user.id, module: "documents", status: "COMPLETE", updated_at: new Date().toISOString() },
-          { onConflict: "user_id,module" }
-        );
-      }
+      if (user) supabase.from("progress").upsert({ user_id: user.id, module: "documents", status: "COMPLETE", updated_at: new Date().toISOString() }, { onConflict: "user_id,module" });
     }
   }, [docChecks, aiContent.documents]);
 
-  // ── LOAD PROGRESS ──
   const loadProgress = async (u) => {
     const { data } = await supabase.from("progress").select("*").eq("user_id", u.id);
     if (data && data.length > 0) {
-      const newProgress = {0:"NOT STARTED",1:"NOT STARTED",2:"NOT STARTED",3:"NOT STARTED"};
-      data.forEach(row => { if (MODULE_IDX[row.module] !== undefined) newProgress[MODULE_IDX[row.module]] = row.status; });
-      setModuleProgress(newProgress);
+      const newP = {0:"NOT STARTED",1:"NOT STARTED",2:"NOT STARTED",3:"NOT STARTED"};
+      data.forEach(row => { if (MODULE_IDX[row.module] !== undefined) newP[MODULE_IDX[row.module]] = row.status; });
+      setModuleProgress(newP);
     }
   };
 
@@ -358,29 +412,20 @@ export default function App() {
     supabase.auth.getSession().then(({ data: { session } }) => {
       if (session?.user) { setUser(session.user); setPage("dashboard"); loadProgress(session.user); }
     });
-    supabase.auth.onAuthStateChange((_event, session) => {
+    supabase.auth.onAuthStateChange((_e, session) => {
       if (session?.user) { setUser(session.user); setPage("dashboard"); loadProgress(session.user); }
     });
     const savedLang = localStorage.getItem("legaliai_lang");
     if (savedLang) setLang(savedLang);
   }, []);
 
-  // ── LANGUAGE CHANGE — regenerate AI content ──
   const handleLangChange = (code) => {
     setLang(code);
     localStorage.setItem("legaliai_lang", code);
     setShowLangMenu(false);
-    // Clear AI content so it regenerates in new language
     setAiContent({});
     setFormFeedback({});
     setInterviewFeedback({});
-  };
-
-  const getProgressLabel = (idx) => {
-    const s = moduleProgress[idx];
-    if (s === "COMPLETE") return t("complete");
-    if (s === "IN PROGRESS") return t("inProgress");
-    return t("notStarted");
   };
 
   const getProgressColor = (idx) => {
@@ -395,6 +440,13 @@ export default function App() {
     if (s === "COMPLETE") return t("review");
     if (s === "IN PROGRESS") return t("resume");
     return t("start");
+  };
+
+  const getProgressLabel = (idx) => {
+    const s = moduleProgress[idx];
+    if (s === "COMPLETE") return t("complete");
+    if (s === "IN PROGRESS") return t("inProgress");
+    return t("notStarted");
   };
 
   const handleSendMagicLink = async () => {
@@ -413,41 +465,31 @@ export default function App() {
     setPage(moduleName);
     if (moduleProgress[idx] === "NOT STARTED") {
       setModuleProgress(prev => ({ ...prev, [idx]: "IN PROGRESS" }));
-      if (user) {
-        await supabase.from("progress").upsert(
-          { user_id: user.id, module: moduleName, status: "IN PROGRESS", updated_at: new Date().toISOString() },
-          { onConflict: "user_id,module" }
-        );
-      }
+      if (user) await supabase.from("progress").upsert({ user_id: user.id, module: moduleName, status: "IN PROGRESS", updated_at: new Date().toISOString() }, { onConflict: "user_id,module" });
     }
     if (idx === 0 && !aiContent.documents) generateDocuments();
     if (idx === 2 && !aiContent.risk) generateRisk();
   };
 
+  // ── CORE: call our Vercel API proxy (fixes CORS) ──
   const callAI = async (prompt) => {
-    const res = await fetch("https://api.anthropic.com/v1/messages", {
+    const res = await fetch("/api/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ model: "claude-sonnet-4-20250514", max_tokens: 1500, messages: [{ role: "user", content: prompt }] }),
+      body: JSON.stringify({ prompt }),
     });
     const data = await res.json();
-    return data.content?.[0]?.text || "";
+    return data.text || "";
   };
 
   const generateDocuments = async () => {
     setLoadingAI(true);
     try {
-      const text = await callAI(`You are an immigration preparation assistant. Based on these N-400 answers: ${JSON.stringify(onboardingAnswers)}, generate a personalized document checklist. Return ONLY a valid JSON array with no extra text or markdown: [{"name":"...","source":"...","reason":"..."}]. Respond entirely in ${langName}.`);
-      const cleaned = text.replace(/```json|```/g, "").trim();
-      setAiContent(prev => ({ ...prev, documents: JSON.parse(cleaned) }));
+      const text = await callAI(`You are an immigration preparation assistant. Based on these N-400 answers: ${JSON.stringify(onboardingAnswers)}, generate a personalized document checklist. IMPORTANT: Respond ENTIRELY in ${langName}. Translate ALL text including document names into ${langName}. Return ONLY a valid JSON array with no markdown or extra text: [{"name":"...","source":"...","reason":"..."}]`);
+      const docs = JSON.parse(text.replace(/```json|```/g, "").trim());
+      setAiContent(prev => ({ ...prev, documents: docs }));
     } catch {
-      setAiContent(prev => ({ ...prev, documents: [
-        { name: "Permanent Resident Card (Green Card)", source: "Your physical card", reason: "Proves your immigration status to USCIS" },
-        { name: "Passport from birth country", source: "Home country embassy or your files", reason: "Confirms your identity and nationality" },
-        { name: "Tax returns (last 5 years)", source: "IRS.gov or your tax preparer", reason: "Proves continuous U.S. residence" },
-        { name: "Travel records", source: "Passport stamps or personal calendar", reason: "Documents all trips outside the U.S." },
-        { name: "Marriage certificate (if applicable)", source: "Vital records office where you married", reason: "Required if married to a U.S. citizen" },
-      ]}));
+      setAiContent(prev => ({ ...prev, documents: FALLBACK_DOCS[lang] || FALLBACK_DOCS["en"] }));
     }
     setLoadingAI(false);
   };
@@ -455,13 +497,12 @@ export default function App() {
   const generateRisk = async () => {
     setLoadingAI(true);
     try {
-      const text = await callAI(`You are an immigration preparation assistant. Based on these N-400 answers: ${JSON.stringify(onboardingAnswers)}, identify 3-5 personal risk factors for this application. Return ONLY a valid JSON array with no extra text or markdown: [{"title":"...","explanation":"...","action":"..."}]. Respond entirely in ${langName}. Be specific and write in plain simple language.`);
-      const cleaned = text.replace(/```json|```/g, "").trim();
-      setAiContent(prev => ({ ...prev, risk: JSON.parse(cleaned) }));
+      const text = await callAI(`You are an immigration preparation assistant. Based on these N-400 answers: ${JSON.stringify(onboardingAnswers)}, identify 3-5 personal risk factors. IMPORTANT: Respond ENTIRELY in ${langName}. Return ONLY a valid JSON array with no markdown or extra text: [{"title":"...","explanation":"...","action":"..."}]`);
+      const risks = JSON.parse(text.replace(/```json|```/g, "").trim());
+      setAiContent(prev => ({ ...prev, risk: risks }));
     } catch {
       setAiContent(prev => ({ ...prev, risk: [
-        { title: "Continuous Residence", explanation: "Any trip over 6 months could interrupt your continuous residence requirement.", action: "Gather all travel records and be prepared to explain any long trips with documentation." },
-        { title: "Good Moral Character", explanation: "USCIS reviews the past 5 years of your conduct and history.", action: "Disclose all interactions with law enforcement, even minor traffic violations." },
+        { title: lang === "pt" ? "Residência Contínua" : lang === "es" ? "Residencia Continua" : "Continuous Residence", explanation: lang === "pt" ? "Qualquer viagem de mais de 6 meses pode interromper seu requisito de residência contínua." : lang === "es" ? "Cualquier viaje de más de 6 meses puede interrumpir tu residencia continua." : "Any trip over 6 months could interrupt your continuous residence requirement.", action: lang === "pt" ? "Reúna todos os registros de viagem e esteja preparado para explicar viagens longas." : lang === "es" ? "Reúne todos los registros de viaje y prepárate para explicar viajes largos." : "Gather all travel records and be ready to explain any long trips." },
       ]}));
     }
     setLoadingAI(false);
@@ -469,24 +510,30 @@ export default function App() {
 
   const handleFormFeedback = async (qId, question, answer) => {
     if (!answer.trim()) return;
-    const feedback = await callAI(`Review this N-400 answer. Question: "${question}" Answer: "${answer}". Give 2-3 sentences of specific feedback. Is it complete? Any red flags? What to improve? Respond in ${langName}.`);
-    setFormFeedback(prev => ({ ...prev, [qId]: feedback }));
+    setLoadingFeedback(prev => ({ ...prev, [qId]: true }));
+    try {
+      const feedback = await callAI(`Review this N-400 answer. Question: "${question}" Answer: "${answer}". Give 2-3 sentences of specific feedback. Is it complete? Any red flags? What to improve? IMPORTANT: Respond ENTIRELY in ${langName}.`);
+      setFormFeedback(prev => ({ ...prev, [qId]: feedback }));
+    } catch { setFormFeedback(prev => ({ ...prev, [qId]: "Could not get feedback. Please try again." })); }
+    setLoadingFeedback(prev => ({ ...prev, [qId]: false }));
   };
 
   const handleInterviewSubmit = async (idx, question, answer) => {
     if (!answer.trim()) return;
-    const feedback = await callAI(`Evaluate this N-400 interview answer. Question: "${question}" Answer: "${answer}". Rate clarity 1-10, give one specific strength and one specific improvement tip. Be encouraging and constructive. 3 sentences max. Respond in ${langName}.`);
-    setInterviewFeedback(prev => ({ ...prev, [idx]: feedback }));
-    const newPracticed = { ...practiced, [idx]: true };
-    setPracticed(newPracticed);
-    // Mark interview complete if all practiced
-    if (Object.keys(newPracticed).length === INTERVIEW_QUESTIONS.length && moduleProgress[3] !== "COMPLETE") {
-      setModuleProgress(prev => ({ ...prev, 3: "COMPLETE" }));
-      if (user) await supabase.from("progress").upsert({ user_id: user.id, module: "interview", status: "COMPLETE", updated_at: new Date().toISOString() }, { onConflict: "user_id,module" });
-    }
+    setLoadingFeedback(prev => ({ ...prev, [`interview_${idx}`]: true }));
+    try {
+      const feedback = await callAI(`Evaluate this N-400 interview answer. Question: "${question}" Answer: "${answer}". Rate clarity 1-10, give one specific strength and one specific improvement tip. Be encouraging. 3 sentences max. IMPORTANT: Respond ENTIRELY in ${langName}.`);
+      setInterviewFeedback(prev => ({ ...prev, [idx]: feedback }));
+      const newPracticed = { ...practiced, [idx]: true };
+      setPracticed(newPracticed);
+      if (Object.keys(newPracticed).length === INTERVIEW_QUESTIONS.length && moduleProgress[3] !== "COMPLETE") {
+        setModuleProgress(prev => ({ ...prev, 3: "COMPLETE" }));
+        if (user) await supabase.from("progress").upsert({ user_id: user.id, module: "interview", status: "COMPLETE", updated_at: new Date().toISOString() }, { onConflict: "user_id,module" });
+      }
+    } catch { setInterviewFeedback(prev => ({ ...prev, [idx]: "Could not get feedback. Please try again." })); }
+    setLoadingFeedback(prev => ({ ...prev, [`interview_${idx}`]: false }));
   };
 
-  // ── STYLES ──
   const goldBtn = { background: "#C9A84C", border: "none", color: "#000", padding: "16px 48px", fontSize: "13px", letterSpacing: "4px", cursor: "pointer", fontWeight: 700, fontFamily: "inherit" };
   const backBtn = { background: "none", border: "none", color: "#555", fontSize: "12px", letterSpacing: "2px", cursor: "pointer", marginBottom: "40px", fontFamily: "inherit", display: "block" };
   const card = { background: "#0a0a0a", border: "1px solid #1a1a1a", padding: "28px", marginBottom: "2px" };
@@ -515,7 +562,6 @@ export default function App() {
 
   const Disclaimer = () => <p style={{ color:"#2a2a2a",fontSize:"11px",textAlign:"center",letterSpacing:"1px",lineHeight:"1.8",margin:"48px auto 0",maxWidth:"600px" }}>{t("disclaimer")}</p>;
 
-  // ── LANDING ──
   if (page === "landing") return (
     <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px" }}>
       <Nav />
@@ -527,7 +573,7 @@ export default function App() {
               <p style={{ color:"#555",fontSize:"13px",letterSpacing:"1px",marginBottom:"32px",lineHeight:1.8 }}>{t("emailSub")}</p>
               <input value={email} onChange={e => setEmail(e.target.value)} onKeyDown={e => e.key==="Enter"&&handleSendMagicLink()} type="email" placeholder="your@email.com" style={{ width:"100%",background:"#111",border:"1px solid #2a2a2a",color:"#F5F5F5",padding:"16px 20px",fontSize:"15px",marginBottom:"16px",boxSizing:"border-box",outline:"none",fontFamily:"inherit" }} />
               <button onClick={handleSendMagicLink} style={{ ...goldBtn, width:"100%", padding:"18px" }}>{t("sendLink")}</button>
-              <button onClick={() => setShowEmailModal(false)} style={{ marginTop:"20px",background:"none",border:"none",color:"#333",fontSize:"12px",cursor:"pointer",fontFamily:"inherit" }}>✕ Cancel</button>
+              <button onClick={() => setShowEmailModal(false)} style={{ marginTop:"20px",background:"none",border:"none",color:"#333",fontSize:"12px",cursor:"pointer",fontFamily:"inherit" }}>✕</button>
             </> : <>
               <div style={{ fontSize:"48px",marginBottom:"24px" }}>✉️</div>
               <h2 style={{ color:"#C9A84C",fontSize:"20px",letterSpacing:"5px",marginBottom:"12px",fontWeight:300 }}>{t("checkEmail")}</h2>
@@ -537,15 +583,9 @@ export default function App() {
         </div>
       )}
       <div style={{ maxWidth:"1100px",margin:"0 auto",padding:"80px 40px",textAlign:"center" }}>
-        <div style={{ display:"inline-block",border:"1px solid #1a1a1a",padding:"6px 16px",marginBottom:"32px" }}>
-          <span style={{ color:"#C9A84C",fontSize:"10px",letterSpacing:"4px" }}>{t("aiPowered")} · {t("personalized")}</span>
-        </div>
         <h1 style={{ color:"#F5F5F5",fontSize:"clamp(28px,5vw,60px)",letterSpacing:"4px",fontWeight:300,lineHeight:1.3,marginBottom:"28px",whiteSpace:"pre-line" }}>{t("tagline")}</h1>
         <p style={{ color:"#777",fontSize:"18px",letterSpacing:"2px",marginBottom:"52px",lineHeight:1.8,maxWidth:"700px",margin:"0 auto 52px" }}>{t("sub")}</p>
-        <button onClick={handleStartCTA} style={{ ...goldBtn, fontSize:"14px", padding:"22px 64px" }}
-          onMouseOver={e => e.currentTarget.style.background="#e6c060"}
-          onMouseOut={e => e.currentTarget.style.background="#C9A84C"}
-        >{t("cta")}</button>
+        <button onClick={handleStartCTA} style={{ ...goldBtn, fontSize:"14px", padding:"22px 64px" }} onMouseOver={e => e.currentTarget.style.background="#e6c060"} onMouseOut={e => e.currentTarget.style.background="#C9A84C"}>{t("cta")}</button>
         <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"2px",margin:"80px 0 0" }}>
           {[t("t1"),t("t2"),t("t3")].map((text,i) => (
             <div key={i} style={{ background:"#0a0a0a",border:"1px solid #1a1a1a",padding:"44px 32px" }}>
@@ -559,7 +599,6 @@ export default function App() {
     </div>
   );
 
-  // ── ONBOARDING ──
   if (page === "onboarding") {
     const questions = [
       { key:"residency", type:"choice", label:t("q1"), opts:t("q1opts") },
@@ -578,36 +617,29 @@ export default function App() {
         <div style={{ display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",minHeight:"calc(100vh - 80px)",padding:"40px" }}>
           <p style={{ color:"#333",fontSize:"11px",letterSpacing:"5px",marginBottom:"48px" }}>QUESTION {currentQ+1} OF 5</p>
           <h2 style={{ color:"#F5F5F5",fontSize:"clamp(18px,3vw,36px)",letterSpacing:"3px",fontWeight:300,textAlign:"center",maxWidth:"720px",marginBottom:"56px",lineHeight:1.4 }}>{q.label}</h2>
-          {q.type === "yesno" && (
-            <div style={{ display:"flex",gap:"16px",marginBottom:"40px" }}>
-              {[t("yes"),t("no")].map((opt,i) => (
-                <button key={i} onClick={() => setOnboardingAnswers(prev => ({ ...prev,[q.key]:i===0?"yes":"no" }))}
-                  style={{ background:onboardingAnswers[q.key]===(i===0?"yes":"no")?"#C9A84C":"transparent", border:`1px solid ${onboardingAnswers[q.key]===(i===0?"yes":"no")?"#C9A84C":"#2a2a2a"}`, color:onboardingAnswers[q.key]===(i===0?"yes":"no")?"#000":"#777", padding:"18px 52px",fontSize:"13px",letterSpacing:"4px",cursor:"pointer",fontFamily:"inherit",fontWeight:700,transition:"all 0.2s" }}>{opt}</button>
-              ))}
-            </div>
-          )}
-          {q.type === "choice" && (
-            <div style={{ display:"flex",flexDirection:"column",gap:"12px",marginBottom:"40px",width:"100%",maxWidth:"520px" }}>
-              {q.opts.map((opt,i) => (
-                <button key={i} onClick={() => setOnboardingAnswers(prev => ({ ...prev,[q.key]:opt }))}
-                  style={{ background:onboardingAnswers[q.key]===opt?"#C9A84C":"transparent", border:`1px solid ${onboardingAnswers[q.key]===opt?"#C9A84C":"#2a2a2a"}`, color:onboardingAnswers[q.key]===opt?"#000":"#777", padding:"18px 32px",fontSize:"14px",letterSpacing:"2px",cursor:"pointer",fontFamily:"inherit",fontWeight:onboardingAnswers[q.key]===opt?700:400,textAlign:"left",transition:"all 0.2s" }}>{opt}</button>
-              ))}
-            </div>
-          )}
-          {q.type === "dropdown" && (
-            <select value={onboardingAnswers[q.key]||""} onChange={e => setOnboardingAnswers(prev => ({ ...prev,[q.key]:e.target.value }))}
-              style={{ background:"#0a0a0a",border:"1px solid #2a2a2a",color:"#F5F5F5",padding:"16px 20px",fontSize:"15px",marginBottom:"40px",width:"100%",maxWidth:"520px",fontFamily:"inherit",outline:"none",cursor:"pointer" }}>
-              <option value="">{t("selectCountry")}</option>
-              {COUNTRIES.map(c => <option key={c} value={c}>{c}</option>)}
-            </select>
-          )}
+          {q.type === "yesno" && <div style={{ display:"flex",gap:"16px",marginBottom:"40px" }}>
+            {[t("yes"),t("no")].map((opt,i) => (
+              <button key={i} onClick={() => setOnboardingAnswers(prev => ({ ...prev,[q.key]:i===0?"yes":"no" }))}
+                style={{ background:onboardingAnswers[q.key]===(i===0?"yes":"no")?"#C9A84C":"transparent",border:`1px solid ${onboardingAnswers[q.key]===(i===0?"yes":"no")?"#C9A84C":"#2a2a2a"}`,color:onboardingAnswers[q.key]===(i===0?"yes":"no")?"#000":"#777",padding:"18px 52px",fontSize:"13px",letterSpacing:"4px",cursor:"pointer",fontFamily:"inherit",fontWeight:700 }}>{opt}</button>
+            ))}
+          </div>}
+          {q.type === "choice" && <div style={{ display:"flex",flexDirection:"column",gap:"12px",marginBottom:"40px",width:"100%",maxWidth:"520px" }}>
+            {q.opts.map((opt,i) => (
+              <button key={i} onClick={() => setOnboardingAnswers(prev => ({ ...prev,[q.key]:opt }))}
+                style={{ background:onboardingAnswers[q.key]===opt?"#C9A84C":"transparent",border:`1px solid ${onboardingAnswers[q.key]===opt?"#C9A84C":"#2a2a2a"}`,color:onboardingAnswers[q.key]===opt?"#000":"#777",padding:"18px 32px",fontSize:"14px",letterSpacing:"2px",cursor:"pointer",fontFamily:"inherit",fontWeight:onboardingAnswers[q.key]===opt?700:400,textAlign:"left" }}>{opt}</button>
+            ))}
+          </div>}
+          {q.type === "dropdown" && <select value={onboardingAnswers[q.key]||""} onChange={e => setOnboardingAnswers(prev => ({ ...prev,[q.key]:e.target.value }))}
+            style={{ background:"#0a0a0a",border:"1px solid #2a2a2a",color:"#F5F5F5",padding:"16px 20px",fontSize:"15px",marginBottom:"40px",width:"100%",maxWidth:"520px",fontFamily:"inherit",outline:"none",cursor:"pointer" }}>
+            <option value="">{t("selectCountry")}</option>
+            {COUNTRIES.map(c => <option key={c} value={c}>{c}</option>)}
+          </select>}
           <button onClick={handleOnboardingNext} style={goldBtn}>{currentQ < 4 ? t("next") : t("finish")}</button>
         </div>
       </div>
     );
   }
 
-  // ── PAYWALL ──
   if (page === "paywall") return (
     <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px",display:"flex",alignItems:"center",justifyContent:"center" }}>
       <Nav />
@@ -615,18 +647,13 @@ export default function App() {
         <div style={{ width:"80px",height:"1px",background:"#C9A84C",margin:"0 auto 40px" }} />
         <h1 style={{ color:"#F5F5F5",fontSize:"clamp(22px,4vw,44px)",letterSpacing:"3px",fontWeight:300,marginBottom:"20px",lineHeight:1.3 }}>{t("paywallTitle")}</h1>
         <p style={{ color:"#777",fontSize:"18px",letterSpacing:"2px",marginBottom:"52px",lineHeight:1.8 }}>{t("paywallSub")}</p>
-        <button onClick={() => setPage("dashboard")} style={{ ...goldBtn, display:"block", margin:"0 auto 20px", padding:"24px 80px", fontSize:"15px" }}
-          onMouseOver={e => e.currentTarget.style.background="#e6c060"}
-          onMouseOut={e => e.currentTarget.style.background="#C9A84C"}
-        >{t("unlock")}</button>
+        <button onClick={() => setPage("dashboard")} style={{ ...goldBtn, display:"block", margin:"0 auto 20px", padding:"24px 80px", fontSize:"15px" }} onMouseOver={e => e.currentTarget.style.background="#e6c060"} onMouseOut={e => e.currentTarget.style.background="#C9A84C"}>{t("unlock")}</button>
         <p style={{ color:"#333",fontSize:"12px",letterSpacing:"2px" }}>{t("paywallNote")}</p>
-        <div style={{ width:"80px",height:"1px",background:"#1a1a1a",margin:"40px auto 0" }} />
         <Disclaimer />
       </div>
     </div>
   );
 
-  // ── DASHBOARD ──
   if (page === "dashboard") return (
     <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px" }}>
       <Nav />
@@ -634,13 +661,13 @@ export default function App() {
         <h1 style={{ color:"#F5F5F5",fontSize:"clamp(18px,3vw,34px)",letterSpacing:"6px",fontWeight:300,marginBottom:"64px",textAlign:"center" }}>{t("dashTitle")}</h1>
         <div style={{ display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:"2px" }}>
           {t("modules").map((mod,i) => (
-            <div key={i} style={{ background:"#0a0a0a",border:`1px solid ${moduleProgress[i]==="COMPLETE"?"#2a4a2a":moduleProgress[i]==="IN PROGRESS"?"#3a3010":"#1a1a1a"}`,padding:"40px",display:"flex",flexDirection:"column",gap:"16px",transition:"border-color 0.3s" }}>
+            <div key={i} style={{ background:"#0a0a0a",border:`1px solid ${moduleProgress[i]==="COMPLETE"?"#1a3a1a":moduleProgress[i]==="IN PROGRESS"?"#3a3010":"#1a1a1a"}`,padding:"40px",display:"flex",flexDirection:"column",gap:"16px" }}>
               <div style={{ fontSize:"28px" }}>{["📋","📝","⚠️","🎤"][i]}</div>
               <h3 style={{ color:"#F5F5F5",fontSize:"14px",letterSpacing:"4px",fontWeight:300,margin:0 }}>{mod}</h3>
               <p style={{ color:"#444",fontSize:"13px",letterSpacing:"1px",margin:0,lineHeight:1.8 }}>{t("modDesc")[i]}</p>
               <div style={{ display:"flex",alignItems:"center",justifyContent:"space-between",marginTop:"auto",paddingTop:"20px",borderTop:"1px solid #111" }}>
                 <span style={{ color:getProgressColor(i),fontSize:"10px",letterSpacing:"2px",fontWeight:600 }}>{getProgressLabel(i)}</span>
-                <button onClick={() => handleModuleOpen(i)} style={{ background: moduleProgress[i]==="COMPLETE"?"transparent":"#C9A84C", border:`1px solid ${moduleProgress[i]==="COMPLETE"?"#4ade80":"#C9A84C"}`, color:moduleProgress[i]==="COMPLETE"?"#4ade80":"#000", padding:"10px 28px",fontSize:"11px",letterSpacing:"3px",cursor:"pointer",fontWeight:700,fontFamily:"inherit" }}>{getBtnLabel(i)}</button>
+                <button onClick={() => handleModuleOpen(i)} style={{ background:moduleProgress[i]==="COMPLETE"?"transparent":"#C9A84C",border:`1px solid ${moduleProgress[i]==="COMPLETE"?"#4ade80":"#C9A84C"}`,color:moduleProgress[i]==="COMPLETE"?"#4ade80":"#000",padding:"10px 28px",fontSize:"11px",letterSpacing:"3px",cursor:"pointer",fontWeight:700,fontFamily:"inherit" }}>{getBtnLabel(i)}</button>
               </div>
             </div>
           ))}
@@ -650,9 +677,8 @@ export default function App() {
     </div>
   );
 
-  // ── DOCUMENTS ──
   if (page === "documents") {
-    const allChecked = aiContent.documents && aiContent.documents.length > 0 && aiContent.documents.every((_,i) => docChecks[i]);
+    const allChecked = aiContent.documents?.length > 0 && aiContent.documents.every((_, i) => docChecks[i]);
     return (
       <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px" }}>
         <Nav />
@@ -660,17 +686,13 @@ export default function App() {
           <button onClick={() => setPage("dashboard")} style={backBtn}>{t("back")}</button>
           <h1 style={{ color:"#F5F5F5",fontSize:"30px",letterSpacing:"6px",fontWeight:300,marginBottom:"8px" }}>{t("docTitle")}</h1>
           {aiContent.documents && <p style={{ color:"#444",fontSize:"12px",letterSpacing:"2px",marginBottom:"40px" }}>{Object.values(docChecks).filter(Boolean).length} / {aiContent.documents.length} gathered</p>}
-          {loadingAI && <div style={{ padding:"40px",textAlign:"center" }}><p style={{ color:"#C9A84C",letterSpacing:"2px",fontSize:"13px" }}>{t("generating")}</p></div>}
-          {allChecked && (
-            <div style={{ background:"#0a1a0a",border:"1px solid #4ade80",padding:"20px 24px",marginBottom:"24px",textAlign:"center" }}>
-              <p style={{ color:"#4ade80",fontSize:"13px",letterSpacing:"2px",margin:0 }}>✓ {t("docsComplete")}</p>
-            </div>
-          )}
+          {loadingAI && <div style={{ padding:"60px",textAlign:"center" }}><p style={{ color:"#C9A84C",letterSpacing:"2px",fontSize:"13px" }}>{t("generating")}</p></div>}
+          {allChecked && <div style={{ background:"#0a1a0a",border:"1px solid #4ade80",padding:"20px 24px",marginBottom:"24px",textAlign:"center" }}><p style={{ color:"#4ade80",fontSize:"13px",letterSpacing:"2px",margin:0 }}>✓ {t("docsComplete")}</p></div>}
           {aiContent.documents && aiContent.documents.map((doc,i) => (
-            <div key={i} style={{ ...card, display:"flex", gap:"20px", alignItems:"flex-start", borderLeft:docChecks[i]?"3px solid #4ade80":"3px solid transparent",transition:"border-color 0.3s" }}>
+            <div key={i} style={{ ...card, display:"flex", gap:"20px", alignItems:"flex-start", borderLeft:docChecks[i]?"3px solid #4ade80":"3px solid transparent" }}>
               <input type="checkbox" checked={!!docChecks[i]} onChange={e => setDocChecks(prev => ({ ...prev,[i]:e.target.checked }))} style={{ marginTop:"4px",accentColor:"#C9A84C",width:"20px",height:"20px",cursor:"pointer",flexShrink:0 }} />
               <div style={{ flex:1 }}>
-                <h3 style={{ color:docChecks[i]?"#444":"#F5F5F5",fontSize:"15px",letterSpacing:"2px",margin:"0 0 10px",textDecoration:docChecks[i]?"line-through":"none",transition:"all 0.2s" }}>{doc.name}</h3>
+                <h3 style={{ color:docChecks[i]?"#444":"#F5F5F5",fontSize:"15px",letterSpacing:"2px",margin:"0 0 10px",textDecoration:docChecks[i]?"line-through":"none" }}>{doc.name}</h3>
                 <p style={{ color:"#666",fontSize:"12px",letterSpacing:"1px",margin:"0 0 6px",lineHeight:1.8 }}><span style={{ color:"#C9A84C",fontSize:"10px" }}>{t("where")}</span> {doc.source}</p>
                 <p style={{ color:"#555",fontSize:"12px",letterSpacing:"1px",margin:0,lineHeight:1.8 }}><span style={{ color:"#C9A84C",fontSize:"10px" }}>{t("why")}</span> {doc.reason}</p>
               </div>
@@ -682,7 +704,6 @@ export default function App() {
     );
   }
 
-  // ── FORM ──
   if (page === "form") return (
     <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px" }}>
       <Nav />
@@ -696,20 +717,19 @@ export default function App() {
               <div key={q.id} style={card}>
                 <h3 style={{ color:"#F5F5F5",fontSize:"15px",letterSpacing:"1px",margin:"0 0 16px",fontWeight:400 }}>{q.q}</h3>
                 <div style={{ background:"#050505",border:"1px solid #111",padding:"16px",marginBottom:"16px" }}>
-                  <p style={{ color:"#666",fontSize:"12px",letterSpacing:"1px",margin:"0 0 8px",lineHeight:1.8 }}><span style={{ color:"#C9A84C",fontSize:"10px",letterSpacing:"3px" }}>{t("means")}</span> {q.explain}</p>
-                  <p style={{ color:"#555",fontSize:"12px",letterSpacing:"1px",margin:"0 0 8px",lineHeight:1.8 }}><span style={{ color:"#C9A84C",fontSize:"10px",letterSpacing:"3px" }}>{t("example")}</span> {q.example}</p>
-                  <p style={{ color:"#555",fontSize:"12px",letterSpacing:"1px",margin:0,lineHeight:1.8 }}><span style={{ color:"#e05555",fontSize:"10px",letterSpacing:"3px" }}>{t("mistake")}</span> {q.mistake}</p>
+                  <p style={{ color:"#666",fontSize:"12px",margin:"0 0 8px",lineHeight:1.8 }}><span style={{ color:"#C9A84C",fontSize:"10px",letterSpacing:"3px" }}>{t("means")}</span> {q.explain}</p>
+                  <p style={{ color:"#555",fontSize:"12px",margin:"0 0 8px",lineHeight:1.8 }}><span style={{ color:"#C9A84C",fontSize:"10px",letterSpacing:"3px" }}>{t("example")}</span> {q.example}</p>
+                  <p style={{ color:"#555",fontSize:"12px",margin:0,lineHeight:1.8 }}><span style={{ color:"#e05555",fontSize:"10px",letterSpacing:"3px" }}>{t("mistake")}</span> {q.mistake}</p>
                 </div>
                 <textarea value={formAnswers[q.id]||""} onChange={e => setFormAnswers(prev => ({ ...prev,[q.id]:e.target.value }))}
                   onBlur={() => handleFormFeedback(q.id, q.q, formAnswers[q.id])}
                   placeholder={t("yourAnswer")}
                   style={{ width:"100%",background:"#080808",border:"1px solid #1a1a1a",color:"#F5F5F5",padding:"14px",fontSize:"14px",fontFamily:"inherit",resize:"vertical",minHeight:"90px",boxSizing:"border-box",outline:"none",lineHeight:1.8 }} />
-                {formFeedback[q.id] && (
-                  <div style={{ marginTop:"12px",borderLeft:"2px solid #C9A84C",paddingLeft:"14px" }}>
-                    <p style={{ color:"#C9A84C",fontSize:"11px",letterSpacing:"2px",margin:"0 0 6px" }}>AI FEEDBACK</p>
-                    <p style={{ color:"#888",fontSize:"13px",letterSpacing:"1px",margin:0,lineHeight:1.8 }}>{formFeedback[q.id]}</p>
-                  </div>
-                )}
+                {loadingFeedback[q.id] && <p style={{ color:"#555",fontSize:"11px",letterSpacing:"2px",marginTop:"8px" }}>{t("thinking")}</p>}
+                {formFeedback[q.id] && <div style={{ marginTop:"12px",borderLeft:"2px solid #C9A84C",paddingLeft:"14px" }}>
+                  <p style={{ color:"#C9A84C",fontSize:"10px",letterSpacing:"3px",margin:"0 0 6px" }}>{t("aiFeedback")}</p>
+                  <p style={{ color:"#888",fontSize:"13px",margin:0,lineHeight:1.8 }}>{formFeedback[q.id]}</p>
+                </div>}
               </div>
             ))}
           </div>
@@ -719,21 +739,20 @@ export default function App() {
     </div>
   );
 
-  // ── RISK ──
   if (page === "risk") return (
     <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px" }}>
       <Nav />
       <div style={{ maxWidth:"800px",margin:"0 auto",padding:"60px 40px" }}>
         <button onClick={() => setPage("dashboard")} style={backBtn}>{t("back")}</button>
         <h1 style={{ color:"#F5F5F5",fontSize:"30px",letterSpacing:"6px",fontWeight:300,marginBottom:"40px" }}>{t("riskTitle")}</h1>
-        {loadingAI && <div style={{ padding:"40px",textAlign:"center" }}><p style={{ color:"#C9A84C",letterSpacing:"2px",fontSize:"13px" }}>{t("generating")}</p></div>}
+        {loadingAI && <div style={{ padding:"60px",textAlign:"center" }}><p style={{ color:"#C9A84C",letterSpacing:"2px",fontSize:"13px" }}>{t("generating")}</p></div>}
         {aiContent.risk && aiContent.risk.map((risk,i) => (
           <div key={i} style={{ ...card, borderLeft:"3px solid #C9A84C",marginBottom:"12px" }}>
             <h3 style={{ color:"#C9A84C",fontSize:"12px",letterSpacing:"4px",margin:"0 0 14px",fontWeight:400 }}>⚠ {risk.title}</h3>
-            <p style={{ color:"#888",fontSize:"14px",letterSpacing:"1px",margin:"0 0 16px",lineHeight:"1.9" }}>{risk.explanation}</p>
+            <p style={{ color:"#888",fontSize:"14px",margin:"0 0 16px",lineHeight:"1.9" }}>{risk.explanation}</p>
             <div style={{ background:"#050505",border:"1px solid #111",padding:"14px" }}>
               <p style={{ color:"#C9A84C",fontSize:"10px",letterSpacing:"3px",margin:"0 0 6px" }}>{t("action")}</p>
-              <p style={{ color:"#F5F5F5",fontSize:"13px",letterSpacing:"1px",margin:0,lineHeight:"1.8" }}>{risk.action}</p>
+              <p style={{ color:"#F5F5F5",fontSize:"13px",margin:0,lineHeight:"1.8" }}>{risk.action}</p>
             </div>
           </div>
         ))}
@@ -742,7 +761,6 @@ export default function App() {
     </div>
   );
 
-  // ── INTERVIEW ──
   if (page === "interview") {
     const practicedCount = Object.keys(practiced).length;
     return (
@@ -751,29 +769,29 @@ export default function App() {
         <div style={{ maxWidth:"800px",margin:"0 auto",padding:"60px 40px" }}>
           <button onClick={() => setPage("dashboard")} style={backBtn}>{t("back")}</button>
           <h1 style={{ color:"#F5F5F5",fontSize:"30px",letterSpacing:"6px",fontWeight:300,marginBottom:"8px" }}>{t("interviewTitle")}</h1>
-          <p style={{ color:"#444",fontSize:"12px",letterSpacing:"2px",marginBottom:"40px" }}>{practicedCount} {t("progressOf")} {INTERVIEW_QUESTIONS.length} {t("questionsCompleted")}</p>
-          <div style={{ height:"4px",background:"#0a0a0a",marginBottom:"40px",borderRadius:"2px" }}>
+          <p style={{ color:"#444",fontSize:"12px",letterSpacing:"2px",marginBottom:"16px" }}>{practicedCount} {t("progressOf")} {INTERVIEW_QUESTIONS.length} {t("questionsCompleted")}</p>
+          <div style={{ height:"4px",background:"#0a0a0a",marginBottom:"16px",borderRadius:"2px" }}>
             <div style={{ height:"100%",background:"#C9A84C",width:`${(practicedCount/INTERVIEW_QUESTIONS.length)*100}%`,transition:"width 0.5s ease",borderRadius:"2px" }} />
           </div>
+          <p style={{ color:"#333",fontSize:"11px",letterSpacing:"1px",marginBottom:"40px",lineHeight:1.8 }}>{t("interviewNote")}</p>
           {INTERVIEW_QUESTIONS.map((q,i) => (
-            <div key={i} style={{ ...card, borderLeft:practiced[i]?"3px solid #4ade80":"3px solid transparent",transition:"border-color 0.3s" }}>
+            <div key={i} style={{ ...card, borderLeft:practiced[i]?"3px solid #4ade80":"3px solid transparent" }}>
               <div style={{ display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:"16px" }}>
-                <h3 style={{ color:practiced[i]?"#555":"#F5F5F5",fontSize:"14px",letterSpacing:"1px",margin:0,fontWeight:400,flex:1,paddingRight:"16px",lineHeight:1.6 }}>{i+1}. {q}</h3>
+                <h3 style={{ color:practiced[i]?"#555":"#F5F5F5",fontSize:"14px",margin:0,fontWeight:400,flex:1,paddingRight:"16px",lineHeight:1.6 }}>{i+1}. {q}</h3>
                 {practiced[i] && <span style={{ color:"#4ade80",fontSize:"10px",letterSpacing:"2px",whiteSpace:"nowrap",fontWeight:600 }}>{t("practiced")}</span>}
               </div>
               <textarea value={interviewAnswers[i]||""} onChange={e => setInterviewAnswers(prev => ({ ...prev,[i]:e.target.value }))}
                 placeholder={t("yourAnswer")}
                 style={{ width:"100%",background:"#080808",border:"1px solid #1a1a1a",color:"#F5F5F5",padding:"14px",fontSize:"14px",fontFamily:"inherit",resize:"vertical",minHeight:"80px",boxSizing:"border-box",outline:"none",marginBottom:"14px",lineHeight:1.8 }} />
               <button onClick={() => handleInterviewSubmit(i, q, interviewAnswers[i])}
-                style={{ background:practiced[i]?"transparent":"#C9A84C",border:`1px solid ${practiced[i]?"#4ade80":"#C9A84C"}`,color:practiced[i]?"#4ade80":"#000",padding:"10px 28px",fontSize:"11px",letterSpacing:"3px",cursor:"pointer",fontWeight:700,fontFamily:"inherit" }}>
-                {practiced[i] ? t("practiced") : t("practice")}
+                disabled={loadingFeedback[`interview_${i}`]}
+                style={{ background:practiced[i]?"transparent":"#C9A84C",border:`1px solid ${practiced[i]?"#4ade80":"#C9A84C"}`,color:practiced[i]?"#4ade80":"#000",padding:"10px 28px",fontSize:"11px",letterSpacing:"3px",cursor:"pointer",fontWeight:700,fontFamily:"inherit",opacity:loadingFeedback[`interview_${i}`]?0.5:1 }}>
+                {loadingFeedback[`interview_${i}`] ? t("thinking") : practiced[i] ? t("practiced") : t("practice")}
               </button>
-              {interviewFeedback[i] && (
-                <div style={{ marginTop:"14px",borderLeft:"2px solid #C9A84C",paddingLeft:"14px" }}>
-                  <p style={{ color:"#C9A84C",fontSize:"11px",letterSpacing:"2px",margin:"0 0 6px" }}>AI FEEDBACK</p>
-                  <p style={{ color:"#888",fontSize:"13px",letterSpacing:"1px",margin:0,lineHeight:1.8 }}>{interviewFeedback[i]}</p>
-                </div>
-              )}
+              {interviewFeedback[i] && <div style={{ marginTop:"14px",borderLeft:"2px solid #C9A84C",paddingLeft:"14px" }}>
+                <p style={{ color:"#C9A84C",fontSize:"10px",letterSpacing:"3px",margin:"0 0 6px" }}>{t("aiFeedback")}</p>
+                <p style={{ color:"#888",fontSize:"13px",margin:0,lineHeight:1.8 }}>{interviewFeedback[i]}</p>
+              </div>}
             </div>
           ))}
           <p style={{ color:"#1a1a1a",fontSize:"11px",letterSpacing:"1px",marginTop:"40px",textAlign:"center",lineHeight:1.8 }}>{t("aiDisclaimer")}</p>
