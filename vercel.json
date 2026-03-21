@@ -1,5 +1,5 @@
 {
   "rewrites": [
-    { "source": "/((?!api/).*)", "destination": "/index.html" }
+    { "source": "/((?!api/|n-400-guide|es/|pt/|zh/|tl/|vi/|hi/).*)", "destination": "/index.html" }
   ]
 }
