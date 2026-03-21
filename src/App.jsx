@@ -460,6 +460,15 @@ export default function App() {
   const handleOnboardingNext = () => { if (currentQ < 4) setCurrentQ(currentQ + 1); else { saveOnboardingAnswers(); setPage("paywall"); } };
   const saveOnboardingAnswers = async () => { if (user) await supabase.from("onboarding_answers").upsert({ user_id: user.id, answers: onboardingAnswers }); };
 
+  const handleUnlock = async () => {
+    if (!user) { setShowEmailModal(true); return; }
+    try {
+      const res = await fetch("/api/stripe-checkout", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ userId: user.id, email: user.email }) });
+      const data = await res.json();
+      if (data.url) window.location.href = data.url;
+    } catch (err) { console.error("Stripe error:", err); }
+  };
+
   const handleModuleOpen = async (idx) => {
     const moduleName = MODULE_NAMES[idx];
     setPage(moduleName);
@@ -647,7 +656,7 @@ export default function App() {
         <div style={{ width:"80px",height:"1px",background:"#C9A84C",margin:"0 auto 40px" }} />
         <h1 style={{ color:"#F5F5F5",fontSize:"clamp(22px,4vw,44px)",letterSpacing:"3px",fontWeight:300,marginBottom:"20px",lineHeight:1.3 }}>{t("paywallTitle")}</h1>
         <p style={{ color:"#777",fontSize:"18px",letterSpacing:"2px",marginBottom:"52px",lineHeight:1.8 }}>{t("paywallSub")}</p>
-        <button onClick={() => setPage("dashboard")} style={{ ...goldBtn, display:"block", margin:"0 auto 20px", padding:"24px 80px", fontSize:"15px" }} onMouseOver={e => e.currentTarget.style.background="#e6c060"} onMouseOut={e => e.currentTarget.style.background="#C9A84C"}>{t("unlock")}</button>
+        <button onClick={handleUnlock} style={{ ...goldBtn, display:"block", margin:"0 auto 20px", padding:"24px 80px", fontSize:"15px" }} onMouseOver={e => e.currentTarget.style.background="#e6c060"} onMouseOut={e => e.currentTarget.style.background="#C9A84C"}>{t("unlock")}</button>
         <p style={{ color:"#333",fontSize:"12px",letterSpacing:"2px" }}>{t("paywallNote")}</p>
         <Disclaimer />
       </div>
