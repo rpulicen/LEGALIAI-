@@ -198,7 +198,7 @@ export default function App() {
 
   const handleSendMagicLink = async () => {
     if (!email) return;
-    await supabase.auth.signInWithOtp({ email, options: { emailRedirectTo: window.location.origin } });
+    await supabase.auth.signInWithOtp({ email, options: { emailRedirectTo: "https://legaliai.com" } });
     setMagicSent(true);
   };
 
