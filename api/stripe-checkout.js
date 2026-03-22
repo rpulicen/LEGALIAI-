@@ -23,7 +23,7 @@ export default async function handler(req, res) {
       metadata: {
         userId: userId,
       },
-      success_url: `https://legaliai.com/dashboard?payment=success`,
+      success_url: `https://legaliai.com/?payment=success`,
       cancel_url: `https://legaliai.com/paywall?payment=cancelled`,
     });
 

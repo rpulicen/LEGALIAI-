@@ -409,52 +409,35 @@ export default function App() {
   };
 
   useEffect(() => {
-    supabase.auth.getSession().then(async ({ data: { session } }) => {
-      if (session?.user) {
-        setUser(session.user);
-        loadProgress(session.user);
-        const params = new URLSearchParams(window.location.search);
-        if (params.get("payment") === "success") {
-          // Record payment directly on success redirect
-          await supabase.from("payments").upsert({
-            user_id: session.user.id,
-            stripe_session_id: "stripe_success_" + Date.now(),
-            amount: 4900,
-            paid_at: new Date().toISOString()
-          }, { onConflict: "user_id" });
-          setPage("dashboard");
-          window.history.replaceState({}, "", "/");
-          return;
-        }
-        const { data: payments } = await supabase.from("payments").select("id").eq("user_id", session.user.id).limit(1);
-        if (payments && payments.length > 0) {
-          setPage("dashboard");
-        } else {
-          const { data: answers } = await supabase.from("onboarding_answers").select("id").eq("user_id", session.user.id).limit(1);
-          if (answers && answers.length > 0) {
-            setPage("paywall");
-          } else {
-            setPage("onboarding");
-          }
-        }
+    const routeUser = async (u) => {
+      setUser(u);
+      loadProgress(u);
+      // Check payment success redirect first
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("payment") === "success") {
+        await supabase.from("users").upsert({ id: u.id, email: u.email }, { onConflict: "id" });
+        await supabase.from("payments").upsert(
+          { user_id: u.id, stripe_session_id: "stripe_" + Date.now(), amount: 4900, paid_at: new Date().toISOString() },
+          { onConflict: "user_id" }
+        );
+        window.history.replaceState({}, "", "/");
+        setPage("dashboard");
+        return;
       }
+      // Check if already paid
+      const { data: payments } = await supabase.from("payments").select("id").eq("user_id", u.id).limit(1);
+      if (payments && payments.length > 0) { setPage("dashboard"); return; }
+      // Check if onboarding done
+      const { data: answers } = await supabase.from("onboarding_answers").select("id").eq("user_id", u.id).limit(1);
+      if (answers && answers.length > 0) { setPage("paywall"); return; }
+      setPage("onboarding");
+    };
+
+    supabase.auth.getSession().then(async ({ data: { session } }) => {
+      if (session?.user) routeUser(session.user);
     });
     supabase.auth.onAuthStateChange(async (_e, session) => {
-      if (session?.user) {
-        setUser(session.user);
-        loadProgress(session.user);
-        const { data: payments } = await supabase.from("payments").select("id").eq("user_id", session.user.id).limit(1);
-        if (payments && payments.length > 0) {
-          setPage("dashboard");
-        } else {
-          const { data: answers } = await supabase.from("onboarding_answers").select("id").eq("user_id", session.user.id).limit(1);
-          if (answers && answers.length > 0) {
-            setPage("paywall");
-          } else {
-            setPage("onboarding");
-          }
-        }
-      }
+      if (session?.user) routeUser(session.user);
     });
     const savedLang = localStorage.getItem("legaliai_lang");
     if (savedLang) setLang(savedLang);
@@ -496,7 +479,12 @@ export default function App() {
     setMagicSent(true);
   };
 
-  const handleSignOut = async () => { await supabase.auth.signOut(); setUser(null); setPage("landing"); };
+  const handleSignOut = async () => {
+    await supabase.auth.signOut();
+    setUser(null);
+    setPage("landing");
+    window.location.href = "https://legaliai.com";
+  };
   const handleStartCTA = () => { if (user) setPage("onboarding"); else setShowEmailModal(true); };
   const handleOnboardingNext = () => { if (currentQ < 4) setCurrentQ(currentQ + 1); else { saveOnboardingAnswers(); setPage("paywall"); } };
   const saveOnboardingAnswers = async () => { if (user) await supabase.from("onboarding_answers").upsert({ user_id: user.id, answers: onboardingAnswers }); };
