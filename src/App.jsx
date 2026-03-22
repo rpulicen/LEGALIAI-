@@ -371,6 +371,7 @@ export default function App() {
   const [showLangMenu, setShowLangMenu] = useState(false);
   const [email, setEmail] = useState("");
   const [showEmailModal, setShowEmailModal] = useState(false);
+  const [isSignIn, setIsSignIn] = useState(false);
   const [magicSent, setMagicSent] = useState(false);
   const [user, setUser] = useState(null);
   const [onboardingAnswers, setOnboardingAnswers] = useState({});
@@ -485,7 +486,8 @@ export default function App() {
     setPage("landing");
     window.location.href = "https://legaliai.com";
   };
-  const handleStartCTA = () => { if (user) setPage("onboarding"); else setShowEmailModal(true); };
+  const handleStartCTA = () => { if (user) setPage("onboarding"); else { setIsSignIn(false); setShowEmailModal(true); } };
+  const handleSignIn = () => { setIsSignIn(true); setShowEmailModal(true); };
   const handleOnboardingNext = () => { if (currentQ < 4) setCurrentQ(currentQ + 1); else { saveOnboardingAnswers(); setPage("paywall"); } };
   const saveOnboardingAnswers = async () => { if (user) await supabase.from("onboarding_answers").upsert({ user_id: user.id, answers: onboardingAnswers }); };
 
@@ -582,6 +584,7 @@ export default function App() {
       <div style={{ display:"flex",alignItems:"center",gap:"24px" }}>
         {user && <span style={{ color:"#444",fontSize:"12px",letterSpacing:"1px" }}>{user.email}</span>}
         {user && <button onClick={handleSignOut} style={{ background:"none",border:"none",color:"#444",fontSize:"11px",letterSpacing:"2px",cursor:"pointer",fontFamily:"inherit" }}>{t("signOut")}</button>}
+        {!user && <button onClick={handleSignIn} style={{ background:"none",border:"1px solid #333",color:"#C9A84C",padding:"7px 18px",fontSize:"11px",letterSpacing:"2px",cursor:"pointer",fontFamily:"inherit" }}>SIGN IN</button>}
         <div style={{ position:"relative" }}>
           <button onClick={() => setShowLangMenu(!showLangMenu)} style={{ background:"none",border:"1px solid #222",color:"#777",padding:"7px 16px",fontSize:"12px",letterSpacing:"1px",cursor:"pointer",fontFamily:"inherit" }}>
             🌐 {LANGUAGES.find(l => l.code === lang)?.label}
@@ -607,7 +610,7 @@ export default function App() {
         <div style={{ position:"fixed",inset:0,background:"rgba(0,0,0,0.96)",zIndex:200,display:"flex",alignItems:"center",justifyContent:"center" }}>
           <div style={{ background:"#080808",border:"1px solid #C9A84C",padding:"64px",maxWidth:"500px",width:"90%",textAlign:"center" }}>
             {!magicSent ? <>
-              <h2 style={{ color:"#F5F5F5",fontSize:"20px",letterSpacing:"5px",marginBottom:"12px",fontWeight:300 }}>{t("emailTitle")}</h2>
+              <h2 style={{ color:"#F5F5F5",fontSize:"20px",letterSpacing:"5px",marginBottom:"12px",fontWeight:300 }}>{isSignIn ? "SIGN IN TO LEGALIAI" : t("emailTitle")}</h2>
               <p style={{ color:"#555",fontSize:"13px",letterSpacing:"1px",marginBottom:"32px",lineHeight:1.8 }}>{t("emailSub")}</p>
               <input value={email} onChange={e => setEmail(e.target.value)} onKeyDown={e => e.key==="Enter"&&handleSendMagicLink()} type="email" placeholder="your@email.com" style={{ width:"100%",background:"#111",border:"1px solid #2a2a2a",color:"#F5F5F5",padding:"16px 20px",fontSize:"15px",marginBottom:"16px",boxSizing:"border-box",outline:"none",fontFamily:"inherit" }} />
               <button onClick={handleSendMagicLink} style={{ ...goldBtn, width:"100%", padding:"18px" }}>{t("sendLink")}</button>
