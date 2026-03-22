@@ -409,11 +409,45 @@ export default function App() {
   };
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      if (session?.user) { setUser(session.user); setPage("dashboard"); loadProgress(session.user); }
+    supabase.auth.getSession().then(async ({ data: { session } }) => {
+      if (session?.user) {
+        setUser(session.user);
+        loadProgress(session.user);
+        const params = new URLSearchParams(window.location.search);
+        if (params.get("payment") === "success") {
+          setPage("dashboard");
+          window.history.replaceState({}, "", "/");
+          return;
+        }
+        const { data: payments } = await supabase.from("payments").select("id").eq("user_id", session.user.id).limit(1);
+        if (payments && payments.length > 0) {
+          setPage("dashboard");
+        } else {
+          const { data: answers } = await supabase.from("onboarding_answers").select("id").eq("user_id", session.user.id).limit(1);
+          if (answers && answers.length > 0) {
+            setPage("paywall");
+          } else {
+            setPage("onboarding");
+          }
+        }
+      }
     });
-    supabase.auth.onAuthStateChange((_e, session) => {
-      if (session?.user) { setUser(session.user); setPage("dashboard"); loadProgress(session.user); }
+    supabase.auth.onAuthStateChange(async (_e, session) => {
+      if (session?.user) {
+        setUser(session.user);
+        loadProgress(session.user);
+        const { data: payments } = await supabase.from("payments").select("id").eq("user_id", session.user.id).limit(1);
+        if (payments && payments.length > 0) {
+          setPage("dashboard");
+        } else {
+          const { data: answers } = await supabase.from("onboarding_answers").select("id").eq("user_id", session.user.id).limit(1);
+          if (answers && answers.length > 0) {
+            setPage("paywall");
+          } else {
+            setPage("onboarding");
+          }
+        }
+      }
     });
     const savedLang = localStorage.getItem("legaliai_lang");
     if (savedLang) setLang(savedLang);
