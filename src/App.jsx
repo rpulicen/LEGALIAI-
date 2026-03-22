@@ -415,6 +415,13 @@ export default function App() {
         loadProgress(session.user);
         const params = new URLSearchParams(window.location.search);
         if (params.get("payment") === "success") {
+          // Record payment directly on success redirect
+          await supabase.from("payments").upsert({
+            user_id: session.user.id,
+            stripe_session_id: "stripe_success_" + Date.now(),
+            amount: 4900,
+            paid_at: new Date().toISOString()
+          }, { onConflict: "user_id" });
           setPage("dashboard");
           window.history.replaceState({}, "", "/");
           return;
