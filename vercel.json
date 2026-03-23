@@ -1,5 +1,5 @@
 {
   "rewrites": [
-    { "source": "/((?!api/|n-400-guide|es/|pt/|zh/|tl/|vi/|hi/).*)", "destination": "/index.html" }
+    { "source": "/((?!api/|n-400-guide|es/|pt/|zh/|tl/|vi/|hi/|citizenship-interview|n-400-documents|how-long-does|n-400-common|citizenship-test|sitemap|robots).*)", "destination": "/index.html" }
   ]
 }
