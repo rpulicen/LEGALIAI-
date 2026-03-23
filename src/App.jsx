@@ -755,7 +755,7 @@ export default function App() {
               <div>
                 <p style={{ color:"#F5F5F5",fontSize:"14px",letterSpacing:"2px",fontWeight:600,marginBottom:"8px" }}>FIND YOUR FILING ADDRESS</p>
                 <p style={{ color:"#aaa",fontSize:"14px",lineHeight:1.8,margin:"0 0 12px" }}>Your filing address depends on your state and how you're submitting. Always check the current address before mailing.</p>
-                <a href="https://www.uscis.gov/n-400" target="_blank" rel="noopener noreferrer" style={{ color:"#C9A84C",fontSize:"12px",letterSpacing:"2px" }}>CHECK FILING ADDRESS →</a>
+                <a href="https://www.uscis.gov/forms/filing-guidance/direct-filing-addresses-for-form-n-400-application-for-naturalization" target="_blank" rel="noopener noreferrer" style={{ color:"#C9A84C",fontSize:"12px",letterSpacing:"2px" }}>CHECK FILING ADDRESS →</a>
               </div>
             </div>
             <div style={{ background:"#0d0d0d",border:"1px solid #222",borderLeft:"3px solid #C9A84C",padding:"28px 32px",display:"flex",gap:"24px",alignItems:"flex-start" }}>
