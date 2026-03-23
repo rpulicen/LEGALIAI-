@@ -599,6 +599,7 @@ export default function App() {
       if (Object.keys(newPracticed).length === INTERVIEW_QUESTIONS.length && moduleProgress[3] !== "COMPLETE") {
         setModuleProgress(prev => ({ ...prev, 3: "COMPLETE" }));
         if (user) await supabase.from("progress").upsert({ user_id: user.id, module: "interview", status: "COMPLETE", updated_at: new Date().toISOString() }, { onConflict: "user_id,module" });
+        setPage("interview_complete");
       }
     } catch { setInterviewFeedback(prev => ({ ...prev, [idx]: "Could not get feedback. Please try again." })); }
     setLoadingFeedback(prev => ({ ...prev, [`interview_${idx}`]: false }));
@@ -963,6 +964,23 @@ export default function App() {
           </div>
         )}
         <p style={{ color:"#444",fontSize:"11px",letterSpacing:"1px",marginTop:"40px",textAlign:"center",lineHeight:1.8 }}>{t("aiDisclaimer")}</p>
+      </div>
+    </div>
+  );
+
+  if (page === "interview_complete") return (
+    <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px" }}>
+      <Nav />
+      <div style={{ maxWidth:"680px",margin:"0 auto",padding:"80px 40px",textAlign:"center" }}>
+        <div style={{ fontSize:"64px",marginBottom:"32px" }}>🎤</div>
+        <div style={{ display:"inline-block",border:"1px solid #1a3a1a",padding:"6px 20px",fontSize:"10px",letterSpacing:"4px",color:"#4ade80",marginBottom:"32px" }}>✓ MODULE COMPLETE</div>
+        <h1 style={{ color:"#F5F5F5",fontSize:"clamp(28px,4vw,42px)",fontWeight:300,letterSpacing:"3px",lineHeight:1.2,marginBottom:"24px" }}>Interview Prep Complete</h1>
+        <p style={{ color:"#aaa",fontSize:"16px",lineHeight:1.9,marginBottom:"48px",maxWidth:"480px",margin:"0 auto 48px" }}>You've practiced all 20 USCIS civics questions with AI feedback. You know what to expect and how to answer confidently.</p>
+        <div style={{ background:"#0a1a0a",border:"1px solid #1a3a1a",borderLeft:"3px solid #4ade80",padding:"24px 32px",marginBottom:"48px",textAlign:"left" }}>
+          <p style={{ color:"#4ade80",fontSize:"11px",letterSpacing:"3px",marginBottom:"8px" }}>WHAT TO DO BEFORE YOUR INTERVIEW</p>
+          <p style={{ color:"#9be9a8",fontSize:"14px",lineHeight:1.8,margin:0 }}>Review the questions you found most difficult one more time the day before your interview. Know your state-specific answers — Governor, Senators, state capital. Arrive 15 minutes early.</p>
+        </div>
+        <button onClick={goToDashboard} style={{ background:"#C9A84C",border:"none",color:"#000",padding:"18px 56px",fontSize:"13px",letterSpacing:"4px",fontWeight:700,cursor:"pointer",fontFamily:"inherit" }}>BACK TO DASHBOARD</button>
       </div>
     </div>
   );
