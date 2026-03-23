@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Main pages -->
+  <url>
+    <loc>https://legaliai.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- English SEO pages -->
+  <url>
+    <loc>https://legaliai.com/n-400-guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://legaliai.com/n-400-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://legaliai.com/es/como-llenar-n-400.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://legaliai.com/pt/como-preencher-n-400.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://legaliai.com/zh/n-400-zhinan.html"/>
+    <xhtml:link rel="alternate" hreflang="tl" href="https://legaliai.com/tl/n-400-gabay.html"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://legaliai.com/vi/huong-dan-n-400.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://legaliai.com/hi/n-400-margdarshan.html"/>
+  </url>
+
+  <!-- Spanish SEO pages -->
+  <url>
+    <loc>https://legaliai.com/es/como-llenar-n-400.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://legaliai.com/n-400-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://legaliai.com/es/como-llenar-n-400.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://legaliai.com/pt/como-preencher-n-400.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://legaliai.com/zh/n-400-zhinan.html"/>
+    <xhtml:link rel="alternate" hreflang="tl" href="https://legaliai.com/tl/n-400-gabay.html"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://legaliai.com/vi/huong-dan-n-400.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://legaliai.com/hi/n-400-margdarshan.html"/>
+  </url>
+
+  <!-- Portuguese SEO pages -->
+  <url>
+    <loc>https://legaliai.com/pt/como-preencher-n-400.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://legaliai.com/n-400-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://legaliai.com/es/como-llenar-n-400.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://legaliai.com/pt/como-preencher-n-400.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://legaliai.com/zh/n-400-zhinan.html"/>
+    <xhtml:link rel="alternate" hreflang="tl" href="https://legaliai.com/tl/n-400-gabay.html"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://legaliai.com/vi/huong-dan-n-400.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://legaliai.com/hi/n-400-margdarshan.html"/>
+  </url>
+
+  <!-- Chinese SEO pages -->
+  <url>
+    <loc>https://legaliai.com/zh/n-400-zhinan.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Tagalog SEO pages -->
+  <url>
+    <loc>https://legaliai.com/tl/n-400-gabay.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Vietnamese SEO pages -->
+  <url>
+    <loc>https://legaliai.com/vi/huong-dan-n-400.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Hindi SEO pages -->
+  <url>
+    <loc>https://legaliai.com/hi/n-400-margdarshan.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+</urlset>
