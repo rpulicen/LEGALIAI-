@@ -608,7 +608,7 @@ export default function App() {
 
   const Nav = () => (
     <nav style={{ position:"fixed",top:0,left:0,right:0,zIndex:100,display:"flex",alignItems:"center",justifyContent:"space-between",padding:"20px 40px",background:"rgba(0,0,0,0.98)",borderBottom:"1px solid #2a2a2a" }}>
-      <div onClick={() => setPage("landing")} style={{ fontFamily:"'Cormorant Garamond',serif",fontSize:"22px",letterSpacing:"12px",color:"#C9A84C",cursor:"pointer",fontWeight:300 }}>LEGALIAI</div>
+      <div onClick={() => user ? goToDashboard() : setPage("landing")} style={{ fontFamily:"'Cormorant Garamond',serif",fontSize:"22px",letterSpacing:"12px",color:"#C9A84C",cursor:"pointer",fontWeight:300 }}>LEGALIAI</div>
       <div style={{ display:"flex",alignItems:"center",gap:"24px" }}>
         {user && <span style={{ color:"#777",fontSize:"12px",letterSpacing:"1px" }}>{user.email}</span>}
         {user && <button onClick={handleSignOut} style={{ background:"none",border:"none",color:"#777",fontSize:"11px",letterSpacing:"2px",cursor:"pointer",fontFamily:"inherit" }}>{t("signOut")}</button>}
@@ -908,6 +908,19 @@ export default function App() {
             ))}
           </div>
         ))}
+        {moduleProgress[1] !== "COMPLETE" && (
+          <div style={{ textAlign:"center",marginTop:"40px" }}>
+            <button onClick={async () => {
+              setModuleProgress(prev => ({ ...prev, 1: "COMPLETE" }));
+              if (user) {
+                await supabase.from("progress").upsert({ user_id: user.id, module: "form", status: "COMPLETE", updated_at: new Date().toISOString() }, { onConflict: "user_id,module" });
+                await supabase.from("progress").update({ status: "COMPLETE", updated_at: new Date().toISOString() }).eq("user_id", user.id).eq("module", "form");
+              }
+              goToDashboard();
+            }} style={{ background:"#C9A84C",border:"none",color:"#000",padding:"16px 48px",fontSize:"12px",letterSpacing:"4px",fontWeight:700,cursor:"pointer",fontFamily:"inherit" }}>✓ MARK AS REVIEWED — COMPLETE</button>
+          </div>
+        )}
+        {moduleProgress[1] === "COMPLETE" && <p style={{ color:"#4ade80",fontSize:"11px",letterSpacing:"3px",textAlign:"center",marginTop:"32px" }}>✓ FORM WALKTHROUGH COMPLETE</p>}
         <p style={{ color:"#444",fontSize:"11px",letterSpacing:"1px",marginTop:"40px",textAlign:"center",lineHeight:1.8 }}>{t("aiDisclaimer")}</p>
       </div>
     </div>
@@ -930,6 +943,23 @@ export default function App() {
             </div>
           </div>
         ))}
+        {aiContent.risk && aiContent.risk.length > 0 && moduleProgress[2] !== "COMPLETE" && (
+          <div style={{ textAlign:"center",marginTop:"40px" }}>
+            <button onClick={async () => {
+              setModuleProgress(prev => ({ ...prev, 2: "COMPLETE" }));
+              if (user) {
+                await supabase.from("progress").upsert({ user_id: user.id, module: "risk", status: "COMPLETE", updated_at: new Date().toISOString() }, { onConflict: "user_id,module" });
+                await supabase.from("progress").update({ status: "COMPLETE", updated_at: new Date().toISOString() }).eq("user_id", user.id).eq("module", "risk");
+              }
+              goToDashboard();
+            }} style={{ background:"#C9A84C",border:"none",color:"#000",padding:"16px 48px",fontSize:"12px",letterSpacing:"4px",fontWeight:700,cursor:"pointer",fontFamily:"inherit" }}>✓ MARK AS REVIEWED — COMPLETE</button>
+          </div>
+        )}
+        {moduleProgress[2] === "COMPLETE" && (
+          <div style={{ textAlign:"center",marginTop:"40px" }}>
+            <p style={{ color:"#4ade80",fontSize:"11px",letterSpacing:"3px" }}>✓ RISK ASSESSMENT COMPLETE</p>
+          </div>
+        )}
         <p style={{ color:"#444",fontSize:"11px",letterSpacing:"1px",marginTop:"40px",textAlign:"center",lineHeight:1.8 }}>{t("aiDisclaimer")}</p>
       </div>
     </div>
