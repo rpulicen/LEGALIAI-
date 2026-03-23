@@ -100,7 +100,7 @@ const T = {
     yes: "是", no: "否", next: "下一步", finish: "完成",
     q1opts: ["不到3年", "3–5年", "5–10年", "超过10年"],
     paywallTitle: "您的个性化N-400准备已就绪。", paywallSub: "一次性$49解锁所有内容。",
-    unlock: "立即解锁", paywallNote: "安全支付。即时访问。无订阅。",
+    unlock: "�������������解锁", paywallNote: "安全支付。即时访问。无订阅。",
     dashTitle: "您的准备控制台",
     modules: ["文件清单", "表格指南", "风险评估", "面试准备"],
     modDesc: ["了解需要收集哪些文件。", "理解表格中的每个问题。", "在USCIS之前了解您的风险。", "练习直到充满信心。"],
@@ -179,7 +179,7 @@ const T = {
     generating: "Đang tạo phân tích cá nhân hóa của bạn...", thinking: "Đang đánh giá câu trả lời của bạn...",
     docTitle: "DANH SÁCH TÀI LIỆU CỦA BẠN", formTitle: "HƯỚNG DẪN MẪU ĐƠN N-400",
     riskTitle: "ĐÁNH GIÁ RỦI RO CỦA BẠN", interviewTitle: "CHUẨN BỊ PHỎNG VẤN",
-    yourAnswer: "Nhập câu trả lời của bạn tại đây...", practiced: "✓ ĐÃ LUYỆN TẬP", practice: "LUYỆN TẬP CÂU NÀY",
+    yourAnswer: "Nhập câu trả lời của bạn tại đây...", practiced: "�� ĐÃ LUYỆN TẬP", practice: "LUYỆN TẬP CÂU NÀY",
     back: "← QUAY LẠI", where: "NƠI LẤY TÀI LIỆU:", why: "TẠI SAO USCIS CẦN:",
     means: "Ý NGHĨA:", example: "VÍ DỤ:", mistake: "⚠ LỖI THƯỜNG GẶP:",
     action: "PHẢI LÀM GÌ:", selectCountry: "Chọn quốc gia của bạn...",
@@ -311,8 +311,8 @@ const FALLBACK_DOCS = {
     { name: "स्थायी निवासी कार्ड (ग्रीन कार्ड)", source: "आपका भौतिक कार्ड", reason: "USCIS को आपकी आव्रजन स्थिति साबित करता है" },
     { name: "जन्म देश का पासपोर्ट", source: "अपने देश का दूतावास या आपकी फाइलें", reason: "आपकी पहचान और राष्ट्रीयता की पुष्टि करता है" },
     { name: "टैक्स रिटर्न (पिछले 5 साल)", source: "IRS.gov या आपके टैक्स प्रिपेरर", reason: "अमेरिका में निरंतर निवास साबित करता है" },
-    { name: "यात्रा रिकॉर्ड", source: "पासपोर्ट स्टैम्प या व्यक्तिगत कैलेंडर", reason: "अमेरिका से बाहर सभी यात्राओं का दस्तावेज़ीकरण" },
-    { name: "विवाह प्रमाण पत्र (यदि लागू हो)", source: "जहाँ शादी हुई वहाँ का महत्वपूर्ण रिकॉर्ड कार्यालय", reason: "यदि अमेरिकी नागरिक से विवाहित हैं तो आवश्यक" },
+    { name: "यात्रा रिकॉर्ड", source: "प������प��र्ट ��्टै�����प या व्यक्तिगत कैलेंडर", reason: "अमेरिका से बाहर सभी यात्राओं का दस्तावेज़ीकरण" },
+    { name: "विवाह प्रमाण पत्र (यदि लागू हो)", source: "जहाँ शादी हुई व��ाँ ������ महत्वपूर्ण ����क��र्ड कार्यालय", reason: "यदि अमेरिकी नागरिक से विवाहित हैं तो आवश्यक" },
   ],
 };
 
@@ -636,8 +636,10 @@ export default function App() {
   const Disclaimer = () => <p style={{ color:"#555",fontSize:"11px",textAlign:"center",letterSpacing:"1px",lineHeight:"1.8",margin:"48px auto 0",maxWidth:"600px" }}>{t("disclaimer")}</p>;
 
   if (page === "landing") return (
-    <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px" }}>
-      <Nav />
+    <>
+      <Analytics />
+      <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px" }}>
+        <Nav />
       {showEmailModal && (
         <div style={{ position:"fixed",inset:0,background:"rgba(0,0,0,0.96)",zIndex:200,display:"flex",alignItems:"center",justifyContent:"center" }}>
           <div style={{ background:"#0d0d0d",border:"1px solid #C9A84C",padding:"64px",maxWidth:"500px",width:"90%",textAlign:"center" }}>
@@ -670,6 +672,7 @@ export default function App() {
         <Disclaimer />
       </div>
     </div>
+    </>
   );
 
   if (page === "onboarding") {
@@ -682,8 +685,10 @@ export default function App() {
     ];
     const q = questions[currentQ];
     return (
-      <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px" }}>
-        <Nav />
+      <>
+        <Analytics />
+        <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px" }}>
+          <Nav />
         <div style={{ height:"3px",background:"#111",position:"fixed",top:"80px",left:0,right:0,zIndex:99 }}>
           <div style={{ height:"100%",background:"#C9A84C",width:`${(currentQ/5)*100}%`,transition:"width 0.5s ease" }} />
         </div>
@@ -710,12 +715,15 @@ export default function App() {
           <button onClick={handleOnboardingNext} style={goldBtn}>{currentQ < 4 ? t("next") : t("finish")}</button>
         </div>
       </div>
+      </>
     );
   }
 
   if (page === "paywall") return (
-    <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px",display:"flex",alignItems:"center",justifyContent:"center" }}>
-      <Nav />
+    <>
+      <Analytics />
+      <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px",display:"flex",alignItems:"center",justifyContent:"center" }}>
+        <Nav />
       <div style={{ textAlign:"center",padding:"40px",maxWidth:"640px" }}>
         <div style={{ width:"80px",height:"1px",background:"#C9A84C",margin:"0 auto 40px" }} />
         <h1 style={{ color:"#F5F5F5",fontSize:"clamp(22px,4vw,44px)",letterSpacing:"3px",fontWeight:300,marginBottom:"20px",lineHeight:1.3 }}>{t("paywallTitle")}</h1>
@@ -725,6 +733,7 @@ export default function App() {
         <Disclaimer />
       </div>
     </div>
+    </>
   );
 
   if (page === "dashboard") {
@@ -734,8 +743,10 @@ export default function App() {
 
     // Completion screen
     if (allComplete) return (
-      <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px" }}>
-        <Nav />
+      <>
+        <Analytics />
+        <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px" }}>
+          <Nav />
         <div style={{ maxWidth:"720px",margin:"0 auto",padding:"80px 40px",textAlign:"center" }}>
           <div style={{ fontSize:"56px",marginBottom:"32px" }}>🎉</div>
           <div style={{ display:"inline-block",border:"1px solid #333",padding:"6px 16px",fontSize:"10px",letterSpacing:"4px",color:"#C9A84C",marginBottom:"32px" }}>PREPARATION COMPLETE</div>
@@ -796,11 +807,14 @@ export default function App() {
           <p style={{ color:"#444",fontSize:"11px",marginTop:"48px",lineHeight:1.8 }}>LEGALIAI is a preparation tool only. This is not legal advice. For complex situations, consult a licensed immigration attorney.</p>
         </div>
       </div>
+      </>
     );
 
     return (
-    <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px" }}>
-      <Nav />
+    <>
+      <Analytics />
+      <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px" }}>
+        <Nav />
       <div style={{ maxWidth:"1000px",margin:"0 auto",padding:"60px 40px" }}>
         <h1 style={{ color:"#F5F5F5",fontSize:"clamp(18px,3vw,34px)",letterSpacing:"6px",fontWeight:300,marginBottom:"32px",textAlign:"center" }}>{t("dashTitle")}</h1>
 
@@ -832,6 +846,7 @@ export default function App() {
         <Disclaimer />
       </div>
     </div>
+    </>
   );}
 
   if (page === "dashboard_modules") {
@@ -839,8 +854,10 @@ export default function App() {
     const completedCount = Object.values(moduleProgress).filter(s => s === "COMPLETE").length;
     const pct = (completedCount / 4) * 100;
     return (
-      <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px" }}>
-        <Nav />
+      <>
+        <Analytics />
+        <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px" }}>
+          <Nav />
         <div style={{ maxWidth:"1000px",margin:"0 auto",padding:"60px 40px" }}>
           <h1 style={{ color:"#F5F5F5",fontSize:"clamp(18px,3vw,34px)",letterSpacing:"6px",fontWeight:300,marginBottom:"32px",textAlign:"center" }}>{t("dashTitle")}</h1>
           <div style={{ marginBottom:"56px" }}>
@@ -868,14 +885,17 @@ export default function App() {
           <Disclaimer />
         </div>
       </div>
+      </>
     );
   }
 
   if (page === "documents") {
     const allChecked = aiContent.documents?.length > 0 && aiContent.documents.every((_, i) => docChecks[i]);
     return (
-      <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px" }}>
-        <Nav />
+      <>
+        <Analytics />
+        <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px" }}>
+          <Nav />
         <div style={{ maxWidth:"800px",margin:"0 auto",padding:"60px 40px" }}>
           <button onClick={goToDashboard} style={backBtn}>{t("back")}</button>
           <h1 style={{ color:"#F5F5F5",fontSize:"30px",letterSpacing:"6px",fontWeight:300,marginBottom:"8px" }}>{t("docTitle")}</h1>
@@ -895,12 +915,15 @@ export default function App() {
           <p style={{ color:"#444",fontSize:"11px",letterSpacing:"1px",marginTop:"40px",textAlign:"center",lineHeight:1.8 }}>{t("aiDisclaimer")}</p>
         </div>
       </div>
+      </>
     );
   }
 
   if (page === "form") return (
-    <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px" }}>
-      <Nav />
+    <>
+      <Analytics />
+      <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px" }}>
+        <Nav />
       <div style={{ maxWidth:"800px",margin:"0 auto",padding:"60px 40px" }}>
         <button onClick={goToDashboard} style={backBtn}>{t("back")}</button>
         <h1 style={{ color:"#F5F5F5",fontSize:"30px",letterSpacing:"6px",fontWeight:300,marginBottom:"40px" }}>{t("formTitle")}</h1>
@@ -944,11 +967,14 @@ export default function App() {
         <p style={{ color:"#444",fontSize:"11px",letterSpacing:"1px",marginTop:"40px",textAlign:"center",lineHeight:1.8 }}>{t("aiDisclaimer")}</p>
       </div>
     </div>
+    </>
   );
 
   if (page === "risk") return (
-    <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px" }}>
-      <Nav />
+    <>
+      <Analytics />
+      <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px" }}>
+        <Nav />
       <div style={{ maxWidth:"800px",margin:"0 auto",padding:"60px 40px" }}>
         <button onClick={goToDashboard} style={backBtn}>{t("back")}</button>
         <h1 style={{ color:"#F5F5F5",fontSize:"30px",letterSpacing:"6px",fontWeight:300,marginBottom:"40px" }}>{t("riskTitle")}</h1>
@@ -983,11 +1009,14 @@ export default function App() {
         <p style={{ color:"#444",fontSize:"11px",letterSpacing:"1px",marginTop:"40px",textAlign:"center",lineHeight:1.8 }}>{t("aiDisclaimer")}</p>
       </div>
     </div>
+    </>
   );
 
   if (page === "interview_complete") return (
-    <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px" }}>
-      <Nav />
+    <>
+      <Analytics />
+      <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px" }}>
+        <Nav />
       <div style={{ maxWidth:"680px",margin:"0 auto",padding:"80px 40px",textAlign:"center" }}>
         <div style={{ fontSize:"64px",marginBottom:"32px" }}>🎤</div>
         <div style={{ display:"inline-block",border:"1px solid #1a3a1a",padding:"6px 20px",fontSize:"10px",letterSpacing:"4px",color:"#4ade80",marginBottom:"32px" }}>✓ MODULE COMPLETE</div>
@@ -1000,13 +1029,16 @@ export default function App() {
         <button onClick={goToDashboard} style={{ background:"#C9A84C",border:"none",color:"#000",padding:"18px 56px",fontSize:"13px",letterSpacing:"4px",fontWeight:700,cursor:"pointer",fontFamily:"inherit" }}>BACK TO DASHBOARD</button>
       </div>
     </div>
+    </>
   );
 
   if (page === "interview") {
     const practicedCount = Object.keys(practiced).length;
     return (
-      <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px" }}>
-        <Nav />
+      <>
+        <Analytics />
+        <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px" }}>
+          <Nav />
         <div style={{ maxWidth:"800px",margin:"0 auto",padding:"60px 40px" }}>
           <button onClick={goToDashboard} style={backBtn}>{t("back")}</button>
           <h1 style={{ color:"#F5F5F5",fontSize:"30px",letterSpacing:"6px",fontWeight:300,marginBottom:"8px" }}>{t("interviewTitle")}</h1>
@@ -1038,8 +1070,7 @@ export default function App() {
           <p style={{ color:"#444",fontSize:"11px",letterSpacing:"1px",marginTop:"40px",textAlign:"center",lineHeight:1.8 }}>{t("aiDisclaimer")}</p>
         </div>
       </div>
+      </>
     );
   }
-
-  return <Analytics />;
 }
