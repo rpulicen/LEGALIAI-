@@ -761,18 +761,10 @@ export default function App() {
                   const dallas = ["AR","LA","OK","TX"];
                   const chicago = ["IL","IN","IA","MI","MO","OH","WI"];
                   let addr = "";
-                  if (elgin.includes(state)) addr = "USCIS Elgin Lockbox
-USPS: USCIS Attn: N-400 / P.O. Box 4060 / Carol Stream, IL 60197-4060
-FedEx/UPS/DHL: USCIS Attn: N-400 (Box 4060) / 2500 Westfield Drive / Elgin, IL 60124-7836";
-                  else if (dallas.includes(state)) addr = "USCIS Dallas Lockbox
-USPS: USCIS Attn: N-400 / P.O. Box 660060 / Dallas, TX 75266-0060
-FedEx/UPS/DHL: USCIS Attn: N-400 (Box 660060) / 2501 S State Hwy 121 Business / Suite 400 / Lewisville, TX 75067-8003";
-                  else if (chicago.includes(state)) addr = "USCIS Chicago Lockbox
-USPS: USCIS Attn: N-400 / P.O. Box 4380 / Chicago, IL 60680-4380
-FedEx/UPS/DHL: USCIS Attn: N-400 (Box 4380) / 131 S. Dearborn, 3rd Floor / Chicago, IL 60603-5517";
-                  else if (state) addr = "USCIS Phoenix Lockbox
-USPS: USCIS Attn: N-400 / P.O. Box 21251 / Phoenix, AZ 85036-1251
-FedEx/UPS/DHL: USCIS Attn: N-400 (Box 21251) / 2108 E. Elliot Rd. / Tempe, AZ 85284-1806";
+                  if (elgin.includes(state)) addr = "USCIS Elgin Lockbox | USPS: P.O. Box 4060, Carol Stream IL 60197-4060 | FedEx/UPS/DHL: 2500 Westfield Drive, Elgin IL 60124-7836";
+                  else if (dallas.includes(state)) addr = "USCIS Dallas Lockbox | USPS: P.O. Box 660060, Dallas TX 75266-0060 | FedEx/UPS/DHL: 2501 S State Hwy 121 Biz Suite 400, Lewisville TX 75067-8003";
+                  else if (chicago.includes(state)) addr = "USCIS Chicago Lockbox | USPS: P.O. Box 4380, Chicago IL 60680-4380 | FedEx/UPS/DHL: 131 S. Dearborn 3rd Floor, Chicago IL 60603-5517";
+                  else if (state) addr = "USCIS Phoenix Lockbox | USPS: P.O. Box 21251, Phoenix AZ 85036-1251 | FedEx/UPS/DHL: 2108 E. Elliot Rd., Tempe AZ 85284-1806";
                   e.target.nextSibling.style.display = addr ? "block" : "none";
                   e.target.nextSibling.innerText = addr;
                 }} style={{ width:"100%",background:"#111",border:"1px solid #333",color:"#F5F5F5",padding:"12px 16px",fontSize:"14px",fontFamily:"inherit",outline:"none",marginBottom:"12px",cursor:"pointer" }}>
