@@ -579,20 +579,20 @@ export default function App() {
   const card = { background: "#0a0a0a", border: "1px solid #1a1a1a", padding: "28px", marginBottom: "2px" };
 
   const Nav = () => (
-    <nav style={{ position:"fixed",top:0,left:0,right:0,zIndex:100,display:"flex",alignItems:"center",justifyContent:"space-between",padding:"20px 40px",background:"rgba(0,0,0,0.98)",borderBottom:"1px solid #1a1a1a" }}>
+    <nav style={{ position:"fixed",top:0,left:0,right:0,zIndex:100,display:"flex",alignItems:"center",justifyContent:"space-between",padding:"20px 40px",background:"rgba(0,0,0,0.98)",borderBottom:"1px solid #2a2a2a" }}>
       <div onClick={() => setPage("landing")} style={{ fontFamily:"'Cormorant Garamond',serif",fontSize:"22px",letterSpacing:"12px",color:"#C9A84C",cursor:"pointer",fontWeight:300 }}>LEGALIAI</div>
       <div style={{ display:"flex",alignItems:"center",gap:"24px" }}>
-        {user && <span style={{ color:"#444",fontSize:"12px",letterSpacing:"1px" }}>{user.email}</span>}
-        {user && <button onClick={handleSignOut} style={{ background:"none",border:"none",color:"#444",fontSize:"11px",letterSpacing:"2px",cursor:"pointer",fontFamily:"inherit" }}>{t("signOut")}</button>}
+        {user && <span style={{ color:"#777",fontSize:"12px",letterSpacing:"1px" }}>{user.email}</span>}
+        {user && <button onClick={handleSignOut} style={{ background:"none",border:"none",color:"#777",fontSize:"11px",letterSpacing:"2px",cursor:"pointer",fontFamily:"inherit" }}>{t("signOut")}</button>}
         {!user && <button onClick={handleSignIn} style={{ background:"none",border:"1px solid #333",color:"#C9A84C",padding:"7px 18px",fontSize:"11px",letterSpacing:"2px",cursor:"pointer",fontFamily:"inherit" }}>SIGN IN</button>}
         <div style={{ position:"relative" }}>
-          <button onClick={() => setShowLangMenu(!showLangMenu)} style={{ background:"none",border:"1px solid #222",color:"#777",padding:"7px 16px",fontSize:"12px",letterSpacing:"1px",cursor:"pointer",fontFamily:"inherit" }}>
+          <button onClick={() => setShowLangMenu(!showLangMenu)} style={{ background:"none",border:"1px solid #222",color:"#aaa",padding:"7px 16px",fontSize:"12px",letterSpacing:"1px",cursor:"pointer",fontFamily:"inherit" }}>
             🌐 {LANGUAGES.find(l => l.code === lang)?.label}
           </button>
           {showLangMenu && (
-            <div style={{ position:"absolute",right:0,top:"110%",background:"#080808",border:"1px solid #222",minWidth:"190px",zIndex:200,boxShadow:"0 20px 60px rgba(0,0,0,0.8)" }}>
+            <div style={{ position:"absolute",right:0,top:"110%",background:"#0d0d0d",border:"1px solid #222",minWidth:"190px",zIndex:200,boxShadow:"0 20px 60px rgba(0,0,0,0.8)" }}>
               {LANGUAGES.map(l => (
-                <div key={l.code} onClick={() => handleLangChange(l.code)} style={{ padding:"13px 20px",color:lang===l.code?"#C9A84C":"#777",cursor:"pointer",fontSize:"14px",borderBottom:"1px solid #111",fontFamily:"'Cormorant Garamond',serif",background:lang===l.code?"#111":"transparent" }}>{l.label}</div>
+                <div key={l.code} onClick={() => handleLangChange(l.code)} style={{ padding:"13px 20px",color:lang===l.code?"#C9A84C":"#777",cursor:"pointer",fontSize:"14px",borderBottom:"1px solid #222",fontFamily:"'Cormorant Garamond',serif",background:lang===l.code?"#111":"transparent" }}>{l.label}</div>
               ))}
             </div>
           )}
@@ -601,37 +601,37 @@ export default function App() {
     </nav>
   );
 
-  const Disclaimer = () => <p style={{ color:"#2a2a2a",fontSize:"11px",textAlign:"center",letterSpacing:"1px",lineHeight:"1.8",margin:"48px auto 0",maxWidth:"600px" }}>{t("disclaimer")}</p>;
+  const Disclaimer = () => <p style={{ color:"#555",fontSize:"11px",textAlign:"center",letterSpacing:"1px",lineHeight:"1.8",margin:"48px auto 0",maxWidth:"600px" }}>{t("disclaimer")}</p>;
 
   if (page === "landing") return (
     <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px" }}>
       <Nav />
       {showEmailModal && (
         <div style={{ position:"fixed",inset:0,background:"rgba(0,0,0,0.96)",zIndex:200,display:"flex",alignItems:"center",justifyContent:"center" }}>
-          <div style={{ background:"#080808",border:"1px solid #C9A84C",padding:"64px",maxWidth:"500px",width:"90%",textAlign:"center" }}>
+          <div style={{ background:"#0d0d0d",border:"1px solid #C9A84C",padding:"64px",maxWidth:"500px",width:"90%",textAlign:"center" }}>
             {!magicSent ? <>
               <h2 style={{ color:"#F5F5F5",fontSize:"20px",letterSpacing:"5px",marginBottom:"12px",fontWeight:300 }}>{isSignIn ? "SIGN IN TO LEGALIAI" : t("emailTitle")}</h2>
-              <p style={{ color:"#555",fontSize:"13px",letterSpacing:"1px",marginBottom:"32px",lineHeight:1.8 }}>{t("emailSub")}</p>
+              <p style={{ color:"#888",fontSize:"13px",letterSpacing:"1px",marginBottom:"32px",lineHeight:1.8 }}>{t("emailSub")}</p>
               <input value={email} onChange={e => setEmail(e.target.value)} onKeyDown={e => e.key==="Enter"&&handleSendMagicLink()} type="email" placeholder="your@email.com" style={{ width:"100%",background:"#111",border:"1px solid #2a2a2a",color:"#F5F5F5",padding:"16px 20px",fontSize:"15px",marginBottom:"16px",boxSizing:"border-box",outline:"none",fontFamily:"inherit" }} />
               <button onClick={handleSendMagicLink} style={{ ...goldBtn, width:"100%", padding:"18px" }}>{t("sendLink")}</button>
-              <button onClick={() => setShowEmailModal(false)} style={{ marginTop:"20px",background:"none",border:"none",color:"#333",fontSize:"12px",cursor:"pointer",fontFamily:"inherit" }}>✕</button>
+              <button onClick={() => setShowEmailModal(false)} style={{ marginTop:"20px",background:"none",border:"none",color:"#666",fontSize:"12px",cursor:"pointer",fontFamily:"inherit" }}>✕</button>
             </> : <>
               <div style={{ fontSize:"48px",marginBottom:"24px" }}>✉️</div>
               <h2 style={{ color:"#C9A84C",fontSize:"20px",letterSpacing:"5px",marginBottom:"12px",fontWeight:300 }}>{t("checkEmail")}</h2>
-              <p style={{ color:"#888",fontSize:"14px",letterSpacing:"1px",lineHeight:"1.8" }}>{t("checkEmailSub")}</p>
+              <p style={{ color:"#bbb",fontSize:"14px",letterSpacing:"1px",lineHeight:"1.8" }}>{t("checkEmailSub")}</p>
             </>}
           </div>
         </div>
       )}
       <div style={{ maxWidth:"1100px",margin:"0 auto",padding:"80px 40px",textAlign:"center" }}>
         <h1 style={{ color:"#F5F5F5",fontSize:"clamp(28px,5vw,60px)",letterSpacing:"4px",fontWeight:300,lineHeight:1.3,marginBottom:"28px",whiteSpace:"pre-line" }}>{t("tagline")}</h1>
-        <p style={{ color:"#777",fontSize:"18px",letterSpacing:"2px",marginBottom:"52px",lineHeight:1.8,maxWidth:"700px",margin:"0 auto 52px" }}>{t("sub")}</p>
+        <p style={{ color:"#aaa",fontSize:"18px",letterSpacing:"2px",marginBottom:"52px",lineHeight:1.8,maxWidth:"700px",margin:"0 auto 52px" }}>{t("sub")}</p>
         <button onClick={handleStartCTA} style={{ ...goldBtn, fontSize:"14px", padding:"22px 64px" }} onMouseOver={e => e.currentTarget.style.background="#e6c060"} onMouseOut={e => e.currentTarget.style.background="#C9A84C"}>{t("cta")}</button>
         <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"2px",margin:"80px 0 0" }}>
           {[t("t1"),t("t2"),t("t3")].map((text,i) => (
-            <div key={i} style={{ background:"#0a0a0a",border:"1px solid #1a1a1a",padding:"44px 32px" }}>
+            <div key={i} style={{ background:"#0d0d0d",border:"1px solid #2a2a2a",padding:"44px 32px" }}>
               <div style={{ color:"#C9A84C",fontSize:"24px",marginBottom:"20px" }}>⟡</div>
-              <p style={{ color:"#666",fontSize:"12px",letterSpacing:"2px",lineHeight:"2" }}>{text}</p>
+              <p style={{ color:"#999",fontSize:"12px",letterSpacing:"2px",lineHeight:"2" }}>{text}</p>
             </div>
           ))}
         </div>
@@ -656,7 +656,7 @@ export default function App() {
           <div style={{ height:"100%",background:"#C9A84C",width:`${(currentQ/5)*100}%`,transition:"width 0.5s ease" }} />
         </div>
         <div style={{ display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",minHeight:"calc(100vh - 80px)",padding:"40px" }}>
-          <p style={{ color:"#333",fontSize:"11px",letterSpacing:"5px",marginBottom:"48px" }}>QUESTION {currentQ+1} OF 5</p>
+          <p style={{ color:"#666",fontSize:"11px",letterSpacing:"5px",marginBottom:"48px" }}>QUESTION {currentQ+1} OF 5</p>
           <h2 style={{ color:"#F5F5F5",fontSize:"clamp(18px,3vw,36px)",letterSpacing:"3px",fontWeight:300,textAlign:"center",maxWidth:"720px",marginBottom:"56px",lineHeight:1.4 }}>{q.label}</h2>
           {q.type === "yesno" && <div style={{ display:"flex",gap:"16px",marginBottom:"40px" }}>
             {[t("yes"),t("no")].map((opt,i) => (
@@ -671,7 +671,7 @@ export default function App() {
             ))}
           </div>}
           {q.type === "dropdown" && <select value={onboardingAnswers[q.key]||""} onChange={e => setOnboardingAnswers(prev => ({ ...prev,[q.key]:e.target.value }))}
-            style={{ background:"#0a0a0a",border:"1px solid #2a2a2a",color:"#F5F5F5",padding:"16px 20px",fontSize:"15px",marginBottom:"40px",width:"100%",maxWidth:"520px",fontFamily:"inherit",outline:"none",cursor:"pointer" }}>
+            style={{ background:"#0d0d0d",border:"1px solid #2a2a2a",color:"#F5F5F5",padding:"16px 20px",fontSize:"15px",marginBottom:"40px",width:"100%",maxWidth:"520px",fontFamily:"inherit",outline:"none",cursor:"pointer" }}>
             <option value="">{t("selectCountry")}</option>
             {COUNTRIES.map(c => <option key={c} value={c}>{c}</option>)}
           </select>}
@@ -687,9 +687,9 @@ export default function App() {
       <div style={{ textAlign:"center",padding:"40px",maxWidth:"640px" }}>
         <div style={{ width:"80px",height:"1px",background:"#C9A84C",margin:"0 auto 40px" }} />
         <h1 style={{ color:"#F5F5F5",fontSize:"clamp(22px,4vw,44px)",letterSpacing:"3px",fontWeight:300,marginBottom:"20px",lineHeight:1.3 }}>{t("paywallTitle")}</h1>
-        <p style={{ color:"#777",fontSize:"18px",letterSpacing:"2px",marginBottom:"52px",lineHeight:1.8 }}>{t("paywallSub")}</p>
+        <p style={{ color:"#aaa",fontSize:"18px",letterSpacing:"2px",marginBottom:"52px",lineHeight:1.8 }}>{t("paywallSub")}</p>
         <button onClick={handleUnlock} style={{ ...goldBtn, display:"block", margin:"0 auto 20px", padding:"24px 80px", fontSize:"15px" }} onMouseOver={e => e.currentTarget.style.background="#e6c060"} onMouseOut={e => e.currentTarget.style.background="#C9A84C"}>{t("unlock")}</button>
-        <p style={{ color:"#333",fontSize:"12px",letterSpacing:"2px" }}>{t("paywallNote")}</p>
+        <p style={{ color:"#666",fontSize:"12px",letterSpacing:"2px" }}>{t("paywallNote")}</p>
         <Disclaimer />
       </div>
     </div>
@@ -702,10 +702,10 @@ export default function App() {
         <h1 style={{ color:"#F5F5F5",fontSize:"clamp(18px,3vw,34px)",letterSpacing:"6px",fontWeight:300,marginBottom:"64px",textAlign:"center" }}>{t("dashTitle")}</h1>
         <div style={{ display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:"2px" }}>
           {t("modules").map((mod,i) => (
-            <div key={i} style={{ background:"#0a0a0a",border:`1px solid ${moduleProgress[i]==="COMPLETE"?"#1a3a1a":moduleProgress[i]==="IN PROGRESS"?"#3a3010":"#1a1a1a"}`,padding:"40px",display:"flex",flexDirection:"column",gap:"16px" }}>
+            <div key={i} style={{ background:"#0d0d0d",border:`1px solid ${moduleProgress[i]==="COMPLETE"?"#1a3a1a":moduleProgress[i]==="IN PROGRESS"?"#3a3010":"#1a1a1a"}`,padding:"40px",display:"flex",flexDirection:"column",gap:"16px" }}>
               <div style={{ fontSize:"28px" }}>{["📋","📝","⚠️","🎤"][i]}</div>
               <h3 style={{ color:"#F5F5F5",fontSize:"14px",letterSpacing:"4px",fontWeight:300,margin:0 }}>{mod}</h3>
-              <p style={{ color:"#444",fontSize:"13px",letterSpacing:"1px",margin:0,lineHeight:1.8 }}>{t("modDesc")[i]}</p>
+              <p style={{ color:"#777",fontSize:"13px",letterSpacing:"1px",margin:0,lineHeight:1.8 }}>{t("modDesc")[i]}</p>
               <div style={{ display:"flex",alignItems:"center",justifyContent:"space-between",marginTop:"auto",paddingTop:"20px",borderTop:"1px solid #111" }}>
                 <span style={{ color:getProgressColor(i),fontSize:"10px",letterSpacing:"2px",fontWeight:600 }}>{getProgressLabel(i)}</span>
                 <button onClick={() => handleModuleOpen(i)} style={{ background:moduleProgress[i]==="COMPLETE"?"transparent":"#C9A84C",border:`1px solid ${moduleProgress[i]==="COMPLETE"?"#4ade80":"#C9A84C"}`,color:moduleProgress[i]==="COMPLETE"?"#4ade80":"#000",padding:"10px 28px",fontSize:"11px",letterSpacing:"3px",cursor:"pointer",fontWeight:700,fontFamily:"inherit" }}>{getBtnLabel(i)}</button>
@@ -726,7 +726,7 @@ export default function App() {
         <div style={{ maxWidth:"800px",margin:"0 auto",padding:"60px 40px" }}>
           <button onClick={() => setPage("dashboard")} style={backBtn}>{t("back")}</button>
           <h1 style={{ color:"#F5F5F5",fontSize:"30px",letterSpacing:"6px",fontWeight:300,marginBottom:"8px" }}>{t("docTitle")}</h1>
-          {aiContent.documents && <p style={{ color:"#444",fontSize:"12px",letterSpacing:"2px",marginBottom:"40px" }}>{Object.values(docChecks).filter(Boolean).length} / {aiContent.documents.length} gathered</p>}
+          {aiContent.documents && <p style={{ color:"#777",fontSize:"12px",letterSpacing:"2px",marginBottom:"40px" }}>{Object.values(docChecks).filter(Boolean).length} / {aiContent.documents.length} gathered</p>}
           {loadingAI && <div style={{ padding:"60px",textAlign:"center" }}><p style={{ color:"#C9A84C",letterSpacing:"2px",fontSize:"13px" }}>{t("generating")}</p></div>}
           {allChecked && <div style={{ background:"#0a1a0a",border:"1px solid #4ade80",padding:"20px 24px",marginBottom:"24px",textAlign:"center" }}><p style={{ color:"#4ade80",fontSize:"13px",letterSpacing:"2px",margin:0 }}>✓ {t("docsComplete")}</p></div>}
           {aiContent.documents && aiContent.documents.map((doc,i) => (
@@ -734,12 +734,12 @@ export default function App() {
               <input type="checkbox" checked={!!docChecks[i]} onChange={e => setDocChecks(prev => ({ ...prev,[i]:e.target.checked }))} style={{ marginTop:"4px",accentColor:"#C9A84C",width:"20px",height:"20px",cursor:"pointer",flexShrink:0 }} />
               <div style={{ flex:1 }}>
                 <h3 style={{ color:docChecks[i]?"#444":"#F5F5F5",fontSize:"15px",letterSpacing:"2px",margin:"0 0 10px",textDecoration:docChecks[i]?"line-through":"none" }}>{doc.name}</h3>
-                <p style={{ color:"#666",fontSize:"12px",letterSpacing:"1px",margin:"0 0 6px",lineHeight:1.8 }}><span style={{ color:"#C9A84C",fontSize:"10px" }}>{t("where")}</span> {doc.source}</p>
-                <p style={{ color:"#555",fontSize:"12px",letterSpacing:"1px",margin:0,lineHeight:1.8 }}><span style={{ color:"#C9A84C",fontSize:"10px" }}>{t("why")}</span> {doc.reason}</p>
+                <p style={{ color:"#999",fontSize:"12px",letterSpacing:"1px",margin:"0 0 6px",lineHeight:1.8 }}><span style={{ color:"#C9A84C",fontSize:"10px" }}>{t("where")}</span> {doc.source}</p>
+                <p style={{ color:"#888",fontSize:"12px",letterSpacing:"1px",margin:0,lineHeight:1.8 }}><span style={{ color:"#C9A84C",fontSize:"10px" }}>{t("why")}</span> {doc.reason}</p>
               </div>
             </div>
           ))}
-          <p style={{ color:"#1a1a1a",fontSize:"11px",letterSpacing:"1px",marginTop:"40px",textAlign:"center",lineHeight:1.8 }}>{t("aiDisclaimer")}</p>
+          <p style={{ color:"#444",fontSize:"11px",letterSpacing:"1px",marginTop:"40px",textAlign:"center",lineHeight:1.8 }}>{t("aiDisclaimer")}</p>
         </div>
       </div>
     );
@@ -753,29 +753,29 @@ export default function App() {
         <h1 style={{ color:"#F5F5F5",fontSize:"30px",letterSpacing:"6px",fontWeight:300,marginBottom:"40px" }}>{t("formTitle")}</h1>
         {N400_SECTIONS.map((section,si) => (
           <div key={si} style={{ marginBottom:"40px" }}>
-            <h2 style={{ color:"#C9A84C",fontSize:"11px",letterSpacing:"5px",marginBottom:"16px",fontWeight:400,paddingBottom:"12px",borderBottom:"1px solid #111" }}>{section.section}</h2>
+            <h2 style={{ color:"#C9A84C",fontSize:"11px",letterSpacing:"5px",marginBottom:"16px",fontWeight:400,paddingBottom:"12px",borderBottom:"1px solid #222" }}>{section.section}</h2>
             {section.questions.map((q) => (
               <div key={q.id} style={card}>
                 <h3 style={{ color:"#F5F5F5",fontSize:"15px",letterSpacing:"1px",margin:"0 0 16px",fontWeight:400 }}>{q.q}</h3>
-                <div style={{ background:"#050505",border:"1px solid #111",padding:"16px",marginBottom:"16px" }}>
-                  <p style={{ color:"#666",fontSize:"12px",margin:"0 0 8px",lineHeight:1.8 }}><span style={{ color:"#C9A84C",fontSize:"10px",letterSpacing:"3px" }}>{t("means")}</span> {q.explain}</p>
-                  <p style={{ color:"#555",fontSize:"12px",margin:"0 0 8px",lineHeight:1.8 }}><span style={{ color:"#C9A84C",fontSize:"10px",letterSpacing:"3px" }}>{t("example")}</span> {q.example}</p>
-                  <p style={{ color:"#555",fontSize:"12px",margin:0,lineHeight:1.8 }}><span style={{ color:"#e05555",fontSize:"10px",letterSpacing:"3px" }}>{t("mistake")}</span> {q.mistake}</p>
+                <div style={{ background:"#0a0a0a",border:"1px solid #222",padding:"16px",marginBottom:"16px" }}>
+                  <p style={{ color:"#999",fontSize:"12px",margin:"0 0 8px",lineHeight:1.8 }}><span style={{ color:"#C9A84C",fontSize:"10px",letterSpacing:"3px" }}>{t("means")}</span> {q.explain}</p>
+                  <p style={{ color:"#888",fontSize:"12px",margin:"0 0 8px",lineHeight:1.8 }}><span style={{ color:"#C9A84C",fontSize:"10px",letterSpacing:"3px" }}>{t("example")}</span> {q.example}</p>
+                  <p style={{ color:"#888",fontSize:"12px",margin:0,lineHeight:1.8 }}><span style={{ color:"#e05555",fontSize:"10px",letterSpacing:"3px" }}>{t("mistake")}</span> {q.mistake}</p>
                 </div>
                 <textarea value={formAnswers[q.id]||""} onChange={e => setFormAnswers(prev => ({ ...prev,[q.id]:e.target.value }))}
                   onBlur={() => handleFormFeedback(q.id, q.q, formAnswers[q.id])}
                   placeholder={t("yourAnswer")}
-                  style={{ width:"100%",background:"#080808",border:"1px solid #1a1a1a",color:"#F5F5F5",padding:"14px",fontSize:"14px",fontFamily:"inherit",resize:"vertical",minHeight:"90px",boxSizing:"border-box",outline:"none",lineHeight:1.8 }} />
-                {loadingFeedback[q.id] && <p style={{ color:"#555",fontSize:"11px",letterSpacing:"2px",marginTop:"8px" }}>{t("thinking")}</p>}
+                  style={{ width:"100%",background:"#0d0d0d",border:"1px solid #2a2a2a",color:"#F5F5F5",padding:"14px",fontSize:"14px",fontFamily:"inherit",resize:"vertical",minHeight:"90px",boxSizing:"border-box",outline:"none",lineHeight:1.8 }} />
+                {loadingFeedback[q.id] && <p style={{ color:"#888",fontSize:"11px",letterSpacing:"2px",marginTop:"8px" }}>{t("thinking")}</p>}
                 {formFeedback[q.id] && <div style={{ marginTop:"12px",borderLeft:"2px solid #C9A84C",paddingLeft:"14px" }}>
                   <p style={{ color:"#C9A84C",fontSize:"10px",letterSpacing:"3px",margin:"0 0 6px" }}>{t("aiFeedback")}</p>
-                  <p style={{ color:"#888",fontSize:"13px",margin:0,lineHeight:1.8 }}>{formFeedback[q.id]}</p>
+                  <p style={{ color:"#bbb",fontSize:"13px",margin:0,lineHeight:1.8 }}>{formFeedback[q.id]}</p>
                 </div>}
               </div>
             ))}
           </div>
         ))}
-        <p style={{ color:"#1a1a1a",fontSize:"11px",letterSpacing:"1px",marginTop:"40px",textAlign:"center",lineHeight:1.8 }}>{t("aiDisclaimer")}</p>
+        <p style={{ color:"#444",fontSize:"11px",letterSpacing:"1px",marginTop:"40px",textAlign:"center",lineHeight:1.8 }}>{t("aiDisclaimer")}</p>
       </div>
     </div>
   );
@@ -790,14 +790,14 @@ export default function App() {
         {aiContent.risk && aiContent.risk.map((risk,i) => (
           <div key={i} style={{ ...card, borderLeft:"3px solid #C9A84C",marginBottom:"12px" }}>
             <h3 style={{ color:"#C9A84C",fontSize:"12px",letterSpacing:"4px",margin:"0 0 14px",fontWeight:400 }}>⚠ {risk.title}</h3>
-            <p style={{ color:"#888",fontSize:"14px",margin:"0 0 16px",lineHeight:"1.9" }}>{risk.explanation}</p>
-            <div style={{ background:"#050505",border:"1px solid #111",padding:"14px" }}>
+            <p style={{ color:"#bbb",fontSize:"14px",margin:"0 0 16px",lineHeight:"1.9" }}>{risk.explanation}</p>
+            <div style={{ background:"#0a0a0a",border:"1px solid #222",padding:"14px" }}>
               <p style={{ color:"#C9A84C",fontSize:"10px",letterSpacing:"3px",margin:"0 0 6px" }}>{t("action")}</p>
               <p style={{ color:"#F5F5F5",fontSize:"13px",margin:0,lineHeight:"1.8" }}>{risk.action}</p>
             </div>
           </div>
         ))}
-        <p style={{ color:"#1a1a1a",fontSize:"11px",letterSpacing:"1px",marginTop:"40px",textAlign:"center",lineHeight:1.8 }}>{t("aiDisclaimer")}</p>
+        <p style={{ color:"#444",fontSize:"11px",letterSpacing:"1px",marginTop:"40px",textAlign:"center",lineHeight:1.8 }}>{t("aiDisclaimer")}</p>
       </div>
     </div>
   );
@@ -810,11 +810,11 @@ export default function App() {
         <div style={{ maxWidth:"800px",margin:"0 auto",padding:"60px 40px" }}>
           <button onClick={() => setPage("dashboard")} style={backBtn}>{t("back")}</button>
           <h1 style={{ color:"#F5F5F5",fontSize:"30px",letterSpacing:"6px",fontWeight:300,marginBottom:"8px" }}>{t("interviewTitle")}</h1>
-          <p style={{ color:"#444",fontSize:"12px",letterSpacing:"2px",marginBottom:"16px" }}>{practicedCount} {t("progressOf")} {INTERVIEW_QUESTIONS.length} {t("questionsCompleted")}</p>
-          <div style={{ height:"4px",background:"#0a0a0a",marginBottom:"16px",borderRadius:"2px" }}>
+          <p style={{ color:"#777",fontSize:"12px",letterSpacing:"2px",marginBottom:"16px" }}>{practicedCount} {t("progressOf")} {INTERVIEW_QUESTIONS.length} {t("questionsCompleted")}</p>
+          <div style={{ height:"4px",background:"#0d0d0d",marginBottom:"16px",borderRadius:"2px" }}>
             <div style={{ height:"100%",background:"#C9A84C",width:`${(practicedCount/INTERVIEW_QUESTIONS.length)*100}%`,transition:"width 0.5s ease",borderRadius:"2px" }} />
           </div>
-          <p style={{ color:"#333",fontSize:"11px",letterSpacing:"1px",marginBottom:"40px",lineHeight:1.8 }}>{t("interviewNote")}</p>
+          <p style={{ color:"#666",fontSize:"11px",letterSpacing:"1px",marginBottom:"40px",lineHeight:1.8 }}>{t("interviewNote")}</p>
           {INTERVIEW_QUESTIONS.map((q,i) => (
             <div key={i} style={{ ...card, borderLeft:practiced[i]?"3px solid #4ade80":"3px solid transparent" }}>
               <div style={{ display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:"16px" }}>
@@ -823,7 +823,7 @@ export default function App() {
               </div>
               <textarea value={interviewAnswers[i]||""} onChange={e => setInterviewAnswers(prev => ({ ...prev,[i]:e.target.value }))}
                 placeholder={t("yourAnswer")}
-                style={{ width:"100%",background:"#080808",border:"1px solid #1a1a1a",color:"#F5F5F5",padding:"14px",fontSize:"14px",fontFamily:"inherit",resize:"vertical",minHeight:"80px",boxSizing:"border-box",outline:"none",marginBottom:"14px",lineHeight:1.8 }} />
+                style={{ width:"100%",background:"#0d0d0d",border:"1px solid #2a2a2a",color:"#F5F5F5",padding:"14px",fontSize:"14px",fontFamily:"inherit",resize:"vertical",minHeight:"80px",boxSizing:"border-box",outline:"none",marginBottom:"14px",lineHeight:1.8 }} />
               <button onClick={() => handleInterviewSubmit(i, q, interviewAnswers[i])}
                 disabled={loadingFeedback[`interview_${i}`]}
                 style={{ background:practiced[i]?"transparent":"#C9A84C",border:`1px solid ${practiced[i]?"#4ade80":"#C9A84C"}`,color:practiced[i]?"#4ade80":"#000",padding:"10px 28px",fontSize:"11px",letterSpacing:"3px",cursor:"pointer",fontWeight:700,fontFamily:"inherit",opacity:loadingFeedback[`interview_${i}`]?0.5:1 }}>
@@ -831,11 +831,11 @@ export default function App() {
               </button>
               {interviewFeedback[i] && <div style={{ marginTop:"14px",borderLeft:"2px solid #C9A84C",paddingLeft:"14px" }}>
                 <p style={{ color:"#C9A84C",fontSize:"10px",letterSpacing:"3px",margin:"0 0 6px" }}>{t("aiFeedback")}</p>
-                <p style={{ color:"#888",fontSize:"13px",margin:0,lineHeight:1.8 }}>{interviewFeedback[i]}</p>
+                <p style={{ color:"#bbb",fontSize:"13px",margin:0,lineHeight:1.8 }}>{interviewFeedback[i]}</p>
               </div>}
             </div>
           ))}
-          <p style={{ color:"#1a1a1a",fontSize:"11px",letterSpacing:"1px",marginTop:"40px",textAlign:"center",lineHeight:1.8 }}>{t("aiDisclaimer")}</p>
+          <p style={{ color:"#444",fontSize:"11px",letterSpacing:"1px",marginTop:"40px",textAlign:"center",lineHeight:1.8 }}>{t("aiDisclaimer")}</p>
         </div>
       </div>
     );
