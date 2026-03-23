@@ -396,17 +396,27 @@ export default function App() {
     const allChecked = aiContent.documents.every((_, i) => docChecks[i]);
     if (allChecked && moduleProgress[0] !== "COMPLETE") {
       setModuleProgress(prev => ({ ...prev, 0: "COMPLETE" }));
-      if (user) supabase.from("progress").upsert({ user_id: user.id, module: "documents", status: "COMPLETE", updated_at: new Date().toISOString() }, { onConflict: "user_id,module" });
+      if (user) {
+        await supabase.from("progress").upsert({ user_id: user.id, module: "documents", status: "COMPLETE", updated_at: new Date().toISOString() }, { onConflict: "user_id,module" });
+        // Force update in case upsert missed
+        await supabase.from("progress").update({ status: "COMPLETE", updated_at: new Date().toISOString() }).eq("user_id", user.id).eq("module", "documents");
+      }
     }
   }, [docChecks, aiContent.documents]);
 
   const loadProgress = async (u) => {
     const { data } = await supabase.from("progress").select("*").eq("user_id", u.id);
+    const newP = {0:"NOT STARTED",1:"NOT STARTED",2:"NOT STARTED",3:"NOT STARTED"};
     if (data && data.length > 0) {
-      const newP = {0:"NOT STARTED",1:"NOT STARTED",2:"NOT STARTED",3:"NOT STARTED"};
       data.forEach(row => { if (MODULE_IDX[row.module] !== undefined) newP[MODULE_IDX[row.module]] = row.status; });
-      setModuleProgress(newP);
     }
+    setModuleProgress(newP);
+    return newP;
+  };
+
+  const goToDashboard = async () => {
+    if (user) await loadProgress(user);
+    setPage("dashboard");
   };
 
   useEffect(() => {
@@ -761,7 +771,7 @@ export default function App() {
             </div>
           </div>
 
-          <button onClick={() => setPage("dashboard_modules")} style={{ background:"transparent",border:"1px solid #333",color:"#777",padding:"12px 32px",fontSize:"11px",letterSpacing:"3px",cursor:"pointer",fontFamily:"inherit" }}>REVIEW MY MODULES</button>
+          <button onClick={goToDashboard} style={{ background:"transparent",border:"1px solid #333",color:"#777",padding:"12px 32px",fontSize:"11px",letterSpacing:"3px",cursor:"pointer",fontFamily:"inherit" }}>REVIEW MY MODULES</button>
 
           <p style={{ color:"#444",fontSize:"11px",marginTop:"48px",lineHeight:1.8 }}>LEGALIAI is a preparation tool only. This is not legal advice. For complex situations, consult a licensed immigration attorney.</p>
         </div>
@@ -847,7 +857,7 @@ export default function App() {
       <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px" }}>
         <Nav />
         <div style={{ maxWidth:"800px",margin:"0 auto",padding:"60px 40px" }}>
-          <button onClick={() => setPage("dashboard")} style={backBtn}>{t("back")}</button>
+          <button onClick={goToDashboard} style={backBtn}>{t("back")}</button>
           <h1 style={{ color:"#F5F5F5",fontSize:"30px",letterSpacing:"6px",fontWeight:300,marginBottom:"8px" }}>{t("docTitle")}</h1>
           {aiContent.documents && <p style={{ color:"#777",fontSize:"12px",letterSpacing:"2px",marginBottom:"40px" }}>{Object.values(docChecks).filter(Boolean).length} / {aiContent.documents.length} gathered</p>}
           {loadingAI && <div style={{ padding:"60px",textAlign:"center" }}><p style={{ color:"#C9A84C",letterSpacing:"2px",fontSize:"13px" }}>{t("generating")}</p></div>}
@@ -872,7 +882,7 @@ export default function App() {
     <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px" }}>
       <Nav />
       <div style={{ maxWidth:"800px",margin:"0 auto",padding:"60px 40px" }}>
-        <button onClick={() => setPage("dashboard")} style={backBtn}>{t("back")}</button>
+        <button onClick={goToDashboard} style={backBtn}>{t("back")}</button>
         <h1 style={{ color:"#F5F5F5",fontSize:"30px",letterSpacing:"6px",fontWeight:300,marginBottom:"40px" }}>{t("formTitle")}</h1>
         {N400_SECTIONS.map((section,si) => (
           <div key={si} style={{ marginBottom:"40px" }}>
@@ -907,7 +917,7 @@ export default function App() {
     <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px" }}>
       <Nav />
       <div style={{ maxWidth:"800px",margin:"0 auto",padding:"60px 40px" }}>
-        <button onClick={() => setPage("dashboard")} style={backBtn}>{t("back")}</button>
+        <button onClick={goToDashboard} style={backBtn}>{t("back")}</button>
         <h1 style={{ color:"#F5F5F5",fontSize:"30px",letterSpacing:"6px",fontWeight:300,marginBottom:"40px" }}>{t("riskTitle")}</h1>
         {loadingAI && <div style={{ padding:"60px",textAlign:"center" }}><p style={{ color:"#C9A84C",letterSpacing:"2px",fontSize:"13px" }}>{t("generating")}</p></div>}
         {aiContent.risk && aiContent.risk.map((risk,i) => (
@@ -931,7 +941,7 @@ export default function App() {
       <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px" }}>
         <Nav />
         <div style={{ maxWidth:"800px",margin:"0 auto",padding:"60px 40px" }}>
-          <button onClick={() => setPage("dashboard")} style={backBtn}>{t("back")}</button>
+          <button onClick={goToDashboard} style={backBtn}>{t("back")}</button>
           <h1 style={{ color:"#F5F5F5",fontSize:"30px",letterSpacing:"6px",fontWeight:300,marginBottom:"8px" }}>{t("interviewTitle")}</h1>
           <p style={{ color:"#777",fontSize:"12px",letterSpacing:"2px",marginBottom:"16px" }}>{practicedCount} {t("progressOf")} {INTERVIEW_QUESTIONS.length} {t("questionsCompleted")}</p>
           <div style={{ height:"4px",background:"#0d0d0d",marginBottom:"16px",borderRadius:"2px" }}>
