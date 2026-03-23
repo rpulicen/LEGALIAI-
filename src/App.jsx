@@ -421,6 +421,15 @@ export default function App() {
           { user_id: u.id, stripe_session_id: "stripe_" + Date.now(), amount: 4900, paid_at: new Date().toISOString() },
           { onConflict: "user_id" }
         );
+        // Send welcome email
+        try {
+          const savedLang = localStorage.getItem("legaliai_lang") || "en";
+          await fetch("/api/send-welcome", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email: u.email, language: savedLang }),
+          });
+        } catch (e) { console.error("Welcome email failed:", e); }
         window.history.replaceState({}, "", "/");
         setPage("dashboard");
         return;
@@ -503,9 +512,18 @@ export default function App() {
   const handleModuleOpen = async (idx) => {
     const moduleName = MODULE_NAMES[idx];
     setPage(moduleName);
-    if (moduleProgress[idx] === "NOT STARTED") {
+    // Always verify with Supabase before setting IN PROGRESS — never overwrite COMPLETE
+    if (user) {
+      const { data: existing } = await supabase.from("progress").select("status").eq("user_id", user.id).eq("module", moduleName).limit(1);
+      const currentStatus = existing?.[0]?.status;
+      if (currentStatus === "COMPLETE") {
+        setModuleProgress(prev => ({ ...prev, [idx]: "COMPLETE" }));
+      } else if (!currentStatus || currentStatus === "NOT STARTED") {
+        setModuleProgress(prev => ({ ...prev, [idx]: "IN PROGRESS" }));
+        await supabase.from("progress").upsert({ user_id: user.id, module: moduleName, status: "IN PROGRESS", updated_at: new Date().toISOString() }, { onConflict: "user_id,module" });
+      }
+    } else if (moduleProgress[idx] === "NOT STARTED") {
       setModuleProgress(prev => ({ ...prev, [idx]: "IN PROGRESS" }));
-      if (user) await supabase.from("progress").upsert({ user_id: user.id, module: moduleName, status: "IN PROGRESS", updated_at: new Date().toISOString() }, { onConflict: "user_id,module" });
     }
     if (idx === 0 && !aiContent.documents) generateDocuments();
     if (idx === 2 && !aiContent.risk) generateRisk();
@@ -695,17 +713,85 @@ export default function App() {
     </div>
   );
 
-  if (page === "dashboard") return (
+  if (page === "dashboard") {
+    const completedCount = Object.values(moduleProgress).filter(s => s === "COMPLETE").length;
+    const allComplete = completedCount === 4;
+    const pct = (completedCount / 4) * 100;
+
+    // Completion screen
+    if (allComplete) return (
+      <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px" }}>
+        <Nav />
+        <div style={{ maxWidth:"720px",margin:"0 auto",padding:"80px 40px",textAlign:"center" }}>
+          <div style={{ fontSize:"56px",marginBottom:"32px" }}>🎉</div>
+          <div style={{ display:"inline-block",border:"1px solid #333",padding:"6px 16px",fontSize:"10px",letterSpacing:"4px",color:"#C9A84C",marginBottom:"32px" }}>PREPARATION COMPLETE</div>
+          <h1 style={{ color:"#F5F5F5",fontSize:"clamp(28px,5vw,48px)",fontWeight:300,letterSpacing:"3px",lineHeight:1.2,marginBottom:"24px" }}>You're Ready to Apply for Citizenship</h1>
+          <p style={{ color:"#aaa",fontSize:"16px",lineHeight:1.9,marginBottom:"56px",maxWidth:"540px",margin:"0 auto 56px" }}>You've completed all 4 preparation modules. You know your documents, understand your form, know your risks, and have practiced your interview. Here's what to do next.</p>
+
+          <div style={{ display:"flex",flexDirection:"column",gap:"2px",marginBottom:"56px",textAlign:"left" }}>
+            <div style={{ background:"#0d0d0d",border:"1px solid #222",borderLeft:"3px solid #C9A84C",padding:"28px 32px",display:"flex",gap:"24px",alignItems:"flex-start" }}>
+              <div style={{ background:"#C9A84C",color:"#000",width:"32px",height:"32px",borderRadius:"50%",display:"flex",alignItems:"center",justifyContent:"center",fontWeight:700,fontSize:"14px",flexShrink:0 }}>1</div>
+              <div>
+                <p style={{ color:"#F5F5F5",fontSize:"14px",letterSpacing:"2px",fontWeight:600,marginBottom:"8px" }}>DOWNLOAD YOUR N-400 FORM</p>
+                <p style={{ color:"#aaa",fontSize:"14px",lineHeight:1.8,margin:"0 0 12px" }}>Get the official N-400 form directly from USCIS. It's free.</p>
+                <a href="https://www.uscis.gov/n-400" target="_blank" rel="noopener noreferrer" style={{ color:"#C9A84C",fontSize:"12px",letterSpacing:"2px" }}>USCIS.GOV/N-400 →</a>
+              </div>
+            </div>
+            <div style={{ background:"#0d0d0d",border:"1px solid #222",borderLeft:"3px solid #C9A84C",padding:"28px 32px",display:"flex",gap:"24px",alignItems:"flex-start" }}>
+              <div style={{ background:"#C9A84C",color:"#000",width:"32px",height:"32px",borderRadius:"50%",display:"flex",alignItems:"center",justifyContent:"center",fontWeight:700,fontSize:"14px",flexShrink:0 }}>2</div>
+              <div>
+                <p style={{ color:"#F5F5F5",fontSize:"14px",letterSpacing:"2px",fontWeight:600,marginBottom:"8px" }}>FIND YOUR FILING ADDRESS</p>
+                <p style={{ color:"#aaa",fontSize:"14px",lineHeight:1.8,margin:"0 0 12px" }}>Your filing address depends on your state and how you're submitting. Always check the current address before mailing.</p>
+                <a href="https://www.uscis.gov/n-400" target="_blank" rel="noopener noreferrer" style={{ color:"#C9A84C",fontSize:"12px",letterSpacing:"2px" }}>CHECK FILING ADDRESS →</a>
+              </div>
+            </div>
+            <div style={{ background:"#0d0d0d",border:"1px solid #222",borderLeft:"3px solid #C9A84C",padding:"28px 32px",display:"flex",gap:"24px",alignItems:"flex-start" }}>
+              <div style={{ background:"#C9A84C",color:"#000",width:"32px",height:"32px",borderRadius:"50%",display:"flex",alignItems:"center",justifyContent:"center",fontWeight:700,fontSize:"14px",flexShrink:0 }}>3</div>
+              <div>
+                <p style={{ color:"#F5F5F5",fontSize:"14px",letterSpacing:"2px",fontWeight:600,marginBottom:"8px" }}>PAY THE $725 FILING FEE</p>
+                <p style={{ color:"#aaa",fontSize:"14px",lineHeight:1.8,margin:0 }}>The USCIS filing fee is $640 + $85 for biometrics = $725 total. Pay by check or money order made out to "U.S. Department of Homeland Security." Fee waivers available if you qualify.</p>
+              </div>
+            </div>
+            <div style={{ background:"#0d0d0d",border:"1px solid #222",borderLeft:"3px solid #C9A84C",padding:"28px 32px",display:"flex",gap:"24px",alignItems:"flex-start" }}>
+              <div style={{ background:"#C9A84C",color:"#000",width:"32px",height:"32px",borderRadius:"50%",display:"flex",alignItems:"center",justifyContent:"center",fontWeight:700,fontSize:"14px",flexShrink:0 }}>4</div>
+              <div>
+                <p style={{ color:"#F5F5F5",fontSize:"14px",letterSpacing:"2px",fontWeight:600,marginBottom:"8px" }}>MAIL YOUR APPLICATION</p>
+                <p style={{ color:"#aaa",fontSize:"14px",lineHeight:1.8,margin:"0 0 12px" }}>Send your completed N-400, supporting documents, photos, and fee together. Use USPS Priority Mail with tracking. Keep copies of everything.</p>
+              </div>
+            </div>
+          </div>
+
+          <button onClick={() => setPage("dashboard_modules")} style={{ background:"transparent",border:"1px solid #333",color:"#777",padding:"12px 32px",fontSize:"11px",letterSpacing:"3px",cursor:"pointer",fontFamily:"inherit" }}>REVIEW MY MODULES</button>
+
+          <p style={{ color:"#444",fontSize:"11px",marginTop:"48px",lineHeight:1.8 }}>LEGALIAI is a preparation tool only. This is not legal advice. For complex situations, consult a licensed immigration attorney.</p>
+        </div>
+      </div>
+    );
+
+    return (
     <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px" }}>
       <Nav />
       <div style={{ maxWidth:"1000px",margin:"0 auto",padding:"60px 40px" }}>
-        <h1 style={{ color:"#F5F5F5",fontSize:"clamp(18px,3vw,34px)",letterSpacing:"6px",fontWeight:300,marginBottom:"64px",textAlign:"center" }}>{t("dashTitle")}</h1>
+        <h1 style={{ color:"#F5F5F5",fontSize:"clamp(18px,3vw,34px)",letterSpacing:"6px",fontWeight:300,marginBottom:"32px",textAlign:"center" }}>{t("dashTitle")}</h1>
+
+        {/* Progress Bar */}
+        <div style={{ background:"#0d0d0d",border:"1px solid #1a1a1a",padding:"28px 32px",marginBottom:"40px" }}>
+          <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:"16px" }}>
+            <span style={{ color:"#aaa",fontSize:"11px",letterSpacing:"3px" }}>{completedCount} OF 4 MODULES COMPLETE</span>
+            <span style={{ color:"#C9A84C",fontSize:"14px",letterSpacing:"3px",fontWeight:700 }}>{Math.round(pct)}%</span>
+          </div>
+          <div style={{ height:"6px",background:"#111",width:"100%",borderRadius:"3px" }}>
+            <div style={{ height:"6px",background:"#C9A84C",width:`${pct}%`,transition:"width 0.6s ease",borderRadius:"3px" }}></div>
+          </div>
+          {pct < 100 && <p style={{ margin:"12px 0 0",color:"#555",fontSize:"11px",letterSpacing:"2px" }}>COMPLETE ALL 4 MODULES TO FINISH YOUR PREPARATION</p>}
+        </div>
+
         <div style={{ display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:"2px" }}>
           {t("modules").map((mod,i) => (
             <div key={i} style={{ background:"#0d0d0d",border:`1px solid ${moduleProgress[i]==="COMPLETE"?"#1a3a1a":moduleProgress[i]==="IN PROGRESS"?"#3a3010":"#1a1a1a"}`,padding:"40px",display:"flex",flexDirection:"column",gap:"16px" }}>
               <div style={{ fontSize:"28px" }}>{["📋","📝","⚠️","🎤"][i]}</div>
               <h3 style={{ color:"#F5F5F5",fontSize:"14px",letterSpacing:"4px",fontWeight:300,margin:0 }}>{mod}</h3>
-              <p style={{ color:"#777",fontSize:"13px",letterSpacing:"1px",margin:0,lineHeight:1.8 }}>{t("modDesc")[i]}</p>
+              <p style={{ color:"#aaa",fontSize:"13px",letterSpacing:"1px",margin:0,lineHeight:1.8 }}>{t("modDesc")[i]}</p>
               <div style={{ display:"flex",alignItems:"center",justifyContent:"space-between",marginTop:"auto",paddingTop:"20px",borderTop:"1px solid #111" }}>
                 <span style={{ color:getProgressColor(i),fontSize:"10px",letterSpacing:"2px",fontWeight:600 }}>{getProgressLabel(i)}</span>
                 <button onClick={() => handleModuleOpen(i)} style={{ background:moduleProgress[i]==="COMPLETE"?"transparent":"#C9A84C",border:`1px solid ${moduleProgress[i]==="COMPLETE"?"#4ade80":"#C9A84C"}`,color:moduleProgress[i]==="COMPLETE"?"#4ade80":"#000",padding:"10px 28px",fontSize:"11px",letterSpacing:"3px",cursor:"pointer",fontWeight:700,fontFamily:"inherit" }}>{getBtnLabel(i)}</button>
@@ -716,7 +802,44 @@ export default function App() {
         <Disclaimer />
       </div>
     </div>
-  );
+  );}
+
+  if (page === "dashboard_modules") {
+    // Same as dashboard but allComplete won't trigger completion screen
+    const completedCount = Object.values(moduleProgress).filter(s => s === "COMPLETE").length;
+    const pct = (completedCount / 4) * 100;
+    return (
+      <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px" }}>
+        <Nav />
+        <div style={{ maxWidth:"1000px",margin:"0 auto",padding:"60px 40px" }}>
+          <h1 style={{ color:"#F5F5F5",fontSize:"clamp(18px,3vw,34px)",letterSpacing:"6px",fontWeight:300,marginBottom:"32px",textAlign:"center" }}>{t("dashTitle")}</h1>
+          <div style={{ marginBottom:"56px" }}>
+            <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:"12px" }}>
+              <span style={{ color:"#777",fontSize:"11px",letterSpacing:"3px" }}>{completedCount} OF 4 MODULES COMPLETE</span>
+              <span style={{ color:"#C9A84C",fontSize:"11px",letterSpacing:"3px",fontWeight:600 }}>{Math.round(pct)}%</span>
+            </div>
+            <div style={{ height:"3px",background:"#111",width:"100%" }}>
+              <div style={{ height:"3px",background:"#C9A84C",width:`${pct}%`,transition:"width 0.6s ease" }}></div>
+            </div>
+          </div>
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:"2px" }}>
+            {t("modules").map((mod,i) => (
+              <div key={i} style={{ background:"#0d0d0d",border:`1px solid ${moduleProgress[i]==="COMPLETE"?"#1a3a1a":moduleProgress[i]==="IN PROGRESS"?"#3a3010":"#1a1a1a"}`,padding:"40px",display:"flex",flexDirection:"column",gap:"16px" }}>
+                <div style={{ fontSize:"28px" }}>{["📋","📝","⚠️","🎤"][i]}</div>
+                <h3 style={{ color:"#F5F5F5",fontSize:"14px",letterSpacing:"4px",fontWeight:300,margin:0 }}>{mod}</h3>
+                <p style={{ color:"#aaa",fontSize:"13px",letterSpacing:"1px",margin:0,lineHeight:1.8 }}>{t("modDesc")[i]}</p>
+                <div style={{ display:"flex",alignItems:"center",justifyContent:"space-between",marginTop:"auto",paddingTop:"20px",borderTop:"1px solid #111" }}>
+                  <span style={{ color:getProgressColor(i),fontSize:"10px",letterSpacing:"2px",fontWeight:600 }}>{getProgressLabel(i)}</span>
+                  <button onClick={() => handleModuleOpen(i)} style={{ background:moduleProgress[i]==="COMPLETE"?"transparent":"#C9A84C",border:`1px solid ${moduleProgress[i]==="COMPLETE"?"#4ade80":"#C9A84C"}`,color:moduleProgress[i]==="COMPLETE"?"#4ade80":"#000",padding:"10px 28px",fontSize:"11px",letterSpacing:"3px",cursor:"pointer",fontWeight:700,fontFamily:"inherit" }}>{getBtnLabel(i)}</button>
+                </div>
+              </div>
+            ))}
+          </div>
+          <Disclaimer />
+        </div>
+      </div>
+    );
+  }
 
   if (page === "documents") {
     const allChecked = aiContent.documents?.length > 0 && aiContent.documents.every((_, i) => docChecks[i]);
