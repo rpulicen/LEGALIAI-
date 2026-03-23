@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { createClient } from "@supabase/supabase-js";
+import { Analytics } from "@vercel/analytics/react";
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || "https://lscxxjiqridkdpggxkiv.supabase.co";
 const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || "";
@@ -1040,5 +1041,5 @@ export default function App() {
     );
   }
 
-  return null;
+  return <Analytics />;
 }
