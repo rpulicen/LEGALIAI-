@@ -397,9 +397,11 @@ export default function App() {
     if (allChecked && moduleProgress[0] !== "COMPLETE") {
       setModuleProgress(prev => ({ ...prev, 0: "COMPLETE" }));
       if (user) {
-        await supabase.from("progress").upsert({ user_id: user.id, module: "documents", status: "COMPLETE", updated_at: new Date().toISOString() }, { onConflict: "user_id,module" });
-        // Force update in case upsert missed
-        await supabase.from("progress").update({ status: "COMPLETE", updated_at: new Date().toISOString() }).eq("user_id", user.id).eq("module", "documents");
+        const saveComplete = async () => {
+          await supabase.from("progress").upsert({ user_id: user.id, module: "documents", status: "COMPLETE", updated_at: new Date().toISOString() }, { onConflict: "user_id,module" });
+          await supabase.from("progress").update({ status: "COMPLETE", updated_at: new Date().toISOString() }).eq("user_id", user.id).eq("module", "documents");
+        };
+        saveComplete();
       }
     }
   }, [docChecks, aiContent.documents]);
