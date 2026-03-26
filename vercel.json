@@ -1,4 +1,7 @@
 {
+  "redirects": [
+    { "source": "/n-400-common-mistakes.html", "destination": "/n-400-tips.html", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/((?!api/|n-400-guide|n-400-tips|n-400-documents|es/|pt/|zh/|tl/|vi/|hi/|citizenship-interview|how-long-does|citizenship-test|sitemap|robots|favicon).*)", "destination": "/index.html" }
   ]
