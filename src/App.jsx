@@ -791,7 +791,7 @@ export default function App() {
             </div>
           </div>
 
-          <button onClick={goToDashboard} style={{ background:"transparent",border:"1px solid #333",color:"#777",padding:"12px 32px",fontSize:"11px",letterSpacing:"3px",cursor:"pointer",fontFamily:"inherit" }}>REVIEW MY MODULES</button>
+          <button onClick={() => setPage("dashboard_modules")} style={{ background:"transparent",border:"1px solid #333",color:"#777",padding:"12px 32px",fontSize:"11px",letterSpacing:"3px",cursor:"pointer",fontFamily:"inherit" }}>REVIEW MY MODULES</button>
 
           <p style={{ color:"#444",fontSize:"11px",marginTop:"48px",lineHeight:1.8 }}>LEGALIAI is a preparation tool only. This is not legal advice. For complex situations, consult a licensed immigration attorney.</p>
         </div>
