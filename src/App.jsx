@@ -658,6 +658,7 @@ export default function App() {
       <div style={{ display:"flex",alignItems:"center",gap:"24px" }}>
         {user && <span style={{ color:"#777",fontSize:"12px",letterSpacing:"1px" }}>{user.email}</span>}
         {user && <button onClick={handleSignOut} style={{ background:"none",border:"none",color:"#777",fontSize:"11px",letterSpacing:"2px",cursor:"pointer",fontFamily:"inherit" }}>{t("signOut")}</button>}
+          <a href="/contact.html" style={{ color:"#555",fontSize:"11px",letterSpacing:"2px",fontFamily:"'DM Sans',sans-serif" }}>CONTACT</a>
         {!user && <button onClick={handleSignIn} style={{ background:"none",border:"1px solid #333",color:"#C9A84C",padding:"7px 18px",fontSize:"11px",letterSpacing:"2px",cursor:"pointer",fontFamily:"inherit" }}>SIGN IN</button>}
         <div style={{ position:"relative" }}>
           <button onClick={() => setShowLangMenu(!showLangMenu)} style={{ background:"none",border:"1px solid #222",color:"#aaa",padding:"7px 16px",fontSize:"12px",letterSpacing:"1px",cursor:"pointer",fontFamily:"inherit" }}>
