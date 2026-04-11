@@ -38,7 +38,7 @@
   ],
   "rewrites": [
     {
-      "source": "/((?!api/|contact|llms.txt|robots.txt|n-400-guide|n-400-tips|n-400-documents|n-400-denied|n-400-processing|128-civics|mexican-|indian-|filipino-|dominican-|cuban-|vietnamese-|chinese-|salvadoran-|guatemalan-|brazilian-|es/|pt/|zh/|tl/|vi/|hi/|ko/|citizenship-interview|how-long-does|citizenship-test|sitemap|robots|favicon).*)",
+      "source": "/((?!api/|citizenship-interview-how-long|n-400-rfe|when-can-i-apply|n-400-fee-waiver|contact|llms.txt|robots.txt|n-400-guide|n-400-tips|n-400-documents|n-400-denied|n-400-processing|128-civics|mexican-|indian-|filipino-|dominican-|cuban-|vietnamese-|chinese-|salvadoran-|guatemalan-|brazilian-|es/|pt/|zh/|tl/|vi/|hi/|ko/|citizenship-interview|how-long-does|citizenship-test|sitemap|robots|favicon).*)",
       "destination": "/index.html"
     }
   ]
