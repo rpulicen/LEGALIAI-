@@ -1,14 +1,45 @@
 {
   "redirects": [
-    { "source": "/n-400-common-mistakes.html", "destination": "/n-400-tips.html", "permanent": true },
-    { "source": "/vi/huong-dan-n-400", "destination": "/vi/huong-dan-n-400.html", "permanent": true },
-    { "source": "/zh/n-400-zhinan", "destination": "/zh/n-400-zhinan.html", "permanent": true },
-    { "source": "/tl/n-400-gabay", "destination": "/tl/n-400-gabay.html", "permanent": true },
-    { "source": "/hi/n-400-margdarshan", "destination": "/hi/n-400-margdarshan.html", "permanent": true },
-    { "source": "/es/como-llenar-n-400", "destination": "/es/como-llenar-n-400.html", "permanent": true },
-    { "source": "/pt/como-preencher-n-400", "destination": "/pt/como-preencher-n-400.html", "permanent": true }
+    {
+      "source": "/n-400-common-mistakes.html",
+      "destination": "/n-400-tips.html",
+      "permanent": true
+    },
+    {
+      "source": "/vi/huong-dan-n-400",
+      "destination": "/vi/huong-dan-n-400.html",
+      "permanent": true
+    },
+    {
+      "source": "/zh/n-400-zhinan",
+      "destination": "/zh/n-400-zhinan.html",
+      "permanent": true
+    },
+    {
+      "source": "/tl/n-400-gabay",
+      "destination": "/tl/n-400-gabay.html",
+      "permanent": true
+    },
+    {
+      "source": "/hi/n-400-margdarshan",
+      "destination": "/hi/n-400-margdarshan.html",
+      "permanent": true
+    },
+    {
+      "source": "/es/como-llenar-n-400",
+      "destination": "/es/como-llenar-n-400.html",
+      "permanent": true
+    },
+    {
+      "source": "/pt/como-preencher-n-400",
+      "destination": "/pt/como-preencher-n-400.html",
+      "permanent": true
+    }
   ],
   "rewrites": [
-    { "source": "/((?!api/|contact|n-400-guide|n-400-tips|n-400-documents|n-400-denied|n-400-processing|128-civics|mexican-|indian-|filipino-|dominican-|cuban-|vietnamese-|chinese-|salvadoran-|guatemalan-|brazilian-|es/|pt/|zh/|tl/|vi/|hi/|ko/|citizenship-interview|how-long-does|citizenship-test|sitemap|robots|favicon).*)", "destination": "/index.html" }
+    {
+      "source": "/((?!api/|contact|llms.txt|robots.txt|n-400-guide|n-400-tips|n-400-documents|n-400-denied|n-400-processing|128-civics|mexican-|indian-|filipino-|dominican-|cuban-|vietnamese-|chinese-|salvadoran-|guatemalan-|brazilian-|es/|pt/|zh/|tl/|vi/|hi/|ko/|citizenship-interview|how-long-does|citizenship-test|sitemap|robots|favicon).*)",
+      "destination": "/index.html"
+    }
   ]
 }

@@ -434,6 +434,61 @@ export default function App() {
   const langName = LANGUAGES.find(l => l.code === lang)?.label || "English";
 
   // Auto-complete documents when all checked
+
+// SoftwareApplication Schema — injected once on mount for Google AI Overviews
+  useEffect(() => {
+    const existing = document.getElementById('legaliai-schema');
+    if (existing) return;
+    const script = document.createElement('script');
+    script.id = 'legaliai-schema';
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "LEGALIAI",
+      "url": "https://legaliai.com",
+      "description": "AI-powered U.S. citizenship (N-400) preparation. Documents, form walkthrough, risk assessment, and interview prep in 8 languages. No lawyer needed. $49 one-time fee.",
+      "applicationCategory": "LegalApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "49.00",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "49.00",
+          "priceCurrency": "USD",
+          "name": "One-time preparation fee"
+        }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "4",
+        "bestRating": "5"
+      },
+      "featureList": [
+        "Personalized document checklist",
+        "N-400 form walkthrough with AI guidance",
+        "Risk assessment before you file",
+        "Interview preparation with 128 civics questions",
+        "Available in 8 languages",
+        "Not legal advice — preparation only"
+      ],
+      "inLanguage": ["en", "es", "pt", "zh", "tl", "vi", "hi", "ko"],
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Lawful permanent residents applying for U.S. citizenship"
+      },
+      "provider": {
+        "@type": "Organization",
+        "name": "LEGALIAI",
+        "url": "https://legaliai.com"
+      }
+    });
+    document.head.appendChild(script);
+  }, []);
+
   useEffect(() => {
     if (!aiContent.documents || aiContent.documents.length === 0) return;
     const allChecked = aiContent.documents.every((_, i) => docChecks[i]);
