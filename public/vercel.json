@@ -38,7 +38,7 @@
   ],
   "rewrites": [
     {
-      "source": "/((?!api/|citizenship-interview-how-long|n-400-rfe|when-can-i-apply|n-400-fee-waiver|contact|llms.txt|robots.txt|n-400-guide|n-400-tips|n-400-documents|n-400-denied|n-400-processing|128-civics|mexican-|indian-|filipino-|dominican-|cuban-|vietnamese-|chinese-|salvadoran-|guatemalan-|brazilian-|es/|pt/|zh/|tl/|vi/|hi/|ko/|citizenship-interview|how-long-does|citizenship-test|sitemap|robots|favicon).*)",
+      "source": "/((?!api/|n400-processing-time-tracker|n400-processing-time-seattle|n400-processing-time-miami|n400-processing-time-chicago|n400-processing-time-detroit|n400-processing-time-newark|n400-processing-time-san-antonio|n400-processing-time-dallas|n400-processing-time-los-angeles|n400-processing-time-new-york|n400-processing-time-houston|n400-timeline-2026|citizenship-interview-how-long|n-400-rfe|when-can-i-apply|n-400-fee-waiver|contact|llms.txt|robots.txt|n-400-guide|n-400-tips|n-400-documents|n-400-denied|n-400-processing|128-civics|mexican-|indian-|filipino-|dominican-|cuban-|vietnamese-|chinese-|salvadoran-|guatemalan-|brazilian-|es/|pt/|zh/|tl/|vi/|hi/|ko/|citizenship-interview|how-long-does|citizenship-test|sitemap|robots|favicon).*)",
       "destination": "/index.html"
     }
   ]
