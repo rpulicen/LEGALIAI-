@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact LEGALIAI — Partnerships, Press & General Inquiries</title>
-  <meta name="description" content="Contact LEGALIAI for partnership opportunities, press inquiries, or general questions about our AI-powered citizenship preparation platform."/>
+  <title>Contact LEGALIAI — Partnerships, Law Firms & Press Inquiries</title>
+  <meta name="description" content="Contact LEGALIAI for law firm partnerships, press inquiries, immigration organization collaboration, or general questions. We respond within 24 hours."/>
   <link rel="canonical" href="https://legaliai.com/contact.html"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
@@ -12,33 +12,68 @@
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{--gold:#C9A84C;--black:#000;--white:#F5F5F5;--gray:#888}
     body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;line-height:1.8}
-    a{color:var(--gold);text-decoration:none}
+    a{color:var(--gold);text-decoration:none}a:hover{text-decoration:underline}
     nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 40px;background:rgba(0,0,0,0.97);border-bottom:1px solid #1a1a1a}
     .logo{font-family:'Cormorant Garamond',serif;font-size:22px;letter-spacing:12px;color:var(--gold);font-weight:300}
     .nav-cta{background:var(--gold);color:#000;padding:10px 24px;font-size:12px;letter-spacing:3px;font-weight:700;font-family:inherit;border:none;cursor:pointer}
-    .hero{max-width:640px;margin:0 auto;padding:80px 40px 60px;text-align:center}
+    .hero{max-width:800px;margin:0 auto;padding:80px 40px 60px;text-align:center}
     .hero-tag{display:inline-block;border:1px solid #1a1a1a;padding:6px 16px;font-size:10px;letter-spacing:4px;color:var(--gold);margin-bottom:32px}
     h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,56px);font-weight:300;letter-spacing:2px;line-height:1.2;margin-bottom:20px}
-    .hero-sub{font-size:16px;color:var(--gray);line-height:1.8;margin-bottom:60px}
-    .form-wrap{max-width:640px;margin:0 auto;padding:0 40px 80px}
-    .field{margin-bottom:24px}
+    .hero-sub{font-size:16px;color:var(--gray);line-height:1.8;max-width:560px;margin:0 auto}
+    .content{max-width:800px;margin:0 auto;padding:0 40px 80px}
+    h2{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;letter-spacing:3px;margin:52px 0 16px;color:var(--white);padding-bottom:12px;border-bottom:1px solid #1a1a1a}
+    h3{font-size:13px;letter-spacing:2px;color:var(--gold);margin:0 0 8px;font-weight:500}
+    p{font-size:15px;color:#999;margin-bottom:14px;line-height:1.9}
+    strong{color:var(--white);font-weight:500}
+
+    /* LAW FIRM SECTION */
+    .lawfirm-box{background:#0a0800;border:1px solid #2a2000;border-left:3px solid var(--gold);padding:32px;margin:32px 0}
+    .lawfirm-tag{font-size:10px;letter-spacing:4px;color:var(--gold);margin-bottom:16px;display:block;font-weight:700}
+    .lawfirm-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;color:var(--white);margin-bottom:12px}
+    .lawfirm-desc{font-size:14px;color:#888;line-height:1.9;margin-bottom:20px}
+    .offer-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:20px}
+    .offer-box{background:#0a0a0a;border:1px solid #1a1a1a;padding:16px 18px}
+    .offer-title{color:var(--white);font-size:13px;font-weight:500;margin-bottom:4px}
+    .offer-desc{color:#555;font-size:12px;line-height:1.7}
+    .lawfirm-cta{display:inline-block;background:var(--gold);color:#000;padding:14px 36px;font-size:12px;letter-spacing:3px;font-weight:700}
+
+    /* INQUIRY CARDS */
+    .inquiry-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin:24px 0}
+    .inquiry-card{background:#0a0a0a;border:1px solid #1a1a1a;padding:22px;cursor:pointer;transition:border-color 0.2s}
+    .inquiry-card:hover,.inquiry-card.active{border-color:var(--gold)}
+    .inquiry-card.active{background:#0a0800}
+    .i-label{font-size:10px;letter-spacing:3px;color:var(--gold);margin-bottom:8px;display:block;font-weight:700}
+    .i-title{color:var(--white);font-size:14px;font-weight:500;margin-bottom:4px}
+    .i-desc{color:#555;font-size:12px;line-height:1.6}
+
+    /* FORM */
+    .form-section{margin-top:8px}
+    .field{margin-bottom:20px}
     label{display:block;font-size:10px;letter-spacing:3px;color:var(--gold);margin-bottom:10px}
     input,textarea,select{width:100%;background:#0a0a0a;border:1px solid #1a1a1a;color:var(--white);padding:16px 20px;font-family:'DM Sans',sans-serif;font-size:15px;outline:none;transition:border-color 0.2s}
     input:focus,textarea:focus,select:focus{border-color:var(--gold)}
     textarea{height:160px;resize:vertical}
     select option{background:#0a0a0a}
-    .submit-btn{width:100%;background:var(--gold);color:#000;border:none;padding:20px;font-size:13px;letter-spacing:4px;font-weight:700;cursor:pointer;font-family:inherit;margin-top:8px}
+    .submit-btn{width:100%;background:var(--gold);color:#000;border:none;padding:20px;font-size:13px;letter-spacing:4px;font-weight:700;cursor:pointer;font-family:inherit;margin-top:8px;transition:background 0.2s}
+    .submit-btn:hover{background:#e6c060}
     .submit-btn:disabled{opacity:0.5;cursor:not-allowed}
-    .success{background:#0a1a0a;border:1px solid #1a3a1a;border-left:3px solid #4ade80;padding:24px;margin-bottom:32px;display:none}
-    .success p{color:#9be9a8;font-size:14px;margin:0}
-    .error-msg{background:#1a0a0a;border:1px solid #3a1a1a;border-left:3px solid #e05555;padding:24px;margin-bottom:32px;display:none}
-    .error-msg p{color:#e9a8a8;font-size:14px;margin:0}
-    .direct-email{text-align:center;padding:40px;border-top:1px solid #0a0a0a;color:#555;font-size:13px}
+    .success-box{background:#0a1a0a;border:1px solid #1a3a1a;border-left:3px solid #4ade80;padding:24px;margin-bottom:24px;display:none}
+    .success-box p{color:#9be9a8;font-size:14px;margin:0}
+    .error-box{background:#1a0a0a;border:1px solid #3a1a1a;border-left:3px solid #e05555;padding:24px;margin-bottom:24px;display:none}
+    .error-box p{color:#e9a8a8;font-size:14px;margin:0}
+
+    /* TRUST SIGNALS */
+    .trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin:24px 0}
+    .trust-box{background:#0a0a0a;border:1px solid #1a1a1a;padding:18px;text-align:center}
+    .trust-num{font-family:'Cormorant Garamond',serif;font-size:36px;color:var(--gold);font-weight:300;display:block}
+    .trust-label{font-size:10px;letter-spacing:2px;color:#444;margin-top:4px;display:block;line-height:1.5}
+
+    .direct-email{text-align:center;padding:32px;border-top:1px solid #0a0a0a;color:#444;font-size:12px;letter-spacing:1px}
     .direct-email a{color:var(--gold)}
     footer{background:#050505;padding:40px;text-align:center;border-top:1px solid #0a0a0a}
-    .footer-links{display:flex;gap:32px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
+    .footer-links{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
     .footer-links a{font-size:12px;letter-spacing:2px;color:#555}
-    @media(max-width:600px){nav{padding:16px 20px}.hero{padding:60px 20px 40px}.form-wrap{padding:0 20px 60px}}
+    @media(max-width:660px){nav{padding:16px 20px}.hero{padding:60px 20px 40px}.content{padding:0 20px 60px}.offer-grid{grid-template-columns:1fr}.inquiry-grid{grid-template-columns:1fr}.trust-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -51,67 +86,158 @@
 <div class="hero">
   <div class="hero-tag">GET IN TOUCH</div>
   <h1>Contact LEGALIAI</h1>
-  <p class="hero-sub">Partnerships, press, integrations, or general inquiries — we read every message and respond within 24 hours.</p>
+  <p class="hero-sub">Partnerships, press, law firm collaboration, or general inquiries — we read every message and respond within 24 hours.</p>
 </div>
 
-<div class="form-wrap">
-  <div class="success" id="success">
-    <p>✓ Message sent. We'll get back to you within 24 hours.</p>
-  </div>
-  <div class="error-msg" id="error">
-    <p>Something went wrong. Please email us directly at <a href="mailto:hello@legaliai.com">hello@legaliai.com</a></p>
+<div class="content">
+
+  <!-- TRUST SIGNALS -->
+  <div class="trust-grid">
+    <div class="trust-box">
+      <span class="trust-num">183</span>
+      <span class="trust-label">Pages of verified USCIS content</span>
+    </div>
+    <div class="trust-box">
+      <span class="trust-num">8</span>
+      <span class="trust-label">Languages — English, Spanish, Portuguese + 5 more</span>
+    </div>
+    <div class="trust-box">
+      <span class="trust-num">$49</span>
+      <span class="trust-label">vs $1,500–$3,000 for an immigration lawyer</span>
+    </div>
   </div>
 
-  <div class="field">
-    <label>YOUR NAME</label>
-    <input type="text" id="name" placeholder="Full name"/>
+  <!-- LAW FIRM SECTION -->
+  <div class="lawfirm-box" id="law-firms">
+    <span class="lawfirm-tag">FOR IMMIGRATION ATTORNEYS & LAW FIRMS</span>
+    <div class="lawfirm-title">Partner With LEGALIAI</div>
+    <p class="lawfirm-desc">LEGALIAI serves the straightforward naturalization cases — the 80% of applicants who do not need a lawyer. When a case is too complex for self-preparation, we refer users to qualified attorneys. If you handle N-400 cases with criminal history, RFE appeals, or prior deportation orders, we should talk.</p>
+    <div class="offer-grid">
+      <div class="offer-box">
+        <div class="offer-title">Qualified Referrals</div>
+        <div class="offer-desc">Users who self-identify as needing legal help — criminal history, RFE denials, complex immigration situations. Pre-qualified, actively seeking representation.</div>
+      </div>
+      <div class="offer-box">
+        <div class="offer-title">Content Partnership</div>
+        <div class="offer-desc">LEGALIAI publishes USCIS-verified processing time data for all 24 field offices. Co-authoring opportunities for immigration attorneys who want to build topical authority.</div>
+      </div>
+      <div class="offer-box">
+        <div class="offer-title">Client Preparation</div>
+        <div class="offer-desc">Attorneys who want their clients fully prepared before their consultation. LEGALIAI reduces intake time by ensuring clients arrive with documents organized and N-400 reviewed.</div>
+      </div>
+      <div class="offer-box">
+        <div class="offer-title">Referral Program</div>
+        <div class="offer-desc">Formal referral arrangements for attorneys who recommend LEGALIAI to clients who do not need full legal representation. Revenue share available.</div>
+      </div>
+    </div>
+    <a href="#contact-form" class="lawfirm-cta" onclick="selectType('Law firm partnership')">DISCUSS A PARTNERSHIP →</a>
   </div>
-  <div class="field">
-    <label>YOUR EMAIL</label>
-    <input type="email" id="email" placeholder="email@company.com"/>
-  </div>
-  <div class="field">
-    <label>SUBJECT</label>
-    <select id="subject">
-      <option value="">Select a topic...</option>
-      <option value="Partnership opportunity">Partnership opportunity</option>
-      <option value="Press / Media inquiry">Press / Media inquiry</option>
-      <option value="Immigration organization">Immigration organization</option>
-      <option value="API / Integration">API / Integration</option>
-      <option value="Investment inquiry">Investment inquiry</option>
-      <option value="General question">General question</option>
-    </select>
-  </div>
-  <div class="field">
-    <label>MESSAGE</label>
-    <textarea id="message" placeholder="Tell us what's on your mind..."></textarea>
-  </div>
-  <button class="submit-btn" id="submit-btn" onclick="sendMessage()">SEND MESSAGE</button>
-</div>
 
-<div class="direct-email">
-  Prefer email? Reach us directly at <a href="mailto:hello@legaliai.com">hello@legaliai.com</a>
+  <!-- CONTACT TYPE SELECTOR -->
+  <h2 id="contact-form">WHAT CAN WE HELP WITH?</h2>
+  <div class="inquiry-grid">
+    <div class="inquiry-card active" id="card-general" onclick="selectType('General inquiry')">
+      <span class="i-label">GENERAL</span>
+      <div class="i-title">General Inquiry</div>
+      <div class="i-desc">Questions about the product, how it works, or your specific situation</div>
+    </div>
+    <div class="inquiry-card" id="card-lawfirm" onclick="selectType('Law firm partnership')">
+      <span class="i-label">LAW FIRMS</span>
+      <div class="i-title">Law Firm Partnership</div>
+      <div class="i-desc">Referral programs, client preparation, content collaboration</div>
+    </div>
+    <div class="inquiry-card" id="card-press" onclick="selectType('Press / Media')">
+      <span class="i-label">PRESS</span>
+      <div class="i-title">Press & Media</div>
+      <div class="i-desc">Interviews, data requests, immigration technology coverage</div>
+    </div>
+    <div class="inquiry-card" id="card-org" onclick="selectType('Immigration organization')">
+      <span class="i-label">ORGANIZATIONS</span>
+      <div class="i-title">Immigration Nonprofits</div>
+      <div class="i-desc">Community partnerships, bulk access, nonprofit pricing</div>
+    </div>
+  </div>
+
+  <!-- FORM -->
+  <div class="form-section">
+    <div class="success-box" id="success">
+      <p>✓ Message sent. We'll get back to you within 24 hours.</p>
+    </div>
+    <div class="error-box" id="error">
+      <p>Something went wrong. Email us directly at <a href="mailto:hello@legaliai.com">hello@legaliai.com</a></p>
+    </div>
+
+    <div class="field">
+      <label>YOUR NAME</label>
+      <input type="text" id="name" placeholder="Full name"/>
+    </div>
+    <div class="field">
+      <label>YOUR EMAIL</label>
+      <input type="email" id="email" placeholder="email@company.com"/>
+    </div>
+    <div class="field">
+      <label>ORGANIZATION (optional)</label>
+      <input type="text" id="org" placeholder="Law firm, nonprofit, company, or leave blank"/>
+    </div>
+    <div class="field">
+      <label>INQUIRY TYPE</label>
+      <select id="subject">
+        <option value="General inquiry">General inquiry</option>
+        <option value="Law firm partnership">Law firm partnership</option>
+        <option value="Press / Media">Press / Media</option>
+        <option value="Immigration organization">Immigration organization</option>
+        <option value="Referral program">Referral program</option>
+        <option value="Technical / API">Technical / API</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>MESSAGE</label>
+      <textarea id="message" placeholder="Tell us what you have in mind. The more context the better."></textarea>
+    </div>
+    <button class="submit-btn" id="submit-btn" onclick="sendMessage()">SEND MESSAGE</button>
+  </div>
+
+  <div class="direct-email">
+    Prefer email directly? <a href="mailto:hello@legaliai.com">hello@legaliai.com</a> &nbsp;|&nbsp;
+    Law firm inquiries: <a href="mailto:partnerships@legaliai.com">partnerships@legaliai.com</a>
+  </div>
+
 </div>
 
 <footer>
   <div class="footer-links">
     <a href="https://legaliai.com">Home</a>
-    <a href="https://legaliai.com/n-400-guide.html">N-400 Guide</a>
-    <a href="https://legaliai.com/128-civics-questions-2025.html">Civics Test</a>
-    <a href="https://legaliai.com/contact.html">Contact</a>
+    <a href="/n-400-guide.html">N-400 Guide</a>
+    <a href="/n400-help.html">N-400 Help</a>
+    <a href="/n-400-processing-time-by-state.html">Processing Times</a>
+    <a href="/citizenship-interview-questions.html">Interview Prep</a>
+    <a href="/contact.html">Contact</a>
   </div>
-  <p style="color:#333;font-size:12px;letter-spacing:1px;">© 2026 LEGALIAI. Preparation guidance only. Not legal advice.</p>
+  <p style="color:#333;font-size:12px;">© 2026 LEGALIAI. Preparation guidance only. Not legal advice.</p>
 </footer>
 
 <script>
+function selectType(type) {
+  document.getElementById('subject').value = type;
+  document.querySelectorAll('.inquiry-card').forEach(c => c.classList.remove('active'));
+  const map = {
+    'General inquiry':'card-general',
+    'Law firm partnership':'card-lawfirm',
+    'Press / Media':'card-press',
+    'Immigration organization':'card-org'
+  };
+  if (map[type]) document.getElementById(map[type]).classList.add('active');
+  document.getElementById('contact-form').scrollIntoView({behavior:'smooth'});
+}
+
 async function sendMessage() {
   const name = document.getElementById('name').value.trim();
   const email = document.getElementById('email').value.trim();
+  const org = document.getElementById('org').value.trim();
   const subject = document.getElementById('subject').value;
   const message = document.getElementById('message').value.trim();
   const btn = document.getElementById('submit-btn');
-  const success = document.getElementById('success');
-  const error = document.getElementById('error');
 
   if (!name || !email || !message) {
     alert('Please fill in your name, email, and message.');
@@ -120,35 +246,32 @@ async function sendMessage() {
 
   btn.disabled = true;
   btn.textContent = 'SENDING...';
-  success.style.display = 'none';
-  error.style.display = 'none';
+  document.getElementById('success').style.display = 'none';
+  document.getElementById('error').style.display = 'none';
 
   try {
     const res = await fetch('/api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, subject, message })
+      body: JSON.stringify({ name, email, org, subject, message })
     });
 
     if (res.ok) {
-      success.style.display = 'block';
-      document.getElementById('name').value = '';
-      document.getElementById('email').value = '';
-      document.getElementById('subject').value = '';
-      document.getElementById('message').value = '';
+      document.getElementById('success').style.display = 'block';
+      ['name','email','org','message'].forEach(id => document.getElementById(id).value = '');
+      document.getElementById('subject').value = 'General inquiry';
       btn.textContent = 'MESSAGE SENT ✓';
     } else {
-      error.style.display = 'block';
+      document.getElementById('error').style.display = 'block';
       btn.disabled = false;
       btn.textContent = 'SEND MESSAGE';
     }
-  } catch (e) {
-    error.style.display = 'block';
+  } catch(e) {
+    document.getElementById('error').style.display = 'block';
     btn.disabled = false;
     btn.textContent = 'SEND MESSAGE';
   }
 }
 </script>
-
 </body>
 </html>
