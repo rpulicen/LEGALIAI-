@@ -29,6 +29,7 @@ const T = {
     q1: "HOW LONG HAVE YOU BEEN A PERMANENT RESIDENT?", q2: "ARE YOU MARRIED TO A U.S. CITIZEN?",
     q3: "HAVE YOU TRAVELED OUTSIDE THE U.S. FOR MORE THAN 6 MONTHS AT A TIME?",
     q4: "ANY CRIMINAL HISTORY INCLUDING MINOR OFFENSES?", q5: "WHAT COUNTRY WERE YOU BORN IN?",
+    q9: "WHAT IS YOUR RESIDENT SINCE DATE? (from your green card)", q6: "DO YOU HAVE ANY PRIOR MARRIAGES THAT ENDED?", q7: "HAVE YOU EVER HAD A LEGAL NAME CHANGE?", q8: "HAVE YOU SERVED IN THE U.S. MILITARY?",
     yes: "YES", no: "NO", next: "NEXT", finish: "FINISH",
     q1opts: ["Less than 3 years", "3–5 years", "5–10 years", "More than 10 years"],
     paywallTitle: "YOUR PERSONALIZED N-400 PREPARATION IS READY.",
@@ -64,6 +65,7 @@ const T = {
     q1: "¿CUÁNTO TIEMPO LLEVAS SIENDO RESIDENTE PERMANENTE?", q2: "¿ESTÁS CASADO/A CON UN/A CIUDADANO/A AMERICANO/A?",
     q3: "¿HAS VIAJADO FUERA DE EE.UU. POR MÁS DE 6 MESES SEGUIDOS?",
     q4: "¿TIENES ANTECEDENTES PENALES, INCLUSO INFRACCIONES MENORES?", q5: "¿EN QUÉ PAÍS NACISTE?",
+    q9: "¿CUÁL ES TU FECHA DE RESIDENCIA? (de tu tarjeta verde)", q6: "¿TIENES MATRIMONIOS ANTERIORES QUE HAYAN TERMINADO?", q7: "¿HAS TENIDO UN CAMBIO LEGAL DE NOMBRE?", q8: "¿HAS SERVIDO EN LAS FUERZAS ARMADAS DE EE.UU.?",
     yes: "SÍ", no: "NO", next: "SIGUIENTE", finish: "FINALIZAR",
     q1opts: ["Menos de 3 años", "3–5 años", "5–10 años", "Más de 10 años"],
     paywallTitle: "TU PREPARACIÓN PERSONALIZADA N-400 ESTÁ LISTA.", paywallSub: "Desbloquea todo por $49 pago único.",
@@ -98,6 +100,7 @@ const T = {
     q1: "您成为永久居民多久了？", q2: "您是否与美国公民结婚？",
     q3: "您是否曾在美国境外旅行超过6个月？",
     q4: "是否有犯罪记录，包括轻微违规？", q5: "您出生在哪个国家？",
+    q9: "您的绿卡上的居民日期是什么？", q6: "您有过以前结束的婚姻吗？", q7: "您是否曾经合法更名？", q8: "您是否在美国军队服役过？",
     yes: "是", no: "否", next: "下一步", finish: "完成",
     q1opts: ["不到3年", "3–5年", "5–10年", "超过10年"],
     paywallTitle: "您的个性化N-400准备已就绪。", paywallSub: "一次性$49解锁所有内容。",
@@ -132,6 +135,7 @@ const T = {
     q1: "GAANO KATAGAL KA NANG PERMANENTENG RESIDENTE?", q2: "IKA'Y KASAL BA SA ISANG MAMAMAYANG AMERIKANO?",
     q3: "NAGLAKBAY KA BA SA LABAS NG U.S. NG HIGIT SA 6 NA BUWAN?",
     q4: "MAY KASAYSAYAN BA NG KRIMEN, KASAMA ANG MALILIIT NA PAGKAKASALA?", q5: "SA ANONG BANSA KA IPINANGANAK?",
+    q9: "ANO ANG IYONG RESIDENT SINCE DATE? (mula sa iyong green card)", q6: "MAYROON KA BANG MGA NAKARAANG KASAL NA NATAPOS?", q7: "NAKARANAS KA NA BA NG LEGAL NA PAGPAPALIT NG PANGALAN?", q8: "NAGSILBI KA BA SA HUKBO NG U.S.?",
     yes: "OO", no: "HINDI", next: "SUSUNOD", finish: "TAPUSIN",
     q1opts: ["Wala pang 3 taon", "3–5 taon", "5–10 taon", "Higit sa 10 taon"],
     paywallTitle: "HANDA NA ANG IYONG PERSONALISADONG N-400 NA PAGHAHANDA.", paywallSub: "I-unlock ang lahat para sa $49 isang beses.",
@@ -166,6 +170,7 @@ const T = {
     q1: "BẠN LÀ THƯỜNG TRÚ NHÂN ĐƯỢC BAO LÂU RỒI?", q2: "BẠN CÓ KẾT HÔN VỚI CÔNG DÂN MỸ KHÔNG?",
     q3: "BẠN CÓ ĐI DU LỊCH NGOÀI HOA KỲ HƠN 6 THÁNG LIÊN TIẾP KHÔNG?",
     q4: "CÓ TIỀN SỬ HÌNH SỰ NÀO, KỂ CẢ VI PHẠM NHỎ KHÔNG?", q5: "BẠN SINH RA Ở QUỐC GIA NÀO?",
+    q9: "NGÀY CƯ TRÚ CỦA BẠN LÀ GÌ? (từ thẻ xanh)", q6: "BẠN CÓ CÁC HÔN NHÂN TRƯỚC ĐÃ KẾT THÚC KHÔNG?", q7: "BẠN CÓ TỪNG THAY ĐỔI TÊN HỢP PHÁP KHÔNG?", q8: "BẠN CÓ TỪNG PHỤC VỤ TRONG QUÂN ĐỘI HOA KỲ KHÔNG?",
     yes: "CÓ", no: "KHÔNG", next: "TIẾP THEO", finish: "HOÀN THÀNH",
     q1opts: ["Dưới 3 năm", "3–5 năm", "5–10 năm", "Hơn 10 năm"],
     paywallTitle: "CHUẨN BỊ N-400 CÁ NHÂN HÓA CỦA BẠN ĐÃ SẴN SÀNG.", paywallSub: "Mở khóa tất cả với $49 một lần.",
@@ -200,6 +205,7 @@ const T = {
     q1: "आप कितने समय से स्थायी निवासी हैं?", q2: "क्या आप किसी अमेरिकी नागरिक से विवाहित हैं?",
     q3: "क्या आप एक बार में 6 महीने से अधिक अमेरिका से बाहर गए हैं?",
     q4: "क्या कोई आपराधिक इतिहास है, जिसमें छोटे अपराध भी शामिल हैं?", q5: "आप किस देश में पैदा हुए थे?",
+    q9: "आपकी ग्रीन कार्ड पर रेजिडेंट सिंस डेट क्या है?", q6: "क्या आपकी कोई पिछली शादियाँ समाप्त हुई हैं?", q7: "क्या आपने कभी कानूनी नाम परिवर्तन किया है?", q8: "क्या आपने अमेरिकी सेना में सेवा की है?",
     yes: "हाँ", no: "नहीं", next: "अगला", finish: "समाप्त करें",
     q1opts: ["3 साल से कम", "3–5 साल", "5–10 साल", "10 साल से अधिक"],
     paywallTitle: "आपकी व्यक्तिगत N-400 तैयारी तैयार है।", paywallSub: "एकमुश्त $49 में सब कुछ अनलॉक करें।",
@@ -234,6 +240,7 @@ const T = {
     q1: "영주권자로 얼마나 되셨나요?", q2: "미국 시민권자와 결혼하셨나요?",
     q3: "6개월 이상 미국을 떠난 적이 있나요?",
     q4: "경미한 위반을 포함한 범죄 기록이 있나요?", q5: "어느 나라에서 태어났나요?",
+    q9: "영주권 카드의 거주 시작 날짜는 언제입니까?", q6: "종료된 이전 결혼이 있나요?", q7: "법적 이름 변경을 한 적이 있나요?", q8: "미국 군대에서 복무한 적이 있나요?",
     yes: "예", no: "아니오", next: "다음", finish: "완료",
     q1opts: ["3년 미만", "3–5년", "5–10년", "10년 이상"],
     paywallTitle: "맞춤형 N-400 준비가 완료되었습니다.", paywallSub: "일회성 $49로 모든 것을 잠금 해제하세요.",
@@ -268,6 +275,7 @@ const T = {
     q1: "HÁ QUANTO TEMPO VOCÊ É RESIDENTE PERMANENTE?", q2: "VOCÊ É CASADO/A COM UM/A CIDADÃO/Ã AMERICANO/A?",
     q3: "VOCÊ VIAJOU PARA FORA DOS EUA POR MAIS DE 6 MESES CONSECUTIVOS?",
     q4: "TEM ALGUM HISTÓRICO CRIMINAL, INCLUINDO INFRAÇÕES MENORES?", q5: "EM QUAL PAÍS VOCÊ NASCEU?",
+    q9: "QUAL É SUA DATA DE RESIDENTE? (do seu green card)", q6: "VOCÊ TEM CASAMENTOS ANTERIORES QUE TERMINARAM?", q7: "VOCÊ JÁ TEVE UMA MUDANÇA LEGAL DE NOME?", q8: "VOCÊ JÁ SERVIU NAS FORÇAS ARMADAS DOS EUA?",
     yes: "SIM", no: "NÃO", next: "PRÓXIMO", finish: "FINALIZAR",
     q1opts: ["Menos de 3 anos", "3–5 anos", "5–10 anos", "Mais de 10 anos"],
     paywallTitle: "SUA PREPARAÇÃO PERSONALIZADA N-400 ESTÁ PRONTA.", paywallSub: "Desbloqueie tudo por $49 pagamento único.",
@@ -653,7 +661,7 @@ export default function App() {
   const generateDocuments = async () => {
     setLoadingAI(true);
     try {
-      const text = await callAI(`You are an immigration preparation assistant. Based on these N-400 answers: ${JSON.stringify(onboardingAnswers)}, generate a personalized document checklist. IMPORTANT: Respond ENTIRELY in ${langName}. Translate ALL text including document names into ${langName}. Return ONLY a valid JSON array with no markdown or extra text: [{"name":"...","source":"...","reason":"..."}]`);
+      const text = await callAI(`You are an expert immigration preparation assistant. Based on these N-400 applicant answers: ${JSON.stringify(onboardingAnswers)}, generate a comprehensive personalized document checklist. Key fields to consider: criminal history (adds court records), prior marriages (adds divorce decrees), name change (adds legal name change docs), military service (adds DD-214). IMPORTANT: Respond ENTIRELY in ${langName}. Translate ALL text including document names into ${langName}. Return ONLY a valid JSON array with no markdown or extra text: [{"name":"...","source":"...","reason":"..."}]`);
       const docs = JSON.parse(text.replace(/```json|```/g, "").trim());
       setAiContent(prev => ({ ...prev, documents: docs }));
     } catch {
@@ -665,7 +673,8 @@ export default function App() {
   const generateRisk = async () => {
     setLoadingAI(true);
     try {
-      const text = await callAI(`You are an immigration preparation assistant. Based on these N-400 answers: ${JSON.stringify(onboardingAnswers)}, identify 3-5 personal risk factors. IMPORTANT: Respond ENTIRELY in ${langName}. Return ONLY a valid JSON array with no markdown or extra text: [{"title":"...","explanation":"...","action":"..."}]`);
+      const needsAttorney = onboardingAnswers.criminal === "yes";
+      const text = await callAI(`You are an expert immigration preparation assistant. Based on these N-400 applicant answers: ${JSON.stringify(onboardingAnswers)}, identify 3-5 personal risk factors that could affect their citizenship application. Consider: travel history over 6 months, criminal record (if criminal=yes, flag that complex criminal history may require an immigration attorney and they should NOT file without legal review), prior marriages requiring divorce decrees, military service pathways, name change documentation gaps, tax compliance, continuous residence. Be specific to their answers. IMPORTANT: Respond ENTIRELY in ${langName}. Return ONLY a valid JSON array with no markdown or extra text: [{"title":"...","explanation":"...","action":"...","needsAttorney":false}]`);
       const risks = JSON.parse(text.replace(/```json|```/g, "").trim());
       setAiContent(prev => ({ ...prev, risk: risks }));
     } catch {
@@ -680,7 +689,7 @@ export default function App() {
     if (!answer.trim()) return;
     setLoadingFeedback(prev => ({ ...prev, [qId]: true }));
     try {
-      const feedback = await callAI(`Review this N-400 answer. Question: "${question}" Answer: "${answer}". Give 2-3 sentences of specific feedback. Is it complete? Any red flags? What to improve? IMPORTANT: Respond ENTIRELY in ${langName}.`);
+      const feedback = await callAI(`Review this N-400 form answer. Question: "${question}" Answer: "${answer}". Give 2-3 sentences of specific feedback. Is it complete? Any red flags? What to improve? IMPORTANT context for Part 12 good moral character questions: (1) DUI is not an automatic bar but must be disclosed with certified court records — flag if relevant. (2) Marijuana use must be disclosed even in states where legal — federal law applies. (3) Selective Service non-registration for men born after 1960 who were in the US between ages 18-26 can be a permanent bar — flag if relevant. (4) Arrests without conviction must still be disclosed. Be specific and direct. IMPORTANT: Respond ENTIRELY in ${langName}.`);
       setFormFeedback(prev => ({ ...prev, [qId]: feedback }));
     } catch { setFormFeedback(prev => ({ ...prev, [qId]: "Could not get feedback. Please try again." })); }
     setLoadingFeedback(prev => ({ ...prev, [qId]: false }));
@@ -777,17 +786,27 @@ export default function App() {
       { key:"long_travel", type:"yesno", label:t("q3") },
       { key:"criminal", type:"yesno", label:t("q4") },
       { key:"country", type:"dropdown", label:t("q5") },
+      { key:"prior_marriages", type:"yesno", label:t("q6") },
+      { key:"name_change", type:"yesno", label:t("q7") },
+      { key:"military", type:"yesno", label:t("q8") },
+      { key:"resident_since_date", type:"date", label:t("q9") },
     ];
     const q = questions[currentQ];
     return (
       <div style={{ minHeight:"100vh",background:"#000",fontFamily:"'Cormorant Garamond',serif",paddingTop:"80px" }}>
         <Nav />
         <div style={{ height:"3px",background:"#111",position:"fixed",top:"80px",left:0,right:0,zIndex:99 }}>
-          <div style={{ height:"100%",background:"#C9A84C",width:`${(currentQ/5)*100}%`,transition:"width 0.5s ease" }} />
+          <div style={{ height:"100%",background:"#C9A84C",width:`${(currentQ/9)*100}%`,transition:"width 0.5s ease" }} />
         </div>
         <div style={{ display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",minHeight:"calc(100vh - 80px)",padding:"40px" }}>
-          <p style={{ color:"#666",fontSize:"11px",letterSpacing:"5px",marginBottom:"48px" }}>QUESTION {currentQ+1} OF 5</p>
+          <p style={{ color:"#666",fontSize:"11px",letterSpacing:"5px",marginBottom:"48px" }}>QUESTION {currentQ+1} OF 9</p>
           <h2 style={{ color:"#F5F5F5",fontSize:"clamp(18px,3vw,36px)",letterSpacing:"3px",fontWeight:300,textAlign:"center",maxWidth:"720px",marginBottom:"56px",lineHeight:1.4 }}>{q.label}</h2>
+          {q.type === "date" && <div style={{ marginBottom:"40px",width:"100%",maxWidth:"400px" }}>
+            <input type="date" value={onboardingAnswers[q.key]||""} onChange={e => setOnboardingAnswers(prev => ({ ...prev,[q.key]:e.target.value }))}
+              style={{ width:"100%",background:"#0a0a0a",border:"1px solid #2a2a2a",color:"#F5F5F5",padding:"18px 24px",fontSize:"16px",fontFamily:"inherit",outline:"none",letterSpacing:"2px" }}
+            />
+            <p style={{ color:"#444",fontSize:"11px",letterSpacing:"2px",marginTop:"12px" }}>RESIDENT SINCE DATE — front of your green card</p>
+          </div>}
           {q.type === "yesno" && <div style={{ display:"flex",gap:"16px",marginBottom:"40px" }}>
             {[t("yes"),t("no")].map((opt,i) => (
               <button key={i} onClick={() => setOnboardingAnswers(prev => ({ ...prev,[q.key]:i===0?"yes":"no" }))}
@@ -876,8 +895,12 @@ export default function App() {
             <div style={{ background:"#0d0d0d",border:"1px solid #222",borderLeft:"3px solid #C9A84C",padding:"28px 32px",display:"flex",gap:"24px",alignItems:"flex-start" }}>
               <div style={{ background:"#C9A84C",color:"#000",width:"32px",height:"32px",borderRadius:"50%",display:"flex",alignItems:"center",justifyContent:"center",fontWeight:700,fontSize:"14px",flexShrink:0 }}>3</div>
               <div>
-                <p style={{ color:"#F5F5F5",fontSize:"14px",letterSpacing:"2px",fontWeight:600,marginBottom:"8px" }}>PAY THE $725 FILING FEE</p>
-                <p style={{ color:"#aaa",fontSize:"14px",lineHeight:1.8,margin:0 }}>The USCIS filing fee is $640 + $85 for biometrics = $725 total. Pay by check or money order made out to "U.S. Department of Homeland Security." Fee waivers available if you qualify.</p>
+                <p style={{ color:"#F5F5F5",fontSize:"14px",letterSpacing:"2px",fontWeight:600,marginBottom:"8px" }}>PAY THE FILING FEE</p>
+                <p style={{ color:"#aaa",fontSize:"14px",lineHeight:1.8,margin:"0 0 10px" }}>The 2026 USCIS filing fee is <strong style={{color:"#F5F5F5"}}>$710 if you file online</strong> or <strong style={{color:"#F5F5F5"}}>$760 if you file by mail</strong>. Pay electronically when filing online, or by money order made out to "U.S. Department of Homeland Security" for paper filing.</p>
+                <p style={{ color:"#aaa",fontSize:"13px",lineHeight:1.8,margin:"0 0 10px" }}>Can't afford the fee? You may qualify for a <a href="/n-400-fee-waiver.html" target="_blank" style={{color:"#C9A84C"}}>full fee waiver ($0) or reduced fee ($380)</a> based on income or benefits you receive.</p>
+                <div style={{ background:"#0a0800",border:"1px solid #2a2000",borderLeft:"3px solid #C9A84C",padding:"12px 16px",marginTop:"8px" }}>
+                  <p style={{ color:"#d4b87a",fontSize:"12px",margin:0,lineHeight:1.8 }}><strong style={{color:"#F5F5F5"}}>2026 processing time after filing:</strong> 6–10 months for 80% of applicants (USCIS April 2026). Times vary significantly by field office — from 5.5 months (Hialeah FL) to 12.5 months (Fort Myers FL). <a href="/n-400-processing-time-by-state.html" target="_blank" style={{color:"#C9A84C"}}>Look up your exact office →</a></p>
+                </div>
               </div>
             </div>
             <div style={{ background:"#0d0d0d",border:"1px solid #222",borderLeft:"3px solid #C9A84C",padding:"28px 32px",display:"flex",gap:"24px",alignItems:"flex-start" }}>
@@ -1061,6 +1084,13 @@ export default function App() {
             </div>
           </div>
         ))}
+        {onboardingAnswers.criminal === "yes" && (
+          <div style={{ background:"#1a0a0a",border:"2px solid #e05555",padding:"24px",marginBottom:"16px" }}>
+            <h3 style={{ color:"#e05555",fontSize:"11px",letterSpacing:"4px",margin:"0 0 12px",fontWeight:700 }}>⚠ ATTORNEY REVIEW RECOMMENDED</h3>
+            <p style={{ color:"#e9a8a8",fontSize:"14px",margin:"0 0 14px",lineHeight:"1.9" }}>You indicated criminal history. Certain convictions are permanent bars to U.S. citizenship. Others create a waiting period. LEGALIAI can guide you through the form — but for criminal history cases, we strongly recommend consulting a licensed immigration attorney before filing.</p>
+            <a href="/n400-good-moral-character.html" target="_blank" style={{ color:"#e05555",fontSize:"12px",letterSpacing:"2px" }}>UNDERSTAND YOUR GOOD MORAL CHARACTER RIGHTS →</a>
+          </div>
+        )}
         {aiContent.risk && aiContent.risk.length > 0 && moduleProgress[2] !== "COMPLETE" && (
           <div style={{ textAlign:"center",marginTop:"40px" }}>
             <button onClick={async () => {
@@ -1112,7 +1142,15 @@ export default function App() {
           <div style={{ height:"4px",background:"#0d0d0d",marginBottom:"16px",borderRadius:"2px" }}>
             <div style={{ height:"100%",background:"#C9A84C",width:`${(practicedCount/INTERVIEW_QUESTIONS.length)*100}%`,transition:"width 0.5s ease",borderRadius:"2px" }} />
           </div>
-          <p style={{ color:"#666",fontSize:"11px",letterSpacing:"1px",marginBottom:"40px",lineHeight:1.8 }}>{t("interviewNote")}</p>
+          <p style={{ color:"#666",fontSize:"11px",letterSpacing:"1px",marginBottom:"16px",lineHeight:1.8 }}>{t("interviewNote")}</p>
+          <div style={{ background:"#0a0800",border:"1px solid #2a2000",borderLeft:"3px solid #C9A84C",padding:"14px 18px",marginBottom:"32px" }}>
+            <p style={{ color:"#d4b87a",fontSize:"12px",letterSpacing:"1px",margin:0,lineHeight:1.8 }}>
+              <strong style={{color:"#F5F5F5"}}>Which civics test will you take?</strong><br/>
+              Filed N-400 on or after October 20, 2025 &rarr; <strong style={{color:"#F5F5F5"}}>New 2025 test</strong>: 20 questions asked, answer 12 correctly to pass.<br/>
+              Filed before October 20, 2025 &rarr; <strong style={{color:"#F5F5F5"}}>Old 2008 test</strong>: 10 questions asked, answer 6 correctly to pass.<br/>
+              <span style={{color:"#888",fontSize:"11px"}}>Check your Form I-797C receipt notice for your exact filing date.</span>
+            </p>
+          </div>
           {INTERVIEW_QUESTIONS.map((q,i) => (
             <div key={i} style={{ ...card, borderLeft:practiced[i]?"3px solid #4ade80":"3px solid transparent" }}>
               <div style={{ display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:"16px" }}>
