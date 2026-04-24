@@ -416,7 +416,7 @@ const INTERVIEW_QUESTIONS = [
 const MODULE_NAMES = ["documents","form","risk","interview"];
 const MODULE_IDX = {documents:0,form:1,risk:2,interview:3};
 
-export default function App() {
+function App() {
   const [page, setPage] = useState("landing");
   const [lang, setLang] = useState("en");
   const [showLangMenu, setShowLangMenu] = useState(false);
@@ -899,7 +899,7 @@ export default function App() {
                 <p style={{ color:"#aaa",fontSize:"14px",lineHeight:1.8,margin:"0 0 10px" }}>The 2026 USCIS filing fee is <strong style={{color:"#F5F5F5"}}>$710 if you file online</strong> or <strong style={{color:"#F5F5F5"}}>$760 if you file by mail</strong>. Pay electronically when filing online, or by money order made out to "U.S. Department of Homeland Security" for paper filing.</p>
                 <p style={{ color:"#aaa",fontSize:"13px",lineHeight:1.8,margin:"0 0 10px" }}>Can't afford the fee? You may qualify for a <a href="/n-400-fee-waiver.html" target="_blank" style={{color:"#C9A84C"}}>full fee waiver ($0) or reduced fee ($380)</a> based on income or benefits you receive.</p>
                 <div style={{ background:"#0a0800",border:"1px solid #2a2000",borderLeft:"3px solid #C9A84C",padding:"12px 16px",marginTop:"8px" }}>
-                  <p style={{ color:"#d4b87a",fontSize:"12px",margin:0,lineHeight:1.8 }}><strong style={{color:"#F5F5F5"}}>2026 processing time after filing:</strong> National median is 7.8 months. Your wait depends on your USCIS field office — from 5.5 months (fastest) to 26 months (slowest). <a href="/n-400-processing-time-by-state.html" target="_blank" style={{color:"#C9A84C"}}>Look up your office →</a></p>
+                  <p style={{ color:"#d4b87a",fontSize:"12px",margin:0,lineHeight:1.8 }}><strong style={{color:"#F5F5F5"}}>2026 processing time after filing:</strong> 6–10 months for 80% of applicants (USCIS April 2026). Times vary significantly by field office — from 5.5 months (Hialeah FL) to 12.5 months (Fort Myers FL). <a href="/n-400-processing-time-by-state.html" target="_blank" style={{color:"#C9A84C"}}>Look up your exact office →</a></p>
                 </div>
               </div>
             </div>
@@ -1177,5 +1177,14 @@ export default function App() {
     );
   }
 
-  return <Analytics />;
+  return null;
+}
+
+export default function Root() {
+  return (
+    <>
+      <App />
+      <Analytics />
+    </>
+  );
 }
