@@ -3,7 +3,7 @@
 // Sends Telegram message with daily status
 // Schedule: "0 12 * * *" (8am ET = 12pm UTC)
 
-import { createClient } from '@supabase/supabase-js';
+const { createClient } = require('@supabase/supabase-js');
 
 const supabase = createClient(
   process.env.VITE_SUPABASE_URL,
@@ -26,9 +26,7 @@ async function sendTelegram(message) {
   });
 }
 
-export const config = { maxDuration: 30 };
-
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   // Security: only allow cron or manual trigger
   const authHeader = req.headers.authorization;
   if (
