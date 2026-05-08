@@ -17,9 +17,14 @@ async function sendTelegram(text) {
 }
 
 export default async function handler(req, res) {
-  if (req.headers['x-vercel-cron'] !== '1') {
+  // Vercel cron auth: Authorization: Bearer ${CRON_SECRET}
+  const authHeader = req.headers.authorization || req.headers.Authorization;
+  const cronSecret = process.env.CRON_SECRET;
+  
+  if (!cronSecret || authHeader !== `Bearer ${cronSecret}`) {
     return res.status(401).json({ error: 'Unauthorized' });
   }
+  
   try {
     const now = new Date();
     const yesterday = new Date(now - 86400000);
@@ -27,19 +32,25 @@ export default async function handler(req, res) {
     const { data: payments } = await supabase.from('payments').select('amount, created_at');
     const total = (payments || []).reduce((s, p) => s + p.amount / 100, 0);
     const newToday = (users || []).filter(u => new Date(u.created_at) > yesterday);
+    const paidToday = (payments || []).filter(p => new Date(p.created_at) > yesterday);
+    const revenueToday = paidToday.reduce((s, p) => s + p.amount / 100, 0);
+    
     let msg = 'LEGALIAI Daily ' + now.toDateString() + '\n';
     msg += 'Users: ' + (users || []).length + '\n';
-    msg += 'Revenue: $' + total.toFixed(0) + '\n';
+    msg += 'Revenue: $' + total.toFixed(0) + ' total\n';
     msg += 'New today: ' + newToday.length;
     if (newToday.length > 0) {
-      msg += '\nNew: ' + newToday.map(u => u.email).join(', ');
+      msg += '\nNew users: ' + newToday.map(u => u.email).join(', ');
     }
+    if (paidToday.length > 0) {
+      msg += '\nPaid today: $' + revenueToday.toFixed(0);
+    }
+    
     await sendTelegram(msg);
-    return res.status(200).json({ ok: true });
+    return res.status(200).json({ ok: true, users: (users || []).length });
   } catch (err) {
-    await sendTelegram('Error: ' + err.message);
+    await sendTelegram('Monitor error: ' + err.message);
     return res.status(500).json({ error: err.message });
   }
 }
-
 
