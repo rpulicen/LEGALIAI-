@@ -416,7 +416,7 @@ const INTERVIEW_QUESTIONS = [
 const MODULE_NAMES = ["documents","form","risk","interview"];
 const MODULE_IDX = {documents:0,form:1,risk:2,interview:3};
 
-export default function App() {
+function App() {
   const [page, setPage] = useState("landing");
   const [lang, setLang] = useState("en");
   const [showLangMenu, setShowLangMenu] = useState(false);
@@ -531,25 +531,26 @@ export default function App() {
     const routeUser = async (u) => {
       setUser(u);
       loadProgress(u);
-      // Check payment success redirect first
+      // Check payment success redirect — verify via DB only (webhook inserts the real record)
       const params = new URLSearchParams(window.location.search);
       if (params.get("payment") === "success") {
-        await supabase.from("users").upsert({ id: u.id, email: u.email }, { onConflict: "id" });
-        await supabase.from("payments").upsert(
-          { user_id: u.id, stripe_session_id: "stripe_" + Date.now(), amount: 4900, paid_at: new Date().toISOString() },
-          { onConflict: "user_id" }
-        );
-        // Send welcome email
-        try {
-          const savedLang = localStorage.getItem("legaliai_lang") || "en";
-          await fetch("/api/send-welcome", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email: u.email, language: savedLang }),
-          });
-        } catch (e) { console.error("Welcome email failed:", e); }
         window.history.replaceState({}, "", "/");
-        setPage("dashboard");
+        // Poll for webhook payment record (up to 6 seconds)
+        let verified = false;
+        for (let i = 0; i < 3; i++) {
+          const { data: pCheck } = await supabase.from("payments").select("id").eq("user_id", u.id).limit(1);
+          if (pCheck && pCheck.length > 0) { verified = true; break; }
+          await new Promise(r => setTimeout(r, 2000));
+        }
+        if (verified) {
+          try {
+            const savedLang = localStorage.getItem("legaliai_lang") || "en";
+            await fetch("/api/send-welcome", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email: u.email, language: savedLang }) });
+          } catch (e) { console.error("Welcome email failed:", e); }
+          setPage("dashboard");
+        } else {
+          setPage("paywall");
+        }
         return;
       }
       // Check if already paid
@@ -1177,5 +1178,14 @@ export default function App() {
     );
   }
 
-  return <Analytics />;
+  return null;
+}
+
+export default function Root() {
+  return (
+    <>
+      <App />
+      <Analytics />
+    </>
+  );
 }
