@@ -1,8 +1,9 @@
 import { createClient } from '@supabase/supabase-js';
 
+// Use service role key to bypass RLS — this is server-side only
 const supabase = createClient(
   process.env.VITE_SUPABASE_URL,
-  process.env.VITE_SUPABASE_ANON_KEY
+  process.env.SUPABASE_SERVICE_ROLE_KEY
 );
 
 async function sendTelegram(text) {
@@ -17,7 +18,6 @@ async function sendTelegram(text) {
 }
 
 export default async function handler(req, res) {
-  // Vercel cron auth: Authorization: Bearer ${CRON_SECRET}
   const authHeader = req.headers.authorization || req.headers.Authorization;
   const cronSecret = process.env.CRON_SECRET;
   
@@ -36,11 +36,11 @@ export default async function handler(req, res) {
     const revenueToday = paidToday.reduce((s, p) => s + p.amount / 100, 0);
     
     let msg = 'LEGALIAI Daily ' + now.toDateString() + '\n';
-    msg += 'Users: ' + (users || []).length + '\n';
+    msg += 'Users: ' + (users || []).length + ' total\n';
     msg += 'Revenue: $' + total.toFixed(0) + ' total\n';
     msg += 'New today: ' + newToday.length;
     if (newToday.length > 0) {
-      msg += '\nNew users: ' + newToday.map(u => u.email).join(', ');
+      msg += '\nNew: ' + newToday.map(u => u.email).join(', ');
     }
     if (paidToday.length > 0) {
       msg += '\nPaid today: $' + revenueToday.toFixed(0);
@@ -53,4 +53,3 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: err.message });
   }
 }
-
