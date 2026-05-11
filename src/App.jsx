@@ -23,6 +23,23 @@ const T = {
     sub: "AI-powered step-by-step preparation for your N-400. No lawyer needed. $49 one-time.",
     cta: "START MY PREPARATION",
     t1: "PLAIN ENGLISH GUIDANCE", t2: "PERSONALIZED TO YOUR SITUATION", t3: "NOT LEGAL ADVICE — PREPARATION ONLY",
+    insideLabel: "WHAT YOU GET FOR $49",
+    insideTitle: "Inside LEGALIAI — Built for Your Situation",
+    insideSub: "Four modules. AI-personalized to your eligibility path, travel history, and risk profile. Not a static checklist.",
+    m1Title: "A Document List That Knows Your Situation",
+    m1Desc: "After 9 questions about your eligibility path, travel history, and criminal record, LEGALIAI generates a checklist specific to you — not a generic 20-item list everyone gets.",
+    m1Pts: ["Marriage-based vs. 5-year path documents", "Travel-history documents if you triggered them", "Criminal-record documents only if disclosed", "Where to get each document and why USCIS needs it"],
+    m2Title: "Every N-400 Question — Explained Before You Answer",
+    m2Desc: "All 16 sections of the N-400. Each question shows what USCIS is actually asking, an example answer, the common mistake, and AI feedback on your own answer.",
+    m2Pts: ["What the question really means", "Real example answers", "The mistake most applicants make", "AI reviews your draft before you submit"],
+    m3Title: "See Your Risks Before USCIS Does",
+    m3Desc: "Extended travel. Criminal history. Tax gaps. The things that delay or deny applications. LEGALIAI maps your personal risk before you file — not after USCIS issues an RFE.",
+    m3Pts: ["Color-coded severity for every risk flag", "What documents to bring for each", "When you need an attorney instead", "What good moral character actually means"],
+    m4Title: "Practice the Interview Until You Can't Get It Wrong",
+    m4Desc: "All 128 questions on the updated 2025 civics test. Practice mode with AI feedback on your answers. The interview becomes muscle memory, not anxiety.",
+    m4Pts: ["Full 128-question civics test", "AI feedback on every answer", "Practice the N-400 interview itself", "Updated for October 2025 civics changes"],
+    readyTitle: "Ready to Stop Guessing?",
+    readySub: "9 questions. $49 one-time. Your personalized N-400 prep ready in under 5 minutes.",
     disclaimer: "LEGALIAI provides preparation guidance only. This is not legal advice. For complex situations, consult a licensed immigration attorney.",
     emailTitle: "ENTER YOUR EMAIL TO START", emailSub: "We'll send you a secure login link. No password needed.",
     sendLink: "SEND MAGIC LINK", checkEmail: "CHECK YOUR EMAIL", checkEmailSub: "Your magic link has been sent. Click the link in your email to continue.",
@@ -58,6 +75,23 @@ const T = {
     tagline: "TU SOLICITUD DE CIUDADANÍA —\nPREPARADA, NO ADIVINADA.",
     sub: "Preparación paso a paso con IA para el N-400. Sin abogado. $49 pago único.",
     cta: "INICIAR MI PREPARACIÓN",
+    insideLabel: "LO QUE OBTIENES POR $49",
+    insideTitle: "Dentro de LEGALIAI — Hecho para Tu Situación",
+    insideSub: "Cuatro módulos. Personalizados por IA según tu vía de elegibilidad, historial de viajes y perfil de riesgo. No es una lista estática.",
+    m1Title: "Una Lista de Documentos Hecha para Ti",
+    m1Desc: "Después de 9 preguntas sobre tu vía de elegibilidad, historial de viajes y antecedentes penales, LEGALIAI genera una lista específica para ti — no una lista genérica de 20 ítems.",
+    m1Pts: ["Documentos según vía: matrimonio vs. 5 años", "Documentos de historial de viajes si los activaste", "Documentos de antecedentes solo si los declaraste", "Dónde obtener cada documento y por qué USCIS lo necesita"],
+    m2Title: "Cada Pregunta del N-400 — Explicada Antes de Responder",
+    m2Desc: "Las 16 secciones del N-400. Cada pregunta muestra lo que USCIS realmente pregunta, un ejemplo de respuesta, el error común, y comentarios de IA sobre tu respuesta.",
+    m2Pts: ["Lo que realmente significa la pregunta", "Ejemplos reales de respuestas", "El error que cometen la mayoría de los aplicantes", "La IA revisa tu borrador antes de enviar"],
+    m3Title: "Conoce Tus Riesgos Antes que USCIS",
+    m3Desc: "Viajes prolongados. Antecedentes penales. Brechas fiscales. Las cosas que retrasan o niegan aplicaciones. LEGALIAI mapea tu riesgo personal antes de presentar — no después de un RFE.",
+    m3Pts: ["Severidad por código de color para cada riesgo", "Qué documentos llevar para cada uno", "Cuándo necesitas un abogado en su lugar", "Qué significa realmente buen carácter moral"],
+    m4Title: "Practica la Entrevista Hasta Dominarla",
+    m4Desc: "Las 128 preguntas del examen de civismo actualizado 2025. Modo de práctica con comentarios de IA. La entrevista se vuelve memoria muscular, no ansiedad.",
+    m4Pts: ["Examen completo de 128 preguntas de civismo", "Comentarios de IA en cada respuesta", "Practica la entrevista N-400", "Actualizado para los cambios de civismo de Oct 2025"],
+    readyTitle: "¿Listo para Dejar de Adivinar?",
+    readySub: "9 preguntas. $49 pago único. Tu preparación N-400 personalizada lista en menos de 5 minutos.",
     t1: "GUÍA EN ESPAÑOL CLARO", t2: "PERSONALIZADO A TU SITUACIÓN", t3: "NO ES ASESORÍA LEGAL — SOLO PREPARACIÓN",
     disclaimer: "LEGALIAI proporciona orientación de preparación únicamente. Esto no es asesoramiento legal. Para situaciones complejas, consulta a un abogado de inmigración.",
     emailTitle: "INGRESA TU CORREO PARA COMENZAR", emailSub: "Te enviaremos un enlace de acceso seguro. Sin contraseña.",
@@ -93,6 +127,23 @@ const T = {
     tagline: "您的美国公民申请 —\n准备充分，而非猜测。",
     sub: "AI驱动的N-400逐步准备指南。无需律师。一次性$49。",
     cta: "开始我的准备",
+    insideLabel: "$49 包含的内容",
+    insideTitle: "LEGALIAI 内部 — 为您的情况量身定制",
+    insideSub: "四个模块。AI 根据您的资格途径、旅行历史和风险概况个性化定制。不是静态清单。",
+    m1Title: "了解您情况的文件清单",
+    m1Desc: "在询问 9 个关于您资格途径、旅行历史和犯罪记录的问题后,LEGALIAI 会为您生成一份专属清单 — 而不是每个人都得到的通用 20 项清单。",
+    m1Pts: ["基于婚姻 vs. 5年途径的文件", "如果触发则需要旅行历史文件", "仅在披露时需要犯罪记录文件", "在哪里获取每份文件以及 USCIS 为何需要它"],
+    m2Title: "N-400 每个问题 — 在您回答之前解释",
+    m2Desc: "N-400 的所有 16 个部分。每个问题都展示 USCIS 实际在问什么、答案示例、常见错误,以及对您答案的 AI 反馈。",
+    m2Pts: ["问题真正的含义", "真实答案示例", "大多数申请人犯的错误", "AI 在您提交前审查草稿"],
+    m3Title: "在 USCIS 之前看到您的风险",
+    m3Desc: "延长的旅行。犯罪历史。税务缺口。导致申请延迟或被拒的事情。LEGALIAI 在您提交前 — 而不是在 USCIS 发出 RFE 后 — 映射您的个人风险。",
+    m3Pts: ["每个风险标志的颜色编码严重性", "每个风险要带的文件", "什么时候您需要律师", "良好道德品格的真正含义"],
+    m4Title: "练习面试直到无懈可击",
+    m4Desc: "2025 年更新的公民测试的全部 128 个问题。带有 AI 反馈的练习模式。面试变成肌肉记忆,而不是焦虑。",
+    m4Pts: ["完整的 128 题公民测试", "每个答案的 AI 反馈", "练习 N-400 面试本身", "针对 2025 年 10 月公民变化更新"],
+    readyTitle: "准备好停止猜测了吗?",
+    readySub: "9 个问题。$49 一次性付款。您的个性化 N-400 准备工作在 5 分钟内完成。",
     t1: "简明中文指导", t2: "根据您的情况个性化定制", t3: "非法律建议 — 仅为准备指导",
     disclaimer: "LEGALIAI仅提供准备指导，这不是法律建议。对于复杂情况，请咨询持牌移民律师。",
     emailTitle: "输入您的电子邮件开始", emailSub: "我们将发送安全登录链接，无需密码。",
@@ -128,6 +179,23 @@ const T = {
     tagline: "ANG IYONG APLIKASYON SA PAGKAMAMAMAYAN —\nHANDA, HINDI NAHULAAN.",
     sub: "Hakbang-hakbang na paghahanda gamit ang AI para sa N-400. Walang abogado. $49 isang beses.",
     cta: "SIMULAN ANG AKING PAGHAHANDA",
+    insideLabel: "ANG MAKUKUHA MO SA $49",
+    insideTitle: "Sa Loob ng LEGALIAI — Ginawa Para sa Iyong Sitwasyon",
+    insideSub: "Apat na module. Personalized ng AI batay sa iyong daan ng eligibility, kasaysayan ng paglalakbay, at risk profile. Hindi static checklist.",
+    m1Title: "Listahan ng Dokumento na Alam ang Iyong Sitwasyon",
+    m1Desc: "Pagkatapos ng 9 na tanong tungkol sa iyong daan ng eligibility, kasaysayan ng paglalakbay, at criminal record, gumagawa ang LEGALIAI ng tiyak na listahan para sa iyo — hindi generic na 20-item na listahan.",
+    m1Pts: ["Marriage-based vs. 5-year path documents", "Travel-history documents kung naipasok mo", "Criminal-record documents kung sinabi lang", "Saan kunin ang bawat dokumento at bakit kailangan ng USCIS"],
+    m2Title: "Bawat Tanong sa N-400 — Ipinaliwanag Bago Mo Sagutin",
+    m2Desc: "Lahat ng 16 na seksyon ng N-400. Ipinapakita ng bawat tanong kung ano talaga ang tinatanong ng USCIS, halimbawang sagot, ang karaniwang pagkakamali, at AI feedback sa iyong sagot.",
+    m2Pts: ["Ano talaga ang ibig sabihin ng tanong", "Tunay na halimbawang sagot", "Pagkakamali ng karamihan sa mga aplikante", "AI tinitingnan ang iyong draft bago ipasa"],
+    m3Title: "Tingnan ang Iyong Mga Risk Bago ng USCIS",
+    m3Desc: "Mahabang paglalakbay. Criminal history. Tax gaps. Ang mga bagay na nagpapatagal o tumatanggi sa aplikasyon. Sinusubaybayan ng LEGALIAI ang iyong personal na risk bago ipasa — hindi pagkatapos ng RFE.",
+    m3Pts: ["Color-coded severity para sa bawat risk", "Anong dokumento ang dadalhin para sa bawat isa", "Kailan kailangan mo ng abogado", "Ano talaga ang ibig sabihin ng good moral character"],
+    m4Title: "Mag-practice ng Interview Hanggang Hindi Ka Magkakamali",
+    m4Desc: "Lahat ng 128 tanong sa updated 2025 civics test. Practice mode na may AI feedback. Ang interview ay nagiging muscle memory, hindi anxiety.",
+    m4Pts: ["Buong 128-tanong na civics test", "AI feedback sa bawat sagot", "Practice ng N-400 interview mismo", "Updated para sa Oct 2025 civics changes"],
+    readyTitle: "Handa Ka Nang Tumigil sa Paghuhula?",
+    readySub: "9 tanong. $49 one-time. Ang iyong personalized N-400 prep ay handa sa loob ng 5 minuto.",
     t1: "GABAY SA SIMPLENG TAGALOG", t2: "INANGKOP SA IYONG SITWASYON", t3: "HINDI LEGAL NA PAYO — PAGHAHANDA LAMANG",
     disclaimer: "Ang LEGALIAI ay nagbibigay lamang ng gabay sa paghahanda. Hindi ito legal na payo. Para sa mga kumplikadong sitwasyon, kumonsulta sa isang lisensyadong abogado.",
     emailTitle: "ILAGAY ANG IYONG EMAIL PARA MAGSIMULA", emailSub: "Magpapadala kami ng secure na link. Walang password.",
@@ -163,6 +231,23 @@ const T = {
     tagline: "ĐƠN XIN QUỐC TỊCH HOA KỲ CỦA BẠN —\nĐƯỢC CHUẨN BỊ, KHÔNG PHẢI ĐỐN MÒ.",
     sub: "Chuẩn bị từng bước với AI cho N-400. Không cần luật sư. $49 một lần.",
     cta: "BẮT ĐẦU CHUẨN BỊ CỦA TÔI",
+    insideLabel: "BẠN ĐƯỢC GÌ VỚI $49",
+    insideTitle: "Bên Trong LEGALIAI — Được Xây Dựng Cho Tình Huống Của Bạn",
+    insideSub: "Bốn mô-đun. Được AI cá nhân hóa theo đường đủ điều kiện, lịch sử đi lại và hồ sơ rủi ro của bạn. Không phải danh sách tĩnh.",
+    m1Title: "Danh Sách Tài Liệu Biết Tình Huống Của Bạn",
+    m1Desc: "Sau 9 câu hỏi về đường đủ điều kiện, lịch sử đi lại và hồ sơ tội phạm của bạn, LEGALIAI tạo một danh sách cụ thể cho bạn — không phải danh sách 20 mục chung chung.",
+    m1Pts: ["Tài liệu theo đường: hôn nhân vs. 5 năm", "Tài liệu lịch sử đi lại nếu bạn kích hoạt", "Tài liệu tội phạm chỉ khi tiết lộ", "Lấy mỗi tài liệu ở đâu và tại sao USCIS cần"],
+    m2Title: "Mỗi Câu Hỏi N-400 — Được Giải Thích Trước Khi Trả Lời",
+    m2Desc: "Tất cả 16 phần của N-400. Mỗi câu hỏi cho biết USCIS thực sự đang hỏi gì, câu trả lời mẫu, lỗi phổ biến và phản hồi AI về câu trả lời của bạn.",
+    m2Pts: ["Câu hỏi thực sự có nghĩa gì", "Ví dụ câu trả lời thực tế", "Lỗi mà hầu hết người nộp đơn mắc phải", "AI xem xét bản nháp trước khi gửi"],
+    m3Title: "Xem Rủi Ro Trước Khi USCIS Thấy",
+    m3Desc: "Đi lại kéo dài. Lịch sử tội phạm. Khoảng trống thuế. Những điều làm trì hoãn hoặc từ chối đơn. LEGALIAI ánh xạ rủi ro cá nhân trước khi nộp — không phải sau RFE.",
+    m3Pts: ["Mức độ nghiêm trọng có mã màu cho mỗi rủi ro", "Tài liệu nào mang theo cho mỗi loại", "Khi nào bạn cần luật sư thay thế", "Phẩm chất đạo đức tốt thực sự nghĩa là gì"],
+    m4Title: "Luyện Phỏng Vấn Đến Khi Không Sai Được",
+    m4Desc: "Tất cả 128 câu hỏi trong bài kiểm tra công dân cập nhật 2025. Chế độ luyện tập với phản hồi AI. Cuộc phỏng vấn trở thành trí nhớ cơ bắp, không phải lo lắng.",
+    m4Pts: ["Bài kiểm tra công dân 128 câu đầy đủ", "Phản hồi AI cho mọi câu trả lời", "Luyện phỏng vấn N-400 thực tế", "Cập nhật cho thay đổi công dân tháng 10/2025"],
+    readyTitle: "Sẵn Sàng Ngừng Đoán?",
+    readySub: "9 câu hỏi. $49 thanh toán một lần. Chuẩn bị N-400 cá nhân hóa sẵn sàng trong 5 phút.",
     t1: "HƯỚNG DẪN TIẾNG VIỆT RÕ RÀNG", t2: "CÁ NHÂN HÓA THEO TÌNH HUỐNG CỦA BẠN", t3: "KHÔNG PHẢI TƯ VẤN PHÁP LÝ — CHỈ CHUẨN BỊ",
     disclaimer: "LEGALIAI chỉ cung cấp hướng dẫn chuẩn bị. Đây không phải tư vấn pháp lý. Với các trường hợp phức tạp, hãy tham khảo luật sư di trú có giấy phép.",
     emailTitle: "NHẬP EMAIL ĐỂ BẮT ĐẦU", emailSub: "Chúng tôi sẽ gửi liên kết đăng nhập bảo mật. Không cần mật khẩu.",
@@ -198,6 +283,23 @@ const T = {
     tagline: "आपका अमेरिकी नागरिकता आवेदन —\nतैयार, अनुमान नहीं।",
     sub: "आपके N-400 के लिए AI-संचालित चरण-दर-चरण तैयारी। कोई वकील नहीं। एकमुश्त $49।",
     cta: "मेरी तैयारी शुरू करें",
+    insideLabel: "$49 में आपको क्या मिलता है",
+    insideTitle: "LEGALIAI के अंदर — आपकी स्थिति के लिए बनाया गया",
+    insideSub: "चार मॉड्यूल। आपके पात्रता मार्ग, यात्रा इतिहास और जोखिम प्रोफ़ाइल के लिए AI-व्यक्तिगत। स्थिर चेकलिस्ट नहीं।",
+    m1Title: "एक दस्तावेज़ सूची जो आपकी स्थिति जानती है",
+    m1Desc: "आपके पात्रता मार्ग, यात्रा इतिहास और आपराधिक रिकॉर्ड के बारे में 9 प्रश्नों के बाद, LEGALIAI आपके लिए विशिष्ट चेकलिस्ट बनाता है — हर किसी के लिए सामान्य 20-आइटम सूची नहीं।",
+    m1Pts: ["विवाह-आधारित बनाम 5-वर्ष पथ दस्तावेज़", "यात्रा-इतिहास दस्तावेज़ यदि आपने उन्हें ट्रिगर किया", "आपराधिक-रिकॉर्ड दस्तावेज़ केवल यदि घोषित किए", "प्रत्येक दस्तावेज़ कहाँ से प्राप्त करें और USCIS को क्यों चाहिए"],
+    m2Title: "प्रत्येक N-400 प्रश्न — उत्तर देने से पहले समझाया गया",
+    m2Desc: "N-400 के सभी 16 खंड। प्रत्येक प्रश्न दिखाता है कि USCIS वास्तव में क्या पूछ रहा है, उदाहरण उत्तर, सामान्य गलती, और आपके उत्तर पर AI प्रतिक्रिया।",
+    m2Pts: ["प्रश्न का वास्तव में क्या अर्थ है", "वास्तविक उदाहरण उत्तर", "अधिकांश आवेदक जो गलती करते हैं", "AI जमा करने से पहले आपके मसौदे की समीक्षा करता है"],
+    m3Title: "USCIS से पहले अपने जोखिमों को देखें",
+    m3Desc: "विस्तारित यात्रा। आपराधिक इतिहास। कर अंतराल। ऐसी चीज़ें जो आवेदनों में देरी या अस्वीकार करती हैं। LEGALIAI दाखिल करने से पहले आपके व्यक्तिगत जोखिम का नक्शा बनाता है — RFE के बाद नहीं।",
+    m3Pts: ["प्रत्येक जोखिम के लिए रंग-कोडित गंभीरता", "प्रत्येक के लिए कौन से दस्तावेज़ लाने हैं", "कब आपको वकील की आवश्यकता है", "अच्छे नैतिक चरित्र का वास्तव में क्या अर्थ है"],
+    m4Title: "साक्षात्कार का अभ्यास तब तक करें जब तक गलत न हो",
+    m4Desc: "अद्यतन 2025 नागरिक परीक्षा के सभी 128 प्रश्न। AI प्रतिक्रिया के साथ अभ्यास मोड। साक्षात्कार मांसपेशी स्मृति बन जाता है, चिंता नहीं।",
+    m4Pts: ["पूर्ण 128-प्रश्न नागरिक परीक्षा", "हर उत्तर पर AI प्रतिक्रिया", "N-400 साक्षात्कार का ही अभ्यास करें", "अक्टूबर 2025 नागरिक परिवर्तनों के लिए अद्यतन"],
+    readyTitle: "अनुमान लगाना बंद करने के लिए तैयार?",
+    readySub: "9 प्रश्न। $49 एक बार। आपकी व्यक्तिगत N-400 तैयारी 5 मिनट से कम में तैयार।",
     t1: "सरल हिंदी में मार्गदर्शन", t2: "आपकी स्थिति के अनुसार व्यक्तिगत", t3: "कानूनी सलाह नहीं — केवल तैयारी",
     disclaimer: "LEGALIAI केवल तैयारी मार्गदर्शन प्रदान करता है। यह कानूनी सलाह नहीं है। जटिल मामलों के लिए लाइसेंस प्राप्त वकील से परामर्श करें।",
     emailTitle: "शुरू करने के लिए अपना ईमेल दर्ज करें", emailSub: "हम एक सुरक्षित लॉगिन लिंक भेजेंगे। कोई पासवर्ड नहीं।",
@@ -233,6 +335,23 @@ const T = {
     tagline: "미국 시민권 신청 —\n준비된, 추측이 아닌.",
     sub: "N-400을 위한 AI 기반 단계별 준비. 변호사 불필요. 일회성 $49.",
     cta: "준비 시작하기",
+    insideLabel: "$49로 받는 것",
+    insideTitle: "LEGALIAI 내부 — 당신의 상황에 맞춰 제작",
+    insideSub: "네 가지 모듈. 자격 경로, 여행 이력, 위험 프로필에 따라 AI로 개인화. 정적 체크리스트가 아닙니다.",
+    m1Title: "당신의 상황을 아는 문서 목록",
+    m1Desc: "자격 경로, 여행 이력, 범죄 기록에 대한 9개 질문 후, LEGALIAI는 모든 사람에게 주는 일반적인 20개 항목 목록이 아니라 당신만을 위한 체크리스트를 생성합니다.",
+    m1Pts: ["결혼 기반 vs. 5년 경로 문서", "트리거 시 여행 이력 문서", "공개한 경우에만 범죄 기록 문서", "각 문서를 어디서 얻는지와 USCIS가 왜 필요한지"],
+    m2Title: "모든 N-400 질문 — 답하기 전에 설명",
+    m2Desc: "N-400의 16개 섹션 모두. 각 질문은 USCIS가 실제로 묻는 내용, 예시 답변, 일반적인 실수, 그리고 당신의 답변에 대한 AI 피드백을 보여줍니다.",
+    m2Pts: ["질문이 실제로 의미하는 것", "실제 답변 예시", "대부분의 신청자가 저지르는 실수", "AI가 제출 전에 초안 검토"],
+    m3Title: "USCIS보다 먼저 당신의 위험을 보세요",
+    m3Desc: "장기 여행. 범죄 기록. 세금 공백. 신청을 지연시키거나 거부하는 것들. LEGALIAI는 RFE 후가 아니라 신청 전에 당신의 개인 위험을 매핑합니다.",
+    m3Pts: ["각 위험에 대한 색상 코드 심각도", "각각 어떤 문서를 가져갈지", "변호사가 필요한 시점", "좋은 도덕적 성격이 실제로 무엇을 의미하는지"],
+    m4Title: "틀리지 않을 때까지 인터뷰 연습",
+    m4Desc: "2025년 업데이트된 시민권 시험의 128개 질문 모두. AI 피드백이 포함된 연습 모드. 인터뷰는 불안이 아닌 근육 기억이 됩니다.",
+    m4Pts: ["완전한 128 질문 시민권 시험", "모든 답변에 대한 AI 피드백", "N-400 인터뷰 자체 연습", "2025년 10월 시민권 변경 사항 업데이트"],
+    readyTitle: "추측을 그만둘 준비가 되셨나요?",
+    readySub: "9개 질문. $49 일회성. 개인화된 N-400 준비가 5분 안에 준비됩니다.",
     t1: "쉬운 한국어 안내", t2: "내 상황에 맞게 맞춤화", t3: "법률 조언 아님 — 준비만",
     disclaimer: "LEGALIAI는 준비 안내만 제공합니다. 법률 조언이 아닙니다. 복잡한 상황에서는 변호사와 상담하세요.",
     emailTitle: "시작하려면 이메일을 입력하세요", emailSub: "보안 로그인 링크를 보내드립니다. 비밀번호 불필요.",
@@ -268,6 +387,23 @@ const T = {
     tagline: "SUA SOLICITAÇÃO DE CIDADANIA AMERICANA —\nPREPARADA, NÃO ADIVINHADA.",
     sub: "Preparação passo a passo com IA para o N-400. Sem advogado. $49 pagamento único.",
     cta: "INICIAR MINHA PREPARAÇÃO",
+    insideLabel: "O QUE VOCÊ RECEBE POR $49",
+    insideTitle: "Por Dentro do LEGALIAI — Feito para Sua Situação",
+    insideSub: "Quatro módulos. Personalizados por IA conforme sua via de elegibilidade, histórico de viagens e perfil de risco. Não é uma lista estática.",
+    m1Title: "Uma Lista de Documentos Feita para Você",
+    m1Desc: "Após 9 perguntas sobre sua via de elegibilidade, histórico de viagens e antecedentes criminais, o LEGALIAI gera uma lista específica para você — não uma lista genérica de 20 itens.",
+    m1Pts: ["Documentos por via: casamento vs. 5 anos", "Documentos de viagens se você os acionou", "Documentos criminais apenas se declarados", "Onde obter cada documento e por que o USCIS precisa"],
+    m2Title: "Cada Pergunta do N-400 — Explicada Antes de Responder",
+    m2Desc: "Todas as 16 seções do N-400. Cada pergunta mostra o que o USCIS realmente está perguntando, um exemplo de resposta, o erro comum, e feedback da IA sobre sua resposta.",
+    m2Pts: ["O que a pergunta realmente significa", "Exemplos reais de respostas", "O erro que a maioria dos aplicantes comete", "A IA revisa seu rascunho antes de enviar"],
+    m3Title: "Veja Seus Riscos Antes do USCIS",
+    m3Desc: "Viagens prolongadas. Antecedentes criminais. Lacunas fiscais. As coisas que atrasam ou negam aplicações. O LEGALIAI mapeia seu risco pessoal antes de enviar — não depois de um RFE.",
+    m3Pts: ["Severidade colorida para cada risco", "Quais documentos levar para cada um", "Quando você precisa de um advogado", "O que bom caráter moral realmente significa"],
+    m4Title: "Pratique a Entrevista Até Dominá-la",
+    m4Desc: "As 128 perguntas do teste de civismo atualizado 2025. Modo de prática com feedback de IA. A entrevista vira memória muscular, não ansiedade.",
+    m4Pts: ["Teste completo de 128 perguntas de civismo", "Feedback de IA em cada resposta", "Pratique a entrevista N-400", "Atualizado para mudanças de civismo de Out 2025"],
+    readyTitle: "Pronto para Parar de Adivinhar?",
+    readySub: "9 perguntas. $49 pagamento único. Sua preparação N-400 personalizada pronta em menos de 5 minutos.",
     t1: "ORIENTAÇÃO EM PORTUGUÊS CLARO", t2: "PERSONALIZADO PARA SUA SITUAÇÃO", t3: "NÃO É ASSESSORIA JURÍDICA — APENAS PREPARAÇÃO",
     disclaimer: "LEGALIAI fornece apenas orientação de preparação. Isso não é assessoria jurídica. Para situações complexas, consulte um advogado de imigração licenciado.",
     emailTitle: "INSIRA SEU EMAIL PARA COMEÇAR", emailSub: "Enviaremos um link de acesso seguro. Sem senha.",
@@ -767,7 +903,174 @@ function App() {
         <h1 style={{ color:"#F5F5F5",fontSize:"clamp(28px,5vw,60px)",letterSpacing:"4px",fontWeight:300,lineHeight:1.3,marginBottom:"28px",whiteSpace:"pre-line" }}>{t("tagline")}</h1>
         <p style={{ color:"#aaa",fontSize:"18px",letterSpacing:"2px",marginBottom:"52px",lineHeight:1.8,maxWidth:"700px",margin:"0 auto 52px" }}>{t("sub")}</p>
         <button onClick={handleStartCTA} style={{ ...goldBtn, fontSize:"14px", padding:"22px 64px" }} onMouseOver={e => e.currentTarget.style.background="#e6c060"} onMouseOut={e => e.currentTarget.style.background="#C9A84C"}>{t("cta")}</button>
-        <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"2px",margin:"80px 0 0" }}>
+
+        {/* WHAT'S INSIDE SECTION — real product previews */}
+        <div style={{ margin:"120px 0 0", textAlign:"left" }}>
+          <div style={{ textAlign:"center", marginBottom:"60px" }}>
+            <div style={{ color:"#C9A84C",fontSize:"11px",letterSpacing:"5px",marginBottom:"16px" }}>{t("insideLabel")}</div>
+            <h2 style={{ color:"#F5F5F5",fontSize:"clamp(24px,3vw,38px)",letterSpacing:"4px",fontWeight:300,lineHeight:1.3,marginBottom:"16px" }}>{t("insideTitle")}</h2>
+            <p style={{ color:"#888",fontSize:"15px",letterSpacing:"1px",maxWidth:"560px",margin:"0 auto",lineHeight:1.8 }}>{t("insideSub")}</p>
+          </div>
+
+          {/* Module 1 — Documents */}
+          <div style={{ display:"grid",gridTemplateColumns:"1fr 1.2fr",gap:"60px",alignItems:"center",marginBottom:"100px",fontFamily:"inherit" }} className="inside-row">
+            <div>
+              <div style={{ color:"#C9A84C",fontSize:"10px",letterSpacing:"4px",marginBottom:"14px" }}>MODULE 01 — DOCUMENTS</div>
+              <h3 style={{ color:"#F5F5F5",fontSize:"26px",letterSpacing:"2px",fontWeight:300,marginBottom:"16px",lineHeight:1.3 }}>{t("m1Title")}</h3>
+              <p style={{ color:"#999",fontSize:"14px",letterSpacing:"1px",lineHeight:2,marginBottom:"24px" }}>{t("m1Desc")}</p>
+              <ul style={{ listStyle:"none",padding:0,margin:0 }}>
+                {t("m1Pts").map((pt,i) => (
+                  <li key={i} style={{ color:"#888",fontSize:"13px",letterSpacing:"1px",marginBottom:"10px",paddingLeft:"20px",position:"relative",lineHeight:1.7 }}>
+                    <span style={{ position:"absolute",left:0,color:"#C9A84C" }}>✓</span>{pt}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div style={{ background:"#0d0d0d",border:"1px solid #2a2a2a",padding:"24px",fontFamily:"'DM Sans',sans-serif" }}>
+              <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:"20px",paddingBottom:"14px",borderBottom:"1px solid #1a1a1a" }}>
+                <span style={{ color:"#F5F5F5",fontSize:"13px",letterSpacing:"3px" }}>YOUR DOCUMENTS</span>
+                <span style={{ color:"#C9A84C",fontSize:"11px",letterSpacing:"2px" }}>2 / 8 GATHERED</span>
+              </div>
+              <div style={{ display:"flex",gap:"14px",padding:"12px 0",borderBottom:"1px solid #111",borderLeft:"3px solid #4ade80",paddingLeft:"14px" }}>
+                <span style={{ color:"#4ade80",marginTop:"2px" }}>✓</span>
+                <div>
+                  <div style={{ color:"#555",fontSize:"13px",textDecoration:"line-through",marginBottom:"4px" }}>Permanent Resident Card</div>
+                  <div style={{ color:"#666",fontSize:"11px",lineHeight:1.6 }}><span style={{ color:"#C9A84C",fontSize:"9px",letterSpacing:"2px" }}>WHERE:</span> Front and back copy of your green card</div>
+                </div>
+              </div>
+              <div style={{ display:"flex",gap:"14px",padding:"12px 0",borderBottom:"1px solid #111" }}>
+                <span style={{ width:"14px",height:"14px",border:"1px solid #444",display:"inline-block",marginTop:"3px" }}></span>
+                <div>
+                  <div style={{ color:"#F5F5F5",fontSize:"13px",marginBottom:"4px" }}>Joint Tax Returns — Last 3 Years</div>
+                  <div style={{ color:"#888",fontSize:"11px",lineHeight:1.6,marginBottom:"4px" }}><span style={{ color:"#C9A84C",fontSize:"9px",letterSpacing:"2px" }}>WHERE:</span> IRS.gov/transcripts — free if you do not have copies</div>
+                  <div style={{ color:"#888",fontSize:"11px",lineHeight:1.6 }}><span style={{ color:"#C9A84C",fontSize:"9px",letterSpacing:"2px" }}>WHY:</span> You marked married to a US citizen — required for 3-year path</div>
+                </div>
+              </div>
+              <div style={{ display:"flex",gap:"14px",padding:"12px 0" }}>
+                <span style={{ width:"14px",height:"14px",border:"1px solid #444",display:"inline-block",marginTop:"3px" }}></span>
+                <div>
+                  <div style={{ color:"#F5F5F5",fontSize:"13px",marginBottom:"4px" }}>Certified Court Records — DUI 2019</div>
+                  <div style={{ color:"#888",fontSize:"11px",lineHeight:1.6 }}><span style={{ color:"#e05555",fontSize:"9px",letterSpacing:"2px" }}>CRITICAL:</span> You disclosed a 2019 DUI — bring original disposition</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Module 2 — Form */}
+          <div style={{ display:"grid",gridTemplateColumns:"1.2fr 1fr",gap:"60px",alignItems:"center",marginBottom:"100px" }} className="inside-row">
+            <div style={{ background:"#0d0d0d",border:"1px solid #2a2a2a",padding:"24px",fontFamily:"'DM Sans',sans-serif" }}>
+              <div style={{ color:"#C9A84C",fontSize:"10px",letterSpacing:"4px",marginBottom:"12px",paddingBottom:"12px",borderBottom:"1px solid #1a1a1a" }}>PART 9 — TIME OUTSIDE THE U.S.</div>
+              <div style={{ color:"#F5F5F5",fontSize:"14px",marginBottom:"14px",lineHeight:1.6 }}>Have you taken any trip of 6 months or more outside the United States in the past 5 years?</div>
+              <div style={{ background:"#0a0a0a",border:"1px solid #1a1a1a",padding:"12px 14px",marginBottom:"14px" }}>
+                <div style={{ marginBottom:"6px" }}><span style={{ color:"#C9A84C",fontSize:"9px",letterSpacing:"2px" }}>WHAT IT MEANS:</span><span style={{ color:"#aaa",fontSize:"11px",marginLeft:"6px" }}>Any single trip — not cumulative.</span></div>
+                <div style={{ marginBottom:"6px" }}><span style={{ color:"#C9A84C",fontSize:"9px",letterSpacing:"2px" }}>EXAMPLE:</span><span style={{ color:"#888",fontSize:"11px",marginLeft:"6px" }}>1 trip of 7 months = YES. Two 4-month trips = NO.</span></div>
+                <div><span style={{ color:"#e05555",fontSize:"9px",letterSpacing:"2px" }}>COMMON MISTAKE:</span><span style={{ color:"#888",fontSize:"11px",marginLeft:"6px" }}>Not counting return travel days.</span></div>
+              </div>
+              <div style={{ background:"#0a0a0a",border:"1px solid #2a2a2a",padding:"12px",marginBottom:"10px",color:"#bbb",fontSize:"12px",lineHeight:1.6 }}>Yes — visited Brazil from June 2022 to January 2023 to take care of my father</div>
+              <div style={{ borderLeft:"2px solid #C9A84C",paddingLeft:"12px" }}>
+                <div style={{ color:"#C9A84C",fontSize:"9px",letterSpacing:"3px",marginBottom:"4px" }}>AI FEEDBACK</div>
+                <div style={{ color:"#bbb",fontSize:"11px",lineHeight:1.6 }}>Strong answer. Add specific dates and bring family-caregiver evidence to your interview. This explanation supports continuous residence.</div>
+              </div>
+            </div>
+            <div>
+              <div style={{ color:"#C9A84C",fontSize:"10px",letterSpacing:"4px",marginBottom:"14px" }}>MODULE 02 — FORM</div>
+              <h3 style={{ color:"#F5F5F5",fontSize:"26px",letterSpacing:"2px",fontWeight:300,marginBottom:"16px",lineHeight:1.3 }}>{t("m2Title")}</h3>
+              <p style={{ color:"#999",fontSize:"14px",letterSpacing:"1px",lineHeight:2,marginBottom:"24px" }}>{t("m2Desc")}</p>
+              <ul style={{ listStyle:"none",padding:0,margin:0 }}>
+                {t("m2Pts").map((pt,i) => (
+                  <li key={i} style={{ color:"#888",fontSize:"13px",letterSpacing:"1px",marginBottom:"10px",paddingLeft:"20px",position:"relative",lineHeight:1.7 }}>
+                    <span style={{ position:"absolute",left:0,color:"#C9A84C" }}>✓</span>{pt}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Module 3 — Risk */}
+          <div style={{ display:"grid",gridTemplateColumns:"1fr 1.2fr",gap:"60px",alignItems:"center",marginBottom:"100px" }} className="inside-row">
+            <div>
+              <div style={{ color:"#C9A84C",fontSize:"10px",letterSpacing:"4px",marginBottom:"14px" }}>MODULE 03 — RISK</div>
+              <h3 style={{ color:"#F5F5F5",fontSize:"26px",letterSpacing:"2px",fontWeight:300,marginBottom:"16px",lineHeight:1.3 }}>{t("m3Title")}</h3>
+              <p style={{ color:"#999",fontSize:"14px",letterSpacing:"1px",lineHeight:2,marginBottom:"24px" }}>{t("m3Desc")}</p>
+              <ul style={{ listStyle:"none",padding:0,margin:0 }}>
+                {t("m3Pts").map((pt,i) => (
+                  <li key={i} style={{ color:"#888",fontSize:"13px",letterSpacing:"1px",marginBottom:"10px",paddingLeft:"20px",position:"relative",lineHeight:1.7 }}>
+                    <span style={{ position:"absolute",left:0,color:"#C9A84C" }}>✓</span>{pt}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div style={{ background:"#0d0d0d",border:"1px solid #2a2a2a",padding:"24px",fontFamily:"'DM Sans',sans-serif" }}>
+              <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:"20px",paddingBottom:"14px",borderBottom:"1px solid #1a1a1a" }}>
+                <span style={{ color:"#F5F5F5",fontSize:"13px",letterSpacing:"3px" }}>YOUR RISK PROFILE</span>
+                <span style={{ color:"#e05555",fontSize:"11px",letterSpacing:"2px" }}>2 ITEMS</span>
+              </div>
+              <div style={{ background:"#1a0a0a",border:"1px solid #3a1a1a",borderLeft:"3px solid #e05555",padding:"14px 16px",marginBottom:"10px" }}>
+                <div style={{ display:"flex",justifyContent:"space-between",marginBottom:"6px" }}>
+                  <span style={{ color:"#F5F5F5",fontSize:"12px",letterSpacing:"2px" }}>EXTENDED TRAVEL</span>
+                  <span style={{ color:"#e05555",fontSize:"9px",letterSpacing:"2px",fontWeight:700 }}>HIGH</span>
+                </div>
+                <div style={{ color:"#e9a8a8",fontSize:"11px",lineHeight:1.7 }}>7-month trip to Brazil 2022 — USCIS will require continuous residence evidence. Prepare employment records, lease, family-caregiver documentation.</div>
+              </div>
+              <div style={{ background:"#1a1500",border:"1px solid #3a3010",borderLeft:"3px solid #C9A84C",padding:"14px 16px",marginBottom:"10px" }}>
+                <div style={{ display:"flex",justifyContent:"space-between",marginBottom:"6px" }}>
+                  <span style={{ color:"#F5F5F5",fontSize:"12px",letterSpacing:"2px" }}>2019 DUI DISCLOSURE</span>
+                  <span style={{ color:"#C9A84C",fontSize:"9px",letterSpacing:"2px",fontWeight:700 }}>MEDIUM</span>
+                </div>
+                <div style={{ color:"#d4b87a",fontSize:"11px",lineHeight:1.7 }}>Disclosed in onboarding. Not automatically disqualifying. Bring certified court disposition documents — not personal summaries.</div>
+              </div>
+              <div style={{ background:"#0a1a0a",border:"1px solid #1a3a1a",borderLeft:"3px solid #4ade80",padding:"14px 16px" }}>
+                <div style={{ display:"flex",justifyContent:"space-between",marginBottom:"6px" }}>
+                  <span style={{ color:"#F5F5F5",fontSize:"12px",letterSpacing:"2px" }}>TAX COMPLIANCE</span>
+                  <span style={{ color:"#4ade80",fontSize:"9px",letterSpacing:"2px",fontWeight:700 }}>CLEAR</span>
+                </div>
+                <div style={{ color:"#9be9a8",fontSize:"11px",lineHeight:1.7 }}>All 5 years of joint tax returns confirmed. No red flags expected on good moral character.</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Module 4 — Interview */}
+          <div style={{ display:"grid",gridTemplateColumns:"1.2fr 1fr",gap:"60px",alignItems:"center",marginBottom:"60px" }} className="inside-row">
+            <div style={{ background:"#0d0d0d",border:"1px solid #2a2a2a",padding:"24px",fontFamily:"'DM Sans',sans-serif" }}>
+              <div style={{ display:"flex",justifyContent:"space-between",marginBottom:"16px",paddingBottom:"12px",borderBottom:"1px solid #1a1a1a" }}>
+                <span style={{ color:"#C9A84C",fontSize:"10px",letterSpacing:"3px" }}>CIVICS QUESTION 47 / 128</span>
+                <span style={{ color:"#777",fontSize:"10px",letterSpacing:"2px" }}>HISTORY · 1800s</span>
+              </div>
+              <div style={{ color:"#F5F5F5",fontSize:"15px",marginBottom:"14px",lineHeight:1.5 }}>Name one war fought by the United States in the 1800s.</div>
+              <div style={{ background:"#0a0a0a",border:"1px solid #2a2a2a",padding:"12px",marginBottom:"12px",color:"#bbb",fontSize:"12px",lineHeight:1.6 }}>The Civil War — between the Union and the Confederate states</div>
+              <div style={{ borderLeft:"2px solid #4ade80",paddingLeft:"12px",marginBottom:"14px" }}>
+                <div style={{ color:"#4ade80",fontSize:"9px",letterSpacing:"3px",marginBottom:"4px" }}>✓ CORRECT</div>
+                <div style={{ color:"#9be9a8",fontSize:"11px",lineHeight:1.7 }}>Perfect answer. USCIS accepts: War of 1812, Mexican-American War, Civil War, Spanish-American War.</div>
+              </div>
+              <div style={{ display:"flex",gap:"8px" }}>
+                <button style={{ flex:1,background:"transparent",border:"1px solid #2a2a2a",color:"#777",padding:"10px",fontSize:"10px",letterSpacing:"2px",cursor:"default",fontFamily:"inherit" }}>← PREVIOUS</button>
+                <button style={{ flex:1,background:"#C9A84C",border:"none",color:"#000",padding:"10px",fontSize:"10px",letterSpacing:"2px",cursor:"default",fontWeight:700,fontFamily:"inherit" }}>NEXT QUESTION →</button>
+              </div>
+            </div>
+            <div>
+              <div style={{ color:"#C9A84C",fontSize:"10px",letterSpacing:"4px",marginBottom:"14px" }}>MODULE 04 — INTERVIEW</div>
+              <h3 style={{ color:"#F5F5F5",fontSize:"26px",letterSpacing:"2px",fontWeight:300,marginBottom:"16px",lineHeight:1.3 }}>{t("m4Title")}</h3>
+              <p style={{ color:"#999",fontSize:"14px",letterSpacing:"1px",lineHeight:2,marginBottom:"24px" }}>{t("m4Desc")}</p>
+              <ul style={{ listStyle:"none",padding:0,margin:0 }}>
+                {t("m4Pts").map((pt,i) => (
+                  <li key={i} style={{ color:"#888",fontSize:"13px",letterSpacing:"1px",marginBottom:"10px",paddingLeft:"20px",position:"relative",lineHeight:1.7 }}>
+                    <span style={{ position:"absolute",left:0,color:"#C9A84C" }}>✓</span>{pt}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Bottom CTA */}
+          <div style={{ background:"#0d0d0d",border:"1px solid #C9A84C",padding:"56px 40px",textAlign:"center",margin:"40px 0 0" }}>
+            <h3 style={{ color:"#F5F5F5",fontSize:"clamp(20px,3vw,30px)",letterSpacing:"3px",fontWeight:300,marginBottom:"14px" }}>{t("readyTitle")}</h3>
+            <p style={{ color:"#999",fontSize:"14px",letterSpacing:"1px",marginBottom:"32px",lineHeight:1.8 }}>{t("readySub")}</p>
+            <button onClick={handleStartCTA} style={{ ...goldBtn, fontSize:"14px", padding:"20px 56px" }}>{t("cta")}</button>
+          </div>
+        </div>
+
+        {/* Original 3 cards — kept as supporting features */}
+        <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"2px",margin:"80px 0 0" }} className="inside-row">
           {[t("t1"),t("t2"),t("t3")].map((text,i) => (
             <div key={i} style={{ background:"#0d0d0d",border:"1px solid #2a2a2a",padding:"44px 32px" }}>
               <div style={{ color:"#C9A84C",fontSize:"24px",marginBottom:"20px" }}>⟡</div>
@@ -775,6 +1078,9 @@ function App() {
             </div>
           ))}
         </div>
+
+        <style>{`@media(max-width:760px){.inside-row{grid-template-columns:1fr !important;gap:30px !important}}`}</style>
+
         <Disclaimer />
       </div>
     </div>
