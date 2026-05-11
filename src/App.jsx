@@ -20,10 +20,10 @@ const LANGUAGES = [
 const T = {
   en: {
     tagline: "YOUR U.S. CITIZENSHIP APPLICATION —\nPREPARED, NOT GUESSED.",
-    sub: "AI-powered step-by-step preparation for your N-400. No lawyer needed. $49 one-time.",
+    sub: "AI-powered step-by-step preparation for your N-400. No lawyer needed. $9.99 one-time.",
     cta: "START MY PREPARATION",
     t1: "PLAIN ENGLISH GUIDANCE", t2: "PERSONALIZED TO YOUR SITUATION", t3: "NOT LEGAL ADVICE — PREPARATION ONLY",
-    insideLabel: "WHAT YOU GET FOR $49",
+    insideLabel: "WHAT YOU GET FOR $9.99",
     insideTitle: "Inside LEGALIAI — Built for Your Situation",
     insideSub: "Four modules. AI-personalized to your eligibility path, travel history, and risk profile. Not a static checklist.",
     m1Title: "A Document List That Knows Your Situation",
@@ -39,7 +39,7 @@ const T = {
     m4Desc: "All 128 questions on the updated 2025 civics test. Practice mode with AI feedback on your answers. The interview becomes muscle memory, not anxiety.",
     m4Pts: ["Full 128-question civics test", "AI feedback on every answer", "Practice the N-400 interview itself", "Updated for October 2025 civics changes"],
     readyTitle: "Ready to Stop Guessing?",
-    readySub: "9 questions. $49 one-time. Your personalized N-400 prep ready in under 5 minutes.",
+    readySub: "9 questions. $9.99 one-time. Your personalized N-400 prep ready in under 5 minutes.",
     mkMod01: "MODULE 01 — DOCUMENTS",
     mkMod02: "MODULE 02 — FORM",
     mkMod03: "MODULE 03 — RISK",
@@ -93,7 +93,7 @@ const T = {
     yes: "YES", no: "NO", next: "NEXT", finish: "FINISH",
     q1opts: ["Less than 3 years", "3–5 years", "5–10 years", "More than 10 years"],
     paywallTitle: "YOUR PERSONALIZED N-400 PREPARATION IS READY.",
-    paywallSub: "Unlock everything for $49 one-time.",
+    paywallSub: "Unlock everything for $9.99 one-time.",
     unlock: "UNLOCK NOW", paywallNote: "Secure payment. Instant access. No subscription.",
     dashTitle: "YOUR PREPARATION DASHBOARD",
     modules: ["DOCUMENT CHECKLIST", "FORM WALKTHROUGH", "RISK ASSESSMENT", "INTERVIEW PREP"],
@@ -116,9 +116,9 @@ const T = {
   },
   es: {
     tagline: "TU SOLICITUD DE CIUDADANÍA —\nPREPARADA, NO ADIVINADA.",
-    sub: "Preparación paso a paso con IA para el N-400. Sin abogado. $49 pago único.",
+    sub: "Preparación paso a paso con IA para el N-400. Sin abogado. $9.99 pago único.",
     cta: "INICIAR MI PREPARACIÓN",
-    insideLabel: "LO QUE OBTIENES POR $49",
+    insideLabel: "LO QUE OBTIENES POR $9.99",
     insideTitle: "Dentro de LEGALIAI — Hecho para Tu Situación",
     insideSub: "Cuatro módulos. Personalizados por IA según tu vía de elegibilidad, historial de viajes y perfil de riesgo. No es una lista estática.",
     m1Title: "Una Lista de Documentos Hecha para Ti",
@@ -134,7 +134,7 @@ const T = {
     m4Desc: "Las 128 preguntas del examen de civismo actualizado 2025. Modo de práctica con comentarios de IA. La entrevista se vuelve memoria muscular, no ansiedad.",
     m4Pts: ["Examen completo de 128 preguntas de civismo", "Comentarios de IA en cada respuesta", "Practica la entrevista N-400", "Actualizado para los cambios de civismo de Oct 2025"],
     readyTitle: "¿Listo para Dejar de Adivinar?",
-    readySub: "9 preguntas. $49 pago único. Tu preparación N-400 personalizada lista en menos de 5 minutos.",
+    readySub: "9 preguntas. $9.99 pago único. Tu preparación N-400 personalizada lista en menos de 5 minutos.",
     mkMod01: "MÓDULO 01 — DOCUMENTOS",
     mkMod02: "MÓDULO 02 — FORMULARIO",
     mkMod03: "MÓDULO 03 — RIESGO",
@@ -188,7 +188,7 @@ const T = {
     q9: "¿CUÁL ES TU FECHA DE RESIDENCIA? (de tu tarjeta verde)", q6: "¿TIENES MATRIMONIOS ANTERIORES QUE HAYAN TERMINADO?", q7: "¿HAS TENIDO UN CAMBIO LEGAL DE NOMBRE?", q8: "¿HAS SERVIDO EN LAS FUERZAS ARMADAS DE EE.UU.?",
     yes: "SÍ", no: "NO", next: "SIGUIENTE", finish: "FINALIZAR",
     q1opts: ["Menos de 3 años", "3–5 años", "5–10 años", "Más de 10 años"],
-    paywallTitle: "TU PREPARACIÓN PERSONALIZADA N-400 ESTÁ LISTA.", paywallSub: "Desbloquea todo por $49 pago único.",
+    paywallTitle: "TU PREPARACIÓN PERSONALIZADA N-400 ESTÁ LISTA.", paywallSub: "Desbloquea todo por $9.99 pago único.",
     unlock: "DESBLOQUEAR AHORA", paywallNote: "Pago seguro. Acceso inmediato. Sin suscripción.",
     dashTitle: "TU PANEL DE PREPARACIÓN",
     modules: ["LISTA DE DOCUMENTOS", "GUÍA DEL FORMULARIO", "EVALUACIÓN DE RIESGOS", "PREPARACIÓN PARA ENTREVISTA"],
@@ -211,9 +211,9 @@ const T = {
   },
   zh: {
     tagline: "您的美国公民申请 —\n准备充分，而非猜测。",
-    sub: "AI驱动的N-400逐步准备指南。无需律师。一次性$49。",
+    sub: "AI驱动的N-400逐步准备指南。无需律师。一次性$9.99。",
     cta: "开始我的准备",
-    insideLabel: "$49 包含的内容",
+    insideLabel: "$9.99 包含的内容",
     insideTitle: "LEGALIAI 内部 — 为您的情况量身定制",
     insideSub: "四个模块。AI 根据您的资格途径、旅行历史和风险概况个性化定制。不是静态清单。",
     m1Title: "了解您情况的文件清单",
@@ -229,7 +229,7 @@ const T = {
     m4Desc: "2025 年更新的公民测试的全部 128 个问题。带有 AI 反馈的练习模式。面试变成肌肉记忆,而不是焦虑。",
     m4Pts: ["完整的 128 题公民测试", "每个答案的 AI 反馈", "练习 N-400 面试本身", "针对 2025 年 10 月公民变化更新"],
     readyTitle: "准备好停止猜测了吗?",
-    readySub: "9 个问题。$49 一次性付款。您的个性化 N-400 准备工作在 5 分钟内完成。",
+    readySub: "9 个问题。$9.99 一次性付款。您的个性化 N-400 准备工作在 5 分钟内完成。",
     mkMod01: "模块 01 — 文件",
     mkMod02: "模块 02 — 表格",
     mkMod03: "模块 03 — 风险",
@@ -283,7 +283,7 @@ const T = {
     q9: "您的绿卡上的居民日期是什么？", q6: "您有过以前结束的婚姻吗？", q7: "您是否曾经合法更名？", q8: "您是否在美国军队服役过？",
     yes: "是", no: "否", next: "下一步", finish: "完成",
     q1opts: ["不到3年", "3–5年", "5–10年", "超过10年"],
-    paywallTitle: "您的个性化N-400准备已就绪。", paywallSub: "一次性$49解锁所有内容。",
+    paywallTitle: "您的个性化N-400准备已就绪。", paywallSub: "一次性$9.99解锁所有内容。",
     unlock: "立即解锁", paywallNote: "安全支付。即时访问。无订阅。",
     dashTitle: "您的准备控制台",
     modules: ["文件清单", "表格指南", "风险评估", "面试准备"],
@@ -306,9 +306,9 @@ const T = {
   },
   tl: {
     tagline: "ANG IYONG APLIKASYON SA PAGKAMAMAMAYAN —\nHANDA, HINDI NAHULAAN.",
-    sub: "Hakbang-hakbang na paghahanda gamit ang AI para sa N-400. Walang abogado. $49 isang beses.",
+    sub: "Hakbang-hakbang na paghahanda gamit ang AI para sa N-400. Walang abogado. $9.99 isang beses.",
     cta: "SIMULAN ANG AKING PAGHAHANDA",
-    insideLabel: "ANG MAKUKUHA MO SA $49",
+    insideLabel: "ANG MAKUKUHA MO SA $9.99",
     insideTitle: "Sa Loob ng LEGALIAI — Ginawa Para sa Iyong Sitwasyon",
     insideSub: "Apat na module. Personalized ng AI batay sa iyong daan ng eligibility, kasaysayan ng paglalakbay, at risk profile. Hindi static checklist.",
     m1Title: "Listahan ng Dokumento na Alam ang Iyong Sitwasyon",
@@ -324,7 +324,7 @@ const T = {
     m4Desc: "Lahat ng 128 tanong sa updated 2025 civics test. Practice mode na may AI feedback. Ang interview ay nagiging muscle memory, hindi anxiety.",
     m4Pts: ["Buong 128-tanong na civics test", "AI feedback sa bawat sagot", "Practice ng N-400 interview mismo", "Updated para sa Oct 2025 civics changes"],
     readyTitle: "Handa Ka Nang Tumigil sa Paghuhula?",
-    readySub: "9 tanong. $49 one-time. Ang iyong personalized N-400 prep ay handa sa loob ng 5 minuto.",
+    readySub: "9 tanong. $9.99 one-time. Ang iyong personalized N-400 prep ay handa sa loob ng 5 minuto.",
     mkMod01: "MODULE 01 — DOCUMENTS",
     mkMod02: "MODULE 02 — FORM",
     mkMod03: "MODULE 03 — RISK",
@@ -378,7 +378,7 @@ const T = {
     q9: "ANO ANG IYONG RESIDENT SINCE DATE? (mula sa iyong green card)", q6: "MAYROON KA BANG MGA NAKARAANG KASAL NA NATAPOS?", q7: "NAKARANAS KA NA BA NG LEGAL NA PAGPAPALIT NG PANGALAN?", q8: "NAGSILBI KA BA SA HUKBO NG U.S.?",
     yes: "OO", no: "HINDI", next: "SUSUNOD", finish: "TAPUSIN",
     q1opts: ["Wala pang 3 taon", "3–5 taon", "5–10 taon", "Higit sa 10 taon"],
-    paywallTitle: "HANDA NA ANG IYONG PERSONALISADONG N-400 NA PAGHAHANDA.", paywallSub: "I-unlock ang lahat para sa $49 isang beses.",
+    paywallTitle: "HANDA NA ANG IYONG PERSONALISADONG N-400 NA PAGHAHANDA.", paywallSub: "I-unlock ang lahat para sa $9.99 isang beses.",
     unlock: "I-UNLOCK NGAYON", paywallNote: "Ligtas na bayad. Agarang access. Walang subscription.",
     dashTitle: "ANG IYONG DASHBOARD NG PAGHAHANDA",
     modules: ["LISTAHAN NG DOKUMENTO", "GABAY SA FORM", "PAGTATASA NG PANGANIB", "PAGHAHANDA SA PANAYAM"],
@@ -401,9 +401,9 @@ const T = {
   },
   vi: {
     tagline: "ĐƠN XIN QUỐC TỊCH HOA KỲ CỦA BẠN —\nĐƯỢC CHUẨN BỊ, KHÔNG PHẢI ĐỐN MÒ.",
-    sub: "Chuẩn bị từng bước với AI cho N-400. Không cần luật sư. $49 một lần.",
+    sub: "Chuẩn bị từng bước với AI cho N-400. Không cần luật sư. $9.99 một lần.",
     cta: "BẮT ĐẦU CHUẨN BỊ CỦA TÔI",
-    insideLabel: "BẠN ĐƯỢC GÌ VỚI $49",
+    insideLabel: "BẠN ĐƯỢC GÌ VỚI $9.99",
     insideTitle: "Bên Trong LEGALIAI — Được Xây Dựng Cho Tình Huống Của Bạn",
     insideSub: "Bốn mô-đun. Được AI cá nhân hóa theo đường đủ điều kiện, lịch sử đi lại và hồ sơ rủi ro của bạn. Không phải danh sách tĩnh.",
     m1Title: "Danh Sách Tài Liệu Biết Tình Huống Của Bạn",
@@ -419,7 +419,7 @@ const T = {
     m4Desc: "Tất cả 128 câu hỏi trong bài kiểm tra công dân cập nhật 2025. Chế độ luyện tập với phản hồi AI. Cuộc phỏng vấn trở thành trí nhớ cơ bắp, không phải lo lắng.",
     m4Pts: ["Bài kiểm tra công dân 128 câu đầy đủ", "Phản hồi AI cho mọi câu trả lời", "Luyện phỏng vấn N-400 thực tế", "Cập nhật cho thay đổi công dân tháng 10/2025"],
     readyTitle: "Sẵn Sàng Ngừng Đoán?",
-    readySub: "9 câu hỏi. $49 thanh toán một lần. Chuẩn bị N-400 cá nhân hóa sẵn sàng trong 5 phút.",
+    readySub: "9 câu hỏi. $9.99 thanh toán một lần. Chuẩn bị N-400 cá nhân hóa sẵn sàng trong 5 phút.",
     mkMod01: "MÔ-ĐUN 01 — TÀI LIỆU",
     mkMod02: "MÔ-ĐUN 02 — BIỂU MẪU",
     mkMod03: "MÔ-ĐUN 03 — RỦI RO",
@@ -473,7 +473,7 @@ const T = {
     q9: "NGÀY CƯ TRÚ CỦA BẠN LÀ GÌ? (từ thẻ xanh)", q6: "BẠN CÓ CÁC HÔN NHÂN TRƯỚC ĐÃ KẾT THÚC KHÔNG?", q7: "BẠN CÓ TỪNG THAY ĐỔI TÊN HỢP PHÁP KHÔNG?", q8: "BẠN CÓ TỪNG PHỤC VỤ TRONG QUÂN ĐỘI HOA KỲ KHÔNG?",
     yes: "CÓ", no: "KHÔNG", next: "TIẾP THEO", finish: "HOÀN THÀNH",
     q1opts: ["Dưới 3 năm", "3–5 năm", "5–10 năm", "Hơn 10 năm"],
-    paywallTitle: "CHUẨN BỊ N-400 CÁ NHÂN HÓA CỦA BẠN ĐÃ SẴN SÀNG.", paywallSub: "Mở khóa tất cả với $49 một lần.",
+    paywallTitle: "CHUẨN BỊ N-400 CÁ NHÂN HÓA CỦA BẠN ĐÃ SẴN SÀNG.", paywallSub: "Mở khóa tất cả với $9.99 một lần.",
     unlock: "MỞ KHÓA NGAY", paywallNote: "Thanh toán an toàn. Truy cập ngay lập tức. Không đăng ký.",
     dashTitle: "BẢNG ĐIỀU KHIỂN CHUẨN BỊ CỦA BẠN",
     modules: ["DANH SÁCH TÀI LIỆU", "HƯỚNG DẪN MẪU ĐƠN", "ĐÁNH GIÁ RỦI RO", "CHUẨN BỊ PHỎNG VẤN"],
@@ -496,9 +496,9 @@ const T = {
   },
   hi: {
     tagline: "आपका अमेरिकी नागरिकता आवेदन —\nतैयार, अनुमान नहीं।",
-    sub: "आपके N-400 के लिए AI-संचालित चरण-दर-चरण तैयारी। कोई वकील नहीं। एकमुश्त $49।",
+    sub: "आपके N-400 के लिए AI-संचालित चरण-दर-चरण तैयारी। कोई वकील नहीं। एकमुश्त $9.99।",
     cta: "मेरी तैयारी शुरू करें",
-    insideLabel: "$49 में आपको क्या मिलता है",
+    insideLabel: "$9.99 में आपको क्या मिलता है",
     insideTitle: "LEGALIAI के अंदर — आपकी स्थिति के लिए बनाया गया",
     insideSub: "चार मॉड्यूल। आपके पात्रता मार्ग, यात्रा इतिहास और जोखिम प्रोफ़ाइल के लिए AI-व्यक्तिगत। स्थिर चेकलिस्ट नहीं।",
     m1Title: "एक दस्तावेज़ सूची जो आपकी स्थिति जानती है",
@@ -514,7 +514,7 @@ const T = {
     m4Desc: "अद्यतन 2025 नागरिक परीक्षा के सभी 128 प्रश्न। AI प्रतिक्रिया के साथ अभ्यास मोड। साक्षात्कार मांसपेशी स्मृति बन जाता है, चिंता नहीं।",
     m4Pts: ["पूर्ण 128-प्रश्न नागरिक परीक्षा", "हर उत्तर पर AI प्रतिक्रिया", "N-400 साक्षात्कार का ही अभ्यास करें", "अक्टूबर 2025 नागरिक परिवर्तनों के लिए अद्यतन"],
     readyTitle: "अनुमान लगाना बंद करने के लिए तैयार?",
-    readySub: "9 प्रश्न। $49 एक बार। आपकी व्यक्तिगत N-400 तैयारी 5 मिनट से कम में तैयार।",
+    readySub: "9 प्रश्न। $9.99 एक बार। आपकी व्यक्तिगत N-400 तैयारी 5 मिनट से कम में तैयार।",
     mkMod01: "मॉड्यूल 01 — दस्तावेज़",
     mkMod02: "मॉड्यूल 02 — फॉर्म",
     mkMod03: "मॉड्यूल 03 — जोखिम",
@@ -568,7 +568,7 @@ const T = {
     q9: "आपकी ग्रीन कार्ड पर रेजिडेंट सिंस डेट क्या है?", q6: "क्या आपकी कोई पिछली शादियाँ समाप्त हुई हैं?", q7: "क्या आपने कभी कानूनी नाम परिवर्तन किया है?", q8: "क्या आपने अमेरिकी सेना में सेवा की है?",
     yes: "हाँ", no: "नहीं", next: "अगला", finish: "समाप्त करें",
     q1opts: ["3 साल से कम", "3–5 साल", "5–10 साल", "10 साल से अधिक"],
-    paywallTitle: "आपकी व्यक्तिगत N-400 तैयारी तैयार है।", paywallSub: "एकमुश्त $49 में सब कुछ अनलॉक करें।",
+    paywallTitle: "आपकी व्यक्तिगत N-400 तैयारी तैयार है।", paywallSub: "एकमुश्त $9.99 में सब कुछ अनलॉक करें।",
     unlock: "अभी अनलॉक करें", paywallNote: "सुरक्षित भुगतान। तत्काल पहुंच। कोई सदस्यता नहीं।",
     dashTitle: "आपका तैयारी डैशबोर्ड",
     modules: ["दस्तावेज़ चेकलिस्ट", "फॉर्म वॉकथ्रू", "जोखिम मूल्यांकन", "साक्षात्कार तैयारी"],
@@ -591,9 +591,9 @@ const T = {
   },
   ko: {
     tagline: "미국 시민권 신청 —\n준비된, 추측이 아닌.",
-    sub: "N-400을 위한 AI 기반 단계별 준비. 변호사 불필요. 일회성 $49.",
+    sub: "N-400을 위한 AI 기반 단계별 준비. 변호사 불필요. 일회성 $9.99.",
     cta: "준비 시작하기",
-    insideLabel: "$49로 받는 것",
+    insideLabel: "$9.99로 받는 것",
     insideTitle: "LEGALIAI 내부 — 당신의 상황에 맞춰 제작",
     insideSub: "네 가지 모듈. 자격 경로, 여행 이력, 위험 프로필에 따라 AI로 개인화. 정적 체크리스트가 아닙니다.",
     m1Title: "당신의 상황을 아는 문서 목록",
@@ -609,7 +609,7 @@ const T = {
     m4Desc: "2025년 업데이트된 시민권 시험의 128개 질문 모두. AI 피드백이 포함된 연습 모드. 인터뷰는 불안이 아닌 근육 기억이 됩니다.",
     m4Pts: ["완전한 128 질문 시민권 시험", "모든 답변에 대한 AI 피드백", "N-400 인터뷰 자체 연습", "2025년 10월 시민권 변경 사항 업데이트"],
     readyTitle: "추측을 그만둘 준비가 되셨나요?",
-    readySub: "9개 질문. $49 일회성. 개인화된 N-400 준비가 5분 안에 준비됩니다.",
+    readySub: "9개 질문. $9.99 일회성. 개인화된 N-400 준비가 5분 안에 준비됩니다.",
     mkMod01: "모듈 01 — 문서",
     mkMod02: "모듈 02 — 양식",
     mkMod03: "모듈 03 — 위험",
@@ -663,7 +663,7 @@ const T = {
     q9: "영주권 카드의 거주 시작 날짜는 언제입니까?", q6: "종료된 이전 결혼이 있나요?", q7: "법적 이름 변경을 한 적이 있나요?", q8: "미국 군대에서 복무한 적이 있나요?",
     yes: "예", no: "아니오", next: "다음", finish: "완료",
     q1opts: ["3년 미만", "3–5년", "5–10년", "10년 이상"],
-    paywallTitle: "맞춤형 N-400 준비가 완료되었습니다.", paywallSub: "일회성 $49로 모든 것을 잠금 해제하세요.",
+    paywallTitle: "맞춤형 N-400 준비가 완료되었습니다.", paywallSub: "일회성 $9.99로 모든 것을 잠금 해제하세요.",
     unlock: "지금 잠금 해제", paywallNote: "안전한 결제. 즉시 접근. 구독 없음.",
     dashTitle: "준비 대시보드",
     modules: ["서류 체크리스트", "양식 안내", "위험 평가", "인터뷰 준비"],
@@ -686,9 +686,9 @@ const T = {
   },
   pt: {
     tagline: "SUA SOLICITAÇÃO DE CIDADANIA AMERICANA —\nPREPARADA, NÃO ADIVINHADA.",
-    sub: "Preparação passo a passo com IA para o N-400. Sem advogado. $49 pagamento único.",
+    sub: "Preparação passo a passo com IA para o N-400. Sem advogado. $9.99 pagamento único.",
     cta: "INICIAR MINHA PREPARAÇÃO",
-    insideLabel: "O QUE VOCÊ RECEBE POR $49",
+    insideLabel: "O QUE VOCÊ RECEBE POR $9.99",
     insideTitle: "Por Dentro do LEGALIAI — Feito para Sua Situação",
     insideSub: "Quatro módulos. Personalizados por IA conforme sua via de elegibilidade, histórico de viagens e perfil de risco. Não é uma lista estática.",
     m1Title: "Uma Lista de Documentos Feita para Você",
@@ -704,7 +704,7 @@ const T = {
     m4Desc: "As 128 perguntas do teste de civismo atualizado 2025. Modo de prática com feedback de IA. A entrevista vira memória muscular, não ansiedade.",
     m4Pts: ["Teste completo de 128 perguntas de civismo", "Feedback de IA em cada resposta", "Pratique a entrevista N-400", "Atualizado para mudanças de civismo de Out 2025"],
     readyTitle: "Pronto para Parar de Adivinhar?",
-    readySub: "9 perguntas. $49 pagamento único. Sua preparação N-400 personalizada pronta em menos de 5 minutos.",
+    readySub: "9 perguntas. $9.99 pagamento único. Sua preparação N-400 personalizada pronta em menos de 5 minutos.",
     mkMod01: "MÓDULO 01 — DOCUMENTOS",
     mkMod02: "MÓDULO 02 — FORMULÁRIO",
     mkMod03: "MÓDULO 03 — RISCO",
@@ -758,7 +758,7 @@ const T = {
     q9: "QUAL É SUA DATA DE RESIDENTE? (do seu green card)", q6: "VOCÊ TEM CASAMENTOS ANTERIORES QUE TERMINARAM?", q7: "VOCÊ JÁ TEVE UMA MUDANÇA LEGAL DE NOME?", q8: "VOCÊ JÁ SERVIU NAS FORÇAS ARMADAS DOS EUA?",
     yes: "SIM", no: "NÃO", next: "PRÓXIMO", finish: "FINALIZAR",
     q1opts: ["Menos de 3 anos", "3–5 anos", "5–10 anos", "Mais de 10 anos"],
-    paywallTitle: "SUA PREPARAÇÃO PERSONALIZADA N-400 ESTÁ PRONTA.", paywallSub: "Desbloqueie tudo por $49 pagamento único.",
+    paywallTitle: "SUA PREPARAÇÃO PERSONALIZADA N-400 ESTÁ PRONTA.", paywallSub: "Desbloqueie tudo por $9.99 pagamento único.",
     unlock: "DESBLOQUEAR AGORA", paywallNote: "Pagamento seguro. Acesso imediato. Sem assinatura.",
     dashTitle: "SEU PAINEL DE PREPARAÇÃO",
     modules: ["LISTA DE DOCUMENTOS", "GUIA DO FORMULÁRIO", "AVALIAÇÃO DE RISCOS", "PREPARAÇÃO PARA ENTREVISTA"],
@@ -898,6 +898,7 @@ const MODULE_IDX = {documents:0,form:1,risk:2,interview:3};
 
 function App() {
   const [page, setPage] = useState("landing");
+  const [hasPaid, setHasPaid] = useState(false);
   const [lang, setLang] = useState("en");
   const [showLangMenu, setShowLangMenu] = useState(false);
   const [email, setEmail] = useState("");
@@ -935,7 +936,7 @@ function App() {
       "@type": "SoftwareApplication",
       "name": "LEGALIAI",
       "url": "https://legaliai.com",
-      "description": "AI-powered U.S. citizenship (N-400) preparation. Documents, form walkthrough, risk assessment, and interview prep in 8 languages. No lawyer needed. $49 one-time fee.",
+      "description": "AI-powered U.S. citizenship (N-400) preparation. Documents, form walkthrough, risk assessment, and interview prep in 8 languages. No lawyer needed. $9.99 one-time fee.",
       "applicationCategory": "LegalApplication",
       "operatingSystem": "Web",
       "offers": {
@@ -1023,6 +1024,7 @@ function App() {
           await new Promise(r => setTimeout(r, 2000));
         }
         if (verified) {
+          setHasPaid(true);
           try {
             const savedLang = localStorage.getItem("legaliai_lang") || "en";
             await fetch("/api/send-welcome", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email: u.email, language: savedLang }) });
@@ -1035,10 +1037,10 @@ function App() {
       }
       // Check if already paid
       const { data: payments } = await supabase.from("payments").select("id").eq("user_id", u.id).limit(1);
-      if (payments && payments.length > 0) { setPage("dashboard"); return; }
+      if (payments && payments.length > 0) { setHasPaid(true); setPage("dashboard"); return; }
       // Check if onboarding done
       const { data: answers } = await supabase.from("onboarding_answers").select("id").eq("user_id", u.id).limit(1);
-      if (answers && answers.length > 0) { setPage("paywall"); return; }
+      if (answers && answers.length > 0) { setPage("dashboard"); return; }
       setPage("onboarding");
     };
 
@@ -1096,7 +1098,7 @@ function App() {
   };
   const handleStartCTA = () => { if (user) setPage("onboarding"); else { setIsSignIn(false); setShowEmailModal(true); } };
   const handleSignIn = () => { setIsSignIn(true); setShowEmailModal(true); };
-  const handleOnboardingNext = () => { if (currentQ < 4) setCurrentQ(currentQ + 1); else { saveOnboardingAnswers(); setPage("paywall"); } };
+  const handleOnboardingNext = () => { if (currentQ < 4) setCurrentQ(currentQ + 1); else { saveOnboardingAnswers(); setPage("dashboard"); } };
   const saveOnboardingAnswers = async () => { if (user) await supabase.from("onboarding_answers").upsert({ user_id: user.id, answers: onboardingAnswers }); };
 
   const handleUnlock = async () => {
@@ -1109,6 +1111,11 @@ function App() {
   };
 
   const handleModuleOpen = async (idx) => {
+    // FREEMIUM CHECK: If user hasn't paid, send them to paywall instead
+    if (user && !hasPaid) {
+      setPage("paywall");
+      return;
+    }
     const moduleName = MODULE_NAMES[idx];
     setPage(moduleName);
     // Always verify with Supabase before setting IN PROGRESS — never overwrite COMPLETE
@@ -1591,12 +1598,12 @@ function App() {
         <div style={{ display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:"2px" }}>
           {t("modules").map((mod,i) => (
             <div key={i} style={{ background:"#0d0d0d",border:`1px solid ${moduleProgress[i]==="COMPLETE"?"#1a3a1a":moduleProgress[i]==="IN PROGRESS"?"#3a3010":"#1a1a1a"}`,padding:"40px",display:"flex",flexDirection:"column",gap:"16px" }}>
-              <div style={{ fontSize:"28px" }}>{["📋","📝","⚠️","🎤"][i]}</div>
+              <div style={{ fontSize:"28px" }}>{hasPaid ? ["📋","📝","⚠️","🎤"][i] : "🔒"}</div>
               <h3 style={{ color:"#F5F5F5",fontSize:"14px",letterSpacing:"4px",fontWeight:300,margin:0 }}>{mod}</h3>
               <p style={{ color:"#aaa",fontSize:"13px",letterSpacing:"1px",margin:0,lineHeight:1.8 }}>{t("modDesc")[i]}</p>
               <div style={{ display:"flex",alignItems:"center",justifyContent:"space-between",marginTop:"auto",paddingTop:"20px",borderTop:"1px solid #111" }}>
-                <span style={{ color:getProgressColor(i),fontSize:"10px",letterSpacing:"2px",fontWeight:600 }}>{getProgressLabel(i)}</span>
-                <button onClick={() => handleModuleOpen(i)} style={{ background:moduleProgress[i]==="COMPLETE"?"transparent":"#C9A84C",border:`1px solid ${moduleProgress[i]==="COMPLETE"?"#4ade80":"#C9A84C"}`,color:moduleProgress[i]==="COMPLETE"?"#4ade80":"#000",padding:"10px 28px",fontSize:"11px",letterSpacing:"3px",cursor:"pointer",fontWeight:700,fontFamily:"inherit" }}>{getBtnLabel(i)}</button>
+                <span style={{ color: !hasPaid ? "#C9A84C" : getProgressColor(i),fontSize:"10px",letterSpacing:"2px",fontWeight:600 }}>{!hasPaid ? "🔒 LOCKED" : getProgressLabel(i)}</span>
+                <button onClick={() => handleModuleOpen(i)} style={{ background: !hasPaid ? "#C9A84C" : moduleProgress[i]==="COMPLETE"?"transparent":"#C9A84C",border:`1px solid ${moduleProgress[i]==="COMPLETE"&&hasPaid?"#4ade80":"#C9A84C"}`,color: !hasPaid ? "#000" : moduleProgress[i]==="COMPLETE"?"#4ade80":"#000",padding:"10px 28px",fontSize:"11px",letterSpacing:"3px",cursor:"pointer",fontWeight:700,fontFamily:"inherit" }}>{!hasPaid ? "$9.99 UNLOCK" : getBtnLabel(i)}</button>
               </div>
             </div>
           ))}
@@ -1627,12 +1634,12 @@ function App() {
           <div style={{ display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:"2px" }}>
             {t("modules").map((mod,i) => (
               <div key={i} style={{ background:"#0d0d0d",border:`1px solid ${moduleProgress[i]==="COMPLETE"?"#1a3a1a":moduleProgress[i]==="IN PROGRESS"?"#3a3010":"#1a1a1a"}`,padding:"40px",display:"flex",flexDirection:"column",gap:"16px" }}>
-                <div style={{ fontSize:"28px" }}>{["📋","📝","⚠️","🎤"][i]}</div>
+                <div style={{ fontSize:"28px" }}>{hasPaid ? ["📋","📝","⚠️","🎤"][i] : "🔒"}</div>
                 <h3 style={{ color:"#F5F5F5",fontSize:"14px",letterSpacing:"4px",fontWeight:300,margin:0 }}>{mod}</h3>
                 <p style={{ color:"#aaa",fontSize:"13px",letterSpacing:"1px",margin:0,lineHeight:1.8 }}>{t("modDesc")[i]}</p>
                 <div style={{ display:"flex",alignItems:"center",justifyContent:"space-between",marginTop:"auto",paddingTop:"20px",borderTop:"1px solid #111" }}>
-                  <span style={{ color:getProgressColor(i),fontSize:"10px",letterSpacing:"2px",fontWeight:600 }}>{getProgressLabel(i)}</span>
-                  <button onClick={() => handleModuleOpen(i)} style={{ background:moduleProgress[i]==="COMPLETE"?"transparent":"#C9A84C",border:`1px solid ${moduleProgress[i]==="COMPLETE"?"#4ade80":"#C9A84C"}`,color:moduleProgress[i]==="COMPLETE"?"#4ade80":"#000",padding:"10px 28px",fontSize:"11px",letterSpacing:"3px",cursor:"pointer",fontWeight:700,fontFamily:"inherit" }}>{getBtnLabel(i)}</button>
+                  <span style={{ color: !hasPaid ? "#C9A84C" : getProgressColor(i),fontSize:"10px",letterSpacing:"2px",fontWeight:600 }}>{!hasPaid ? "🔒 LOCKED" : getProgressLabel(i)}</span>
+                  <button onClick={() => handleModuleOpen(i)} style={{ background: !hasPaid ? "#C9A84C" : moduleProgress[i]==="COMPLETE"?"transparent":"#C9A84C",border:`1px solid ${moduleProgress[i]==="COMPLETE"&&hasPaid?"#4ade80":"#C9A84C"}`,color: !hasPaid ? "#000" : moduleProgress[i]==="COMPLETE"?"#4ade80":"#000",padding:"10px 28px",fontSize:"11px",letterSpacing:"3px",cursor:"pointer",fontWeight:700,fontFamily:"inherit" }}>{!hasPaid ? "$9.99 UNLOCK" : getBtnLabel(i)}</button>
                 </div>
               </div>
             ))}
