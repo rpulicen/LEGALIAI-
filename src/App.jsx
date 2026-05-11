@@ -40,6 +40,49 @@ const T = {
     m4Pts: ["Full 128-question civics test", "AI feedback on every answer", "Practice the N-400 interview itself", "Updated for October 2025 civics changes"],
     readyTitle: "Ready to Stop Guessing?",
     readySub: "9 questions. $49 one-time. Your personalized N-400 prep ready in under 5 minutes.",
+    mkMod01: "MODULE 01 — DOCUMENTS",
+    mkMod02: "MODULE 02 — FORM",
+    mkMod03: "MODULE 03 — RISK",
+    mkMod04: "MODULE 04 — INTERVIEW",
+    mkDocsTitle: "YOUR DOCUMENTS",
+    mkDocsCount: "2 / 8 GATHERED",
+    mkDoc1Name: "Permanent Resident Card",
+    mkDoc1Where: "{t("mkDoc1Where")}",
+    mkDoc2Name: "Joint Tax Returns — Last 3 Years",
+    mkDoc2Where: "{t("mkDoc2Where")}",
+    mkDoc2Why: "{t("mkDoc2Why")}",
+    mkDoc3Name: "Certified Court Records — DUI 2019",
+    mkDoc3Critical: "{t("mkDoc3Critical")}",
+    mkPart9: "PART 9 — TIME OUTSIDE THE U.S.",
+    mkPart9Q: "Have you taken any trip of 6 months or more outside the United States in the past 5 years?",
+    mkMeansLbl: "WHAT IT MEANS:",
+    mkMeansTxt: "Any single trip — not cumulative.",
+    mkExampleLbl: "EXAMPLE:",
+    mkExampleTxt: "1 trip of 7 months = YES. Two 4-month trips = NO.",
+    mkMistakeLbl: "COMMON MISTAKE:",
+    mkMistakeTxt: "Not counting return travel days.",
+    mkExampleAns: "Yes — visited Brazil from June 2022 to January 2023 to take care of my father",
+    mkAIFb: "AI FEEDBACK",
+    mkAIFbTxt: "Strong answer. Add specific dates and bring family-caregiver evidence to your interview. This explanation supports continuous residence.",
+    mkRiskTitle: "YOUR RISK PROFILE",
+    mkRiskCount: "2 ITEMS",
+    mkRisk1: "EXTENDED TRAVEL",
+    mkLvlHigh: "HIGH",
+    mkRisk1Txt: "7-month trip to Brazil 2022 — USCIS will require continuous residence evidence. Prepare employment records, lease, family-caregiver documentation.",
+    mkRisk2: "2019 DUI DISCLOSURE",
+    mkLvlMed: "MEDIUM",
+    mkRisk2Txt: "Disclosed in onboarding. Not automatically disqualifying. Bring certified court disposition documents — not personal summaries.",
+    mkRisk3: "TAX COMPLIANCE",
+    mkLvlClear: "CLEAR",
+    mkRisk3Txt: "All 5 years of joint tax returns confirmed. No red flags expected on good moral character.",
+    mkCivicsQ: "CIVICS QUESTION 47 / 128",
+    mkCivicsCat: "HISTORY · 1800s",
+    mkCivicsQTxt: "Name one war fought by the United States in the 1800s.",
+    mkCivicsAns: "The Civil War — between the Union and the Confederate states",
+    mkCorrect: "✓ CORRECT",
+    mkCorrectTxt: "Perfect answer. USCIS accepts: War of 1812, Mexican-American War, Civil War, Spanish-American War.",
+    mkPrev: "← PREVIOUS",
+    mkNextQ: "NEXT QUESTION →",
     disclaimer: "LEGALIAI provides preparation guidance only. This is not legal advice. For complex situations, consult a licensed immigration attorney.",
     emailTitle: "ENTER YOUR EMAIL TO START", emailSub: "We'll send you a secure login link. No password needed.",
     sendLink: "SEND MAGIC LINK", checkEmail: "CHECK YOUR EMAIL", checkEmailSub: "Your magic link has been sent. Click the link in your email to continue.",
@@ -92,6 +135,49 @@ const T = {
     m4Pts: ["Examen completo de 128 preguntas de civismo", "Comentarios de IA en cada respuesta", "Practica la entrevista N-400", "Actualizado para los cambios de civismo de Oct 2025"],
     readyTitle: "¿Listo para Dejar de Adivinar?",
     readySub: "9 preguntas. $49 pago único. Tu preparación N-400 personalizada lista en menos de 5 minutos.",
+    mkMod01: "MÓDULO 01 — DOCUMENTOS",
+    mkMod02: "MÓDULO 02 — FORMULARIO",
+    mkMod03: "MÓDULO 03 — RIESGO",
+    mkMod04: "MÓDULO 04 — ENTREVISTA",
+    mkDocsTitle: "TUS DOCUMENTOS",
+    mkDocsCount: "2 / 8 RECOLECTADOS",
+    mkDoc1Name: "Tarjeta de Residente Permanente (Green Card)",
+    mkDoc1Where: "Copia frontal y trasera de tu green card",
+    mkDoc2Name: "Declaraciones de Impuestos Conjuntas — Últimos 3 Años",
+    mkDoc2Where: "IRS.gov/transcripts — gratis si no tienes copias",
+    mkDoc2Why: "Marcaste casado(a) con ciudadano de EE.UU. — requerido para vía de 3 años",
+    mkDoc3Name: "Registros Certificados de la Corte — DUI 2019",
+    mkDoc3Critical: "Declaraste un DUI de 2019 — trae la disposición original",
+    mkPart9: "PARTE 9 — TIEMPO FUERA DE EE.UU.",
+    mkPart9Q: "¿Has hecho algún viaje de 6 meses o más fuera de los Estados Unidos en los últimos 5 años?",
+    mkMeansLbl: "QUÉ SIGNIFICA:",
+    mkMeansTxt: "Cualquier viaje único — no acumulativo.",
+    mkExampleLbl: "EJEMPLO:",
+    mkExampleTxt: "1 viaje de 7 meses = SÍ. Dos viajes de 4 meses = NO.",
+    mkMistakeLbl: "ERROR COMÚN:",
+    mkMistakeTxt: "No contar los días de viaje de regreso.",
+    mkExampleAns: "Sí — visité México de junio 2022 a enero 2023 para cuidar a mi padre",
+    mkAIFb: "COMENTARIOS DE IA",
+    mkAIFbTxt: "Respuesta sólida. Agrega fechas específicas y lleva evidencia de cuidador familiar a tu entrevista. Esta explicación apoya residencia continua.",
+    mkRiskTitle: "TU PERFIL DE RIESGO",
+    mkRiskCount: "2 ÍTEMS",
+    mkRisk1: "VIAJE PROLONGADO",
+    mkLvlHigh: "ALTO",
+    mkRisk1Txt: "Viaje de 7 meses a México 2022 — USCIS requerirá evidencia de residencia continua. Prepara registros de empleo, arrendamiento, documentación de cuidador familiar.",
+    mkRisk2: "DIVULGACIÓN DE DUI 2019",
+    mkLvlMed: "MEDIO",
+    mkRisk2Txt: "Declarado en onboarding. No descalifica automáticamente. Trae documentos certificados de la corte — no resúmenes personales.",
+    mkRisk3: "CUMPLIMIENTO FISCAL",
+    mkLvlClear: "LIMPIO",
+    mkRisk3Txt: "Los 5 años de declaraciones conjuntas confirmados. No se esperan red flags en buen carácter moral.",
+    mkCivicsQ: "PREGUNTA DE CIVISMO 47 / 128",
+    mkCivicsCat: "HISTORIA · Siglo XIX",
+    mkCivicsQTxt: "Nombra una guerra librada por los Estados Unidos en el siglo XIX.",
+    mkCivicsAns: "La Guerra Civil — entre la Unión y los estados Confederados",
+    mkCorrect: "✓ CORRECTO",
+    mkCorrectTxt: "Respuesta perfecta. USCIS acepta: Guerra de 1812, Guerra Mexicano-Estadounidense, Guerra Civil, Guerra Hispano-Estadounidense.",
+    mkPrev: "← ANTERIOR",
+    mkNextQ: "SIGUIENTE PREGUNTA →",
     t1: "GUÍA EN ESPAÑOL CLARO", t2: "PERSONALIZADO A TU SITUACIÓN", t3: "NO ES ASESORÍA LEGAL — SOLO PREPARACIÓN",
     disclaimer: "LEGALIAI proporciona orientación de preparación únicamente. Esto no es asesoramiento legal. Para situaciones complejas, consulta a un abogado de inmigración.",
     emailTitle: "INGRESA TU CORREO PARA COMENZAR", emailSub: "Te enviaremos un enlace de acceso seguro. Sin contraseña.",
@@ -144,6 +230,49 @@ const T = {
     m4Pts: ["完整的 128 题公民测试", "每个答案的 AI 反馈", "练习 N-400 面试本身", "针对 2025 年 10 月公民变化更新"],
     readyTitle: "准备好停止猜测了吗?",
     readySub: "9 个问题。$49 一次性付款。您的个性化 N-400 准备工作在 5 分钟内完成。",
+    mkMod01: "模块 01 — 文件",
+    mkMod02: "模块 02 — 表格",
+    mkMod03: "模块 03 — 风险",
+    mkMod04: "模块 04 — 面试",
+    mkDocsTitle: "您的文件",
+    mkDocsCount: "已收集 2 / 8",
+    mkDoc1Name: "永久居民卡(绿卡)",
+    mkDoc1Where: "您绿卡的正反面副本",
+    mkDoc2Name: "联合报税表 — 过去 3 年",
+    mkDoc2Where: "IRS.gov/transcripts — 如果没有副本可免费获取",
+    mkDoc2Why: "您标记为与美国公民结婚 — 3 年路径要求",
+    mkDoc3Name: "法院认证记录 — 2019 年 DUI",
+    mkDoc3Critical: "您披露了 2019 年的 DUI — 携带原始判决",
+    mkPart9: "第 9 部分 — 离开美国的时间",
+    mkPart9Q: "在过去 5 年中,您是否有过任何一次 6 个月或以上离开美国的旅行?",
+    mkMeansLbl: "含义:",
+    mkMeansTxt: "任何单次旅行 — 不累计。",
+    mkExampleLbl: "示例:",
+    mkExampleTxt: "1 次 7 个月的旅行 = 是。两次 4 个月的旅行 = 否。",
+    mkMistakeLbl: "常见错误:",
+    mkMistakeTxt: "没有计算返程旅行天数。",
+    mkExampleAns: "是 — 2022 年 6 月至 2023 年 1 月访问中国照顾我的父亲",
+    mkAIFb: "AI 反馈",
+    mkAIFbTxt: "强势答案。在您的面试中添加具体日期并带上家庭照顾者证据。这一解释支持持续居住。",
+    mkRiskTitle: "您的风险概况",
+    mkRiskCount: "2 项",
+    mkRisk1: "长期旅行",
+    mkLvlHigh: "高",
+    mkRisk1Txt: "2022 年 7 个月的中国之行 — USCIS 将要求持续居住证据。准备就业记录、租约、家庭照顾者文件。",
+    mkRisk2: "2019 年 DUI 披露",
+    mkLvlMed: "中",
+    mkRisk2Txt: "入门时披露。不会自动取消资格。携带法院认证的处置文件 — 而非个人摘要。",
+    mkRisk3: "税务合规",
+    mkLvlClear: "清晰",
+    mkRisk3Txt: "所有 5 年的联合报税表已确认。良好道德品格预计无红旗。",
+    mkCivicsQ: "公民问题 47 / 128",
+    mkCivicsCat: "历史 · 1800 年代",
+    mkCivicsQTxt: "说出美国在 1800 年代打过的一场战争。",
+    mkCivicsAns: "内战 — 联邦与南部邦联之间",
+    mkCorrect: "✓ 正确",
+    mkCorrectTxt: "完美答案。USCIS 接受:1812 年战争、美墨战争、内战、美西战争。",
+    mkPrev: "← 上一个",
+    mkNextQ: "下一个问题 →",
     t1: "简明中文指导", t2: "根据您的情况个性化定制", t3: "非法律建议 — 仅为准备指导",
     disclaimer: "LEGALIAI仅提供准备指导，这不是法律建议。对于复杂情况，请咨询持牌移民律师。",
     emailTitle: "输入您的电子邮件开始", emailSub: "我们将发送安全登录链接，无需密码。",
@@ -196,6 +325,49 @@ const T = {
     m4Pts: ["Buong 128-tanong na civics test", "AI feedback sa bawat sagot", "Practice ng N-400 interview mismo", "Updated para sa Oct 2025 civics changes"],
     readyTitle: "Handa Ka Nang Tumigil sa Paghuhula?",
     readySub: "9 tanong. $49 one-time. Ang iyong personalized N-400 prep ay handa sa loob ng 5 minuto.",
+    mkMod01: "MODULE 01 — DOCUMENTS",
+    mkMod02: "MODULE 02 — FORM",
+    mkMod03: "MODULE 03 — RISK",
+    mkMod04: "MODULE 04 — INTERVIEW",
+    mkDocsTitle: "IYONG MGA DOKUMENTO",
+    mkDocsCount: "2 / 8 NAKUHA",
+    mkDoc1Name: "Permanent Resident Card (Green Card)",
+    mkDoc1Where: "Harap at likod ng iyong green card",
+    mkDoc2Name: "Joint Tax Returns — Huling 3 Taon",
+    mkDoc2Where: "IRS.gov/transcripts — libre kung wala kang kopya",
+    mkDoc2Why: "Tinanda mong kasal sa US citizen — required para sa 3-year path",
+    mkDoc3Name: "Sertipikadong Tala ng Korte — DUI 2019",
+    mkDoc3Critical: "Inihayag mo ang 2019 DUI — dalhin ang original disposition",
+    mkPart9: "BAHAGI 9 — ORAS SA LABAS NG U.S.",
+    mkPart9Q: "Mayroon ka bang biyahe na 6 buwan o higit pa sa labas ng Estados Unidos sa loob ng nakaraang 5 taon?",
+    mkMeansLbl: "ANO ANG IBIG SABIHIN:",
+    mkMeansTxt: "Anumang isang biyahe — hindi cumulative.",
+    mkExampleLbl: "HALIMBAWA:",
+    mkExampleTxt: "1 biyahe ng 7 buwan = OO. Dalawang biyahe ng 4 buwan = HINDI.",
+    mkMistakeLbl: "KARANIWANG PAGKAKAMALI:",
+    mkMistakeTxt: "Hindi binibilang ang mga araw ng pagbabalik.",
+    mkExampleAns: "Oo — bumisita sa Pilipinas mula Hunyo 2022 hanggang Enero 2023 upang alagaan ang aking ama",
+    mkAIFb: "AI FEEDBACK",
+    mkAIFbTxt: "Malakas na sagot. Magdagdag ng partikular na petsa at magdala ng family-caregiver evidence sa iyong interview. Sinusuportahan nito ang continuous residence.",
+    mkRiskTitle: "IYONG RISK PROFILE",
+    mkRiskCount: "2 ITEMS",
+    mkRisk1: "MAHABANG BIYAHE",
+    mkLvlHigh: "MATAAS",
+    mkRisk1Txt: "7 buwang biyahe sa Pilipinas 2022 — Hihingi ang USCIS ng continuous residence evidence. Maghanda ng employment records, lease, family-caregiver dokumentasyon.",
+    mkRisk2: "PAGHAYAG NG 2019 DUI",
+    mkLvlMed: "KATAMTAMAN",
+    mkRisk2Txt: "Inihayag sa onboarding. Hindi automatic na disqualifying. Magdala ng sertipikadong court disposition documents — hindi personal summaries.",
+    mkRisk3: "TAX COMPLIANCE",
+    mkLvlClear: "MALINIS",
+    mkRisk3Txt: "Lahat ng 5 taon ng joint tax returns kumpirmado. Walang red flags na inaasahan sa good moral character.",
+    mkCivicsQ: "CIVICS QUESTION 47 / 128",
+    mkCivicsCat: "KASAYSAYAN · 1800s",
+    mkCivicsQTxt: "Pangalanan ang isang digmaan na nilaban ng Estados Unidos noong 1800s.",
+    mkCivicsAns: "Ang Civil War — sa pagitan ng Union at ng mga Confederate states",
+    mkCorrect: "✓ TAMA",
+    mkCorrectTxt: "Perpektong sagot. Tinatanggap ng USCIS: Digmaan ng 1812, Mexican-American War, Civil War, Spanish-American War.",
+    mkPrev: "← NAKARAAN",
+    mkNextQ: "SUNOD NA TANONG →",
     t1: "GABAY SA SIMPLENG TAGALOG", t2: "INANGKOP SA IYONG SITWASYON", t3: "HINDI LEGAL NA PAYO — PAGHAHANDA LAMANG",
     disclaimer: "Ang LEGALIAI ay nagbibigay lamang ng gabay sa paghahanda. Hindi ito legal na payo. Para sa mga kumplikadong sitwasyon, kumonsulta sa isang lisensyadong abogado.",
     emailTitle: "ILAGAY ANG IYONG EMAIL PARA MAGSIMULA", emailSub: "Magpapadala kami ng secure na link. Walang password.",
@@ -248,6 +420,49 @@ const T = {
     m4Pts: ["Bài kiểm tra công dân 128 câu đầy đủ", "Phản hồi AI cho mọi câu trả lời", "Luyện phỏng vấn N-400 thực tế", "Cập nhật cho thay đổi công dân tháng 10/2025"],
     readyTitle: "Sẵn Sàng Ngừng Đoán?",
     readySub: "9 câu hỏi. $49 thanh toán một lần. Chuẩn bị N-400 cá nhân hóa sẵn sàng trong 5 phút.",
+    mkMod01: "MÔ-ĐUN 01 — TÀI LIỆU",
+    mkMod02: "MÔ-ĐUN 02 — BIỂU MẪU",
+    mkMod03: "MÔ-ĐUN 03 — RỦI RO",
+    mkMod04: "MÔ-ĐUN 04 — PHỎNG VẤN",
+    mkDocsTitle: "TÀI LIỆU CỦA BẠN",
+    mkDocsCount: "ĐÃ THU THẬP 2 / 8",
+    mkDoc1Name: "Thẻ Thường Trú Nhân (Green Card)",
+    mkDoc1Where: "Bản sao mặt trước và mặt sau thẻ xanh của bạn",
+    mkDoc2Name: "Khai Thuế Chung — 3 Năm Gần Nhất",
+    mkDoc2Where: "IRS.gov/transcripts — miễn phí nếu bạn không có bản sao",
+    mkDoc2Why: "Bạn đã đánh dấu kết hôn với công dân Hoa Kỳ — yêu cầu cho đường 3 năm",
+    mkDoc3Name: "Hồ Sơ Tòa Án Có Chứng Nhận — DUI 2019",
+    mkDoc3Critical: "Bạn đã tiết lộ DUI 2019 — mang theo bản gốc",
+    mkPart9: "PHẦN 9 — THỜI GIAN BÊN NGOÀI HOA KỲ",
+    mkPart9Q: "Bạn có chuyến đi nào từ 6 tháng trở lên bên ngoài Hoa Kỳ trong 5 năm qua không?",
+    mkMeansLbl: "Ý NGHĨA:",
+    mkMeansTxt: "Bất kỳ chuyến đi đơn lẻ nào — không tích lũy.",
+    mkExampleLbl: "VÍ DỤ:",
+    mkExampleTxt: "1 chuyến đi 7 tháng = CÓ. Hai chuyến đi 4 tháng = KHÔNG.",
+    mkMistakeLbl: "LỖI THƯỜNG GẶP:",
+    mkMistakeTxt: "Không tính ngày di chuyển về.",
+    mkExampleAns: "Có — về thăm Việt Nam từ tháng 6/2022 đến tháng 1/2023 để chăm sóc cha tôi",
+    mkAIFb: "PHẢN HỒI AI",
+    mkAIFbTxt: "Câu trả lời mạnh mẽ. Thêm ngày cụ thể và mang bằng chứng chăm sóc gia đình đến phỏng vấn. Lời giải thích này hỗ trợ cư trú liên tục.",
+    mkRiskTitle: "HỒ SƠ RỦI RO CỦA BẠN",
+    mkRiskCount: "2 MỤC",
+    mkRisk1: "ĐI LẠI KÉO DÀI",
+    mkLvlHigh: "CAO",
+    mkRisk1Txt: "Chuyến đi 7 tháng đến Việt Nam 2022 — USCIS sẽ yêu cầu bằng chứng cư trú liên tục. Chuẩn bị hồ sơ việc làm, hợp đồng thuê, tài liệu chăm sóc gia đình.",
+    mkRisk2: "TIẾT LỘ DUI 2019",
+    mkLvlMed: "TRUNG BÌNH",
+    mkRisk2Txt: "Tiết lộ trong onboarding. Không tự động bị từ chối. Mang tài liệu tòa án được chứng nhận — không phải tóm tắt cá nhân.",
+    mkRisk3: "TUÂN THỦ THUẾ",
+    mkLvlClear: "SẠCH",
+    mkRisk3Txt: "Tất cả 5 năm khai thuế chung đã được xác nhận. Không có cờ đỏ về phẩm chất đạo đức tốt.",
+    mkCivicsQ: "CÂU HỎI CÔNG DÂN 47 / 128",
+    mkCivicsCat: "LỊCH SỬ · 1800s",
+    mkCivicsQTxt: "Nêu tên một cuộc chiến mà Hoa Kỳ đã tham gia trong những năm 1800.",
+    mkCivicsAns: "Nội chiến — giữa Liên bang và các bang Liên minh miền Nam",
+    mkCorrect: "✓ ĐÚNG",
+    mkCorrectTxt: "Câu trả lời hoàn hảo. USCIS chấp nhận: Chiến tranh 1812, Chiến tranh Mỹ-Mexico, Nội chiến, Chiến tranh Tây Ban Nha-Mỹ.",
+    mkPrev: "← TRƯỚC",
+    mkNextQ: "CÂU HỎI TIẾP THEO →",
     t1: "HƯỚNG DẪN TIẾNG VIỆT RÕ RÀNG", t2: "CÁ NHÂN HÓA THEO TÌNH HUỐNG CỦA BẠN", t3: "KHÔNG PHẢI TƯ VẤN PHÁP LÝ — CHỈ CHUẨN BỊ",
     disclaimer: "LEGALIAI chỉ cung cấp hướng dẫn chuẩn bị. Đây không phải tư vấn pháp lý. Với các trường hợp phức tạp, hãy tham khảo luật sư di trú có giấy phép.",
     emailTitle: "NHẬP EMAIL ĐỂ BẮT ĐẦU", emailSub: "Chúng tôi sẽ gửi liên kết đăng nhập bảo mật. Không cần mật khẩu.",
@@ -300,6 +515,49 @@ const T = {
     m4Pts: ["पूर्ण 128-प्रश्न नागरिक परीक्षा", "हर उत्तर पर AI प्रतिक्रिया", "N-400 साक्षात्कार का ही अभ्यास करें", "अक्टूबर 2025 नागरिक परिवर्तनों के लिए अद्यतन"],
     readyTitle: "अनुमान लगाना बंद करने के लिए तैयार?",
     readySub: "9 प्रश्न। $49 एक बार। आपकी व्यक्तिगत N-400 तैयारी 5 मिनट से कम में तैयार।",
+    mkMod01: "मॉड्यूल 01 — दस्तावेज़",
+    mkMod02: "मॉड्यूल 02 — फॉर्म",
+    mkMod03: "मॉड्यूल 03 — जोखिम",
+    mkMod04: "मॉड्यूल 04 — साक्षात्कार",
+    mkDocsTitle: "आपके दस्तावेज़",
+    mkDocsCount: "2 / 8 एकत्रित",
+    mkDoc1Name: "स्थायी निवासी कार्ड (ग्रीन कार्ड)",
+    mkDoc1Where: "आपके ग्रीन कार्ड की आगे और पीछे की कॉपी",
+    mkDoc2Name: "संयुक्त कर रिटर्न — पिछले 3 साल",
+    mkDoc2Where: "IRS.gov/transcripts — अगर आपके पास कॉपी नहीं है तो मुफ्त",
+    mkDoc2Why: "आपने अमेरिकी नागरिक से विवाहित चिह्नित किया — 3-वर्ष पथ के लिए आवश्यक",
+    mkDoc3Name: "प्रमाणित न्यायालय रिकॉर्ड — DUI 2019",
+    mkDoc3Critical: "आपने 2019 DUI का खुलासा किया — मूल disposition लाएं",
+    mkPart9: "भाग 9 — अमेरिका के बाहर का समय",
+    mkPart9Q: "क्या आपने पिछले 5 वर्षों में संयुक्त राज्य अमेरिका के बाहर 6 महीने या उससे अधिक की कोई यात्रा की है?",
+    mkMeansLbl: "इसका क्या मतलब है:",
+    mkMeansTxt: "कोई एक यात्रा — संचयी नहीं।",
+    mkExampleLbl: "उदाहरण:",
+    mkExampleTxt: "7 महीने की 1 यात्रा = हाँ। 4 महीने की दो यात्राएँ = नहीं।",
+    mkMistakeLbl: "सामान्य गलती:",
+    mkMistakeTxt: "वापसी यात्रा के दिनों को नहीं गिनना।",
+    mkExampleAns: "हाँ — अपने पिता की देखभाल के लिए जून 2022 से जनवरी 2023 तक भारत गया",
+    mkAIFb: "AI प्रतिक्रिया",
+    mkAIFbTxt: "मजबूत उत्तर। विशिष्ट तिथियाँ जोड़ें और अपने साक्षात्कार में पारिवारिक देखभालकर्ता साक्ष्य लाएँ। यह स्पष्टीकरण निरंतर निवास का समर्थन करता है।",
+    mkRiskTitle: "आपका जोखिम प्रोफ़ाइल",
+    mkRiskCount: "2 आइटम",
+    mkRisk1: "विस्तारित यात्रा",
+    mkLvlHigh: "उच्च",
+    mkRisk1Txt: "2022 में भारत की 7 महीने की यात्रा — USCIS को निरंतर निवास के साक्ष्य की आवश्यकता होगी। रोजगार रिकॉर्ड, पट्टा, पारिवारिक देखभालकर्ता दस्तावेज़ तैयार करें।",
+    mkRisk2: "2019 DUI खुलासा",
+    mkLvlMed: "मध्यम",
+    mkRisk2Txt: "ऑनबोर्डिंग में खुलासा। स्वचालित रूप से अयोग्य नहीं। प्रमाणित अदालत disposition दस्तावेज़ लाएँ — व्यक्तिगत सारांश नहीं।",
+    mkRisk3: "कर अनुपालन",
+    mkLvlClear: "स्पष्ट",
+    mkRisk3Txt: "सभी 5 वर्षों के संयुक्त कर रिटर्न पुष्ट। अच्छे नैतिक चरित्र पर कोई red flags अपेक्षित नहीं।",
+    mkCivicsQ: "नागरिक प्रश्न 47 / 128",
+    mkCivicsCat: "इतिहास · 1800 का दशक",
+    mkCivicsQTxt: "1800 के दशक में संयुक्त राज्य अमेरिका द्वारा लड़ा गया एक युद्ध बताएँ।",
+    mkCivicsAns: "गृहयुद्ध — संघ और संघीय राज्यों के बीच",
+    mkCorrect: "✓ सही",
+    mkCorrectTxt: "सही उत्तर। USCIS स्वीकार करता है: 1812 का युद्ध, मैक्सिकन-अमेरिकी युद्ध, गृहयुद्ध, स्पेनिश-अमेरिकी युद्ध।",
+    mkPrev: "← पिछला",
+    mkNextQ: "अगला प्रश्न →",
     t1: "सरल हिंदी में मार्गदर्शन", t2: "आपकी स्थिति के अनुसार व्यक्तिगत", t3: "कानूनी सलाह नहीं — केवल तैयारी",
     disclaimer: "LEGALIAI केवल तैयारी मार्गदर्शन प्रदान करता है। यह कानूनी सलाह नहीं है। जटिल मामलों के लिए लाइसेंस प्राप्त वकील से परामर्श करें।",
     emailTitle: "शुरू करने के लिए अपना ईमेल दर्ज करें", emailSub: "हम एक सुरक्षित लॉगिन लिंक भेजेंगे। कोई पासवर्ड नहीं।",
@@ -352,6 +610,49 @@ const T = {
     m4Pts: ["완전한 128 질문 시민권 시험", "모든 답변에 대한 AI 피드백", "N-400 인터뷰 자체 연습", "2025년 10월 시민권 변경 사항 업데이트"],
     readyTitle: "추측을 그만둘 준비가 되셨나요?",
     readySub: "9개 질문. $49 일회성. 개인화된 N-400 준비가 5분 안에 준비됩니다.",
+    mkMod01: "모듈 01 — 문서",
+    mkMod02: "모듈 02 — 양식",
+    mkMod03: "모듈 03 — 위험",
+    mkMod04: "모듈 04 — 인터뷰",
+    mkDocsTitle: "귀하의 문서",
+    mkDocsCount: "2 / 8 수집됨",
+    mkDoc1Name: "영주권 카드 (그린카드)",
+    mkDoc1Where: "귀하의 그린카드 앞면과 뒷면 사본",
+    mkDoc2Name: "공동 세금 신고서 — 최근 3년",
+    mkDoc2Where: "IRS.gov/transcripts — 사본이 없으면 무료",
+    mkDoc2Why: "미국 시민과 결혼했다고 표시함 — 3년 경로에 필요",
+    mkDoc3Name: "인증된 법원 기록 — DUI 2019",
+    mkDoc3Critical: "2019년 DUI를 공개했습니다 — 원본 처분을 가져오세요",
+    mkPart9: "파트 9 — 미국 외부에서의 시간",
+    mkPart9Q: "지난 5년 동안 미국 외부에서 6개월 이상의 여행을 한 적이 있습니까?",
+    mkMeansLbl: "의미:",
+    mkMeansTxt: "단일 여행 — 누적 아님.",
+    mkExampleLbl: "예시:",
+    mkExampleTxt: "7개월 여행 1회 = 예. 4개월 여행 두 번 = 아니오.",
+    mkMistakeLbl: "일반적인 실수:",
+    mkMistakeTxt: "귀국 여행 일수를 세지 않는 것.",
+    mkExampleAns: "예 — 2022년 6월부터 2023년 1월까지 아버지를 돌보기 위해 한국을 방문했습니다",
+    mkAIFb: "AI 피드백",
+    mkAIFbTxt: "강력한 답변입니다. 구체적인 날짜를 추가하고 인터뷰에 가족 돌봄 증거를 가져오세요. 이 설명은 지속적인 거주를 뒷받침합니다.",
+    mkRiskTitle: "귀하의 위험 프로필",
+    mkRiskCount: "2 항목",
+    mkRisk1: "장기 여행",
+    mkLvlHigh: "높음",
+    mkRisk1Txt: "2022년 7개월 한국 여행 — USCIS는 지속적인 거주 증거를 요구할 것입니다. 고용 기록, 임대 계약, 가족 돌봄 문서를 준비하세요.",
+    mkRisk2: "2019 DUI 공개",
+    mkLvlMed: "중간",
+    mkRisk2Txt: "온보딩에서 공개됨. 자동으로 자격 박탈되지 않음. 인증된 법원 처분 문서를 가져오세요 — 개인 요약이 아님.",
+    mkRisk3: "세금 준수",
+    mkLvlClear: "깨끗함",
+    mkRisk3Txt: "5년간의 공동 세금 신고서 모두 확인됨. 좋은 도덕적 품성에 대한 red flags 예상되지 않음.",
+    mkCivicsQ: "시민권 질문 47 / 128",
+    mkCivicsCat: "역사 · 1800년대",
+    mkCivicsQTxt: "1800년대에 미국이 치른 전쟁 하나를 말하세요.",
+    mkCivicsAns: "남북전쟁 — 연방과 남부연합 사이",
+    mkCorrect: "✓ 정확함",
+    mkCorrectTxt: "완벽한 답변. USCIS가 인정함: 1812년 전쟁, 미국-멕시코 전쟁, 남북전쟁, 미국-스페인 전쟁.",
+    mkPrev: "← 이전",
+    mkNextQ: "다음 질문 →",
     t1: "쉬운 한국어 안내", t2: "내 상황에 맞게 맞춤화", t3: "법률 조언 아님 — 준비만",
     disclaimer: "LEGALIAI는 준비 안내만 제공합니다. 법률 조언이 아닙니다. 복잡한 상황에서는 변호사와 상담하세요.",
     emailTitle: "시작하려면 이메일을 입력하세요", emailSub: "보안 로그인 링크를 보내드립니다. 비밀번호 불필요.",
@@ -404,6 +705,49 @@ const T = {
     m4Pts: ["Teste completo de 128 perguntas de civismo", "Feedback de IA em cada resposta", "Pratique a entrevista N-400", "Atualizado para mudanças de civismo de Out 2025"],
     readyTitle: "Pronto para Parar de Adivinhar?",
     readySub: "9 perguntas. $49 pagamento único. Sua preparação N-400 personalizada pronta em menos de 5 minutos.",
+    mkMod01: "MÓDULO 01 — DOCUMENTOS",
+    mkMod02: "MÓDULO 02 — FORMULÁRIO",
+    mkMod03: "MÓDULO 03 — RISCO",
+    mkMod04: "MÓDULO 04 — ENTREVISTA",
+    mkDocsTitle: "SEUS DOCUMENTOS",
+    mkDocsCount: "2 / 8 COLETADOS",
+    mkDoc1Name: "Green Card (Cartão de Residente Permanente)",
+    mkDoc1Where: "Cópia da frente e verso do seu green card",
+    mkDoc2Name: "Declarações de Imposto Conjuntas — Últimos 3 Anos",
+    mkDoc2Where: "IRS.gov/transcripts — grátis se você não tiver cópias",
+    mkDoc2Why: "Você marcou casado(a) com cidadão dos EUA — exigido para via de 3 anos",
+    mkDoc3Name: "Registros Certificados do Tribunal — DUI 2019",
+    mkDoc3Critical: "Você divulgou um DUI de 2019 — traga a disposição original",
+    mkPart9: "PARTE 9 — TEMPO FORA DOS EUA",
+    mkPart9Q: "Você fez alguma viagem de 6 meses ou mais fora dos Estados Unidos nos últimos 5 anos?",
+    mkMeansLbl: "O QUE SIGNIFICA:",
+    mkMeansTxt: "Qualquer viagem única — não cumulativo.",
+    mkExampleLbl: "EXEMPLO:",
+    mkExampleTxt: "1 viagem de 7 meses = SIM. Duas viagens de 4 meses = NÃO.",
+    mkMistakeLbl: "ERRO COMUM:",
+    mkMistakeTxt: "Não contar os dias de viagem de retorno.",
+    mkExampleAns: "Sim — visitei o Brasil de junho de 2022 a janeiro de 2023 para cuidar do meu pai",
+    mkAIFb: "FEEDBACK DA IA",
+    mkAIFbTxt: "Resposta forte. Adicione datas específicas e leve evidências de cuidador familiar para sua entrevista. Esta explicação apoia residência contínua.",
+    mkRiskTitle: "SEU PERFIL DE RISCO",
+    mkRiskCount: "2 ITENS",
+    mkRisk1: "VIAGEM PROLONGADA",
+    mkLvlHigh: "ALTO",
+    mkRisk1Txt: "Viagem de 7 meses ao Brasil em 2022 — USCIS exigirá evidência de residência contínua. Prepare registros de emprego, contrato de aluguel, documentação de cuidador familiar.",
+    mkRisk2: "DIVULGAÇÃO DE DUI 2019",
+    mkLvlMed: "MÉDIO",
+    mkRisk2Txt: "Divulgado no onboarding. Não desqualifica automaticamente. Traga documentos certificados do tribunal — não resumos pessoais.",
+    mkRisk3: "COMPLIANCE FISCAL",
+    mkLvlClear: "LIMPO",
+    mkRisk3Txt: "Todos os 5 anos de declarações conjuntas confirmados. Nenhuma red flag esperada em bom caráter moral.",
+    mkCivicsQ: "QUESTÃO DE CIVISMO 47 / 128",
+    mkCivicsCat: "HISTÓRIA · Séc. XIX",
+    mkCivicsQTxt: "Cite uma guerra travada pelos Estados Unidos no século XIX.",
+    mkCivicsAns: "A Guerra Civil — entre a União e os estados Confederados",
+    mkCorrect: "✓ CORRETO",
+    mkCorrectTxt: "Resposta perfeita. USCIS aceita: Guerra de 1812, Guerra Mexicano-Americana, Guerra Civil, Guerra Hispano-Americana.",
+    mkPrev: "← ANTERIOR",
+    mkNextQ: "PRÓXIMA QUESTÃO →",
     t1: "ORIENTAÇÃO EM PORTUGUÊS CLARO", t2: "PERSONALIZADO PARA SUA SITUAÇÃO", t3: "NÃO É ASSESSORIA JURÍDICA — APENAS PREPARAÇÃO",
     disclaimer: "LEGALIAI fornece apenas orientação de preparação. Isso não é assessoria jurídica. Para situações complexas, consulte um advogado de imigração licenciado.",
     emailTitle: "INSIRA SEU EMAIL PARA COMEÇAR", emailSub: "Enviaremos um link de acesso seguro. Sem senha.",
@@ -915,7 +1259,7 @@ function App() {
           {/* Module 1 — Documents */}
           <div style={{ display:"grid",gridTemplateColumns:"1fr 1.2fr",gap:"60px",alignItems:"center",marginBottom:"100px",fontFamily:"inherit" }} className="inside-row">
             <div>
-              <div style={{ color:"#C9A84C",fontSize:"10px",letterSpacing:"4px",marginBottom:"14px" }}>MODULE 01 — DOCUMENTS</div>
+              <div style={{ color:"#C9A84C",fontSize:"10px",letterSpacing:"4px",marginBottom:"14px" }}>{t("mkMod01")}</div>
               <h3 style={{ color:"#F5F5F5",fontSize:"26px",letterSpacing:"2px",fontWeight:300,marginBottom:"16px",lineHeight:1.3 }}>{t("m1Title")}</h3>
               <p style={{ color:"#999",fontSize:"14px",letterSpacing:"1px",lineHeight:2,marginBottom:"24px" }}>{t("m1Desc")}</p>
               <ul style={{ listStyle:"none",padding:0,margin:0 }}>
@@ -928,20 +1272,20 @@ function App() {
             </div>
             <div style={{ background:"#0d0d0d",border:"1px solid #2a2a2a",padding:"24px",fontFamily:"'DM Sans',sans-serif" }}>
               <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:"20px",paddingBottom:"14px",borderBottom:"1px solid #1a1a1a" }}>
-                <span style={{ color:"#F5F5F5",fontSize:"13px",letterSpacing:"3px" }}>YOUR DOCUMENTS</span>
-                <span style={{ color:"#C9A84C",fontSize:"11px",letterSpacing:"2px" }}>2 / 8 GATHERED</span>
+                <span style={{ color:"#F5F5F5",fontSize:"13px",letterSpacing:"3px" }}>{t("mkDocsTitle")}</span>
+                <span style={{ color:"#C9A84C",fontSize:"11px",letterSpacing:"2px" }}>{t("mkDocsCount")}</span>
               </div>
               <div style={{ display:"flex",gap:"14px",padding:"12px 0",borderBottom:"1px solid #111",borderLeft:"3px solid #4ade80",paddingLeft:"14px" }}>
                 <span style={{ color:"#4ade80",marginTop:"2px" }}>✓</span>
                 <div>
-                  <div style={{ color:"#555",fontSize:"13px",textDecoration:"line-through",marginBottom:"4px" }}>Permanent Resident Card</div>
+                  <div style={{ color:"#555",fontSize:"13px",textDecoration:"line-through",marginBottom:"4px" }}>{t("mkDoc1Name")}</div>
                   <div style={{ color:"#666",fontSize:"11px",lineHeight:1.6 }}><span style={{ color:"#C9A84C",fontSize:"9px",letterSpacing:"2px" }}>WHERE:</span> Front and back copy of your green card</div>
                 </div>
               </div>
               <div style={{ display:"flex",gap:"14px",padding:"12px 0",borderBottom:"1px solid #111" }}>
                 <span style={{ width:"14px",height:"14px",border:"1px solid #444",display:"inline-block",marginTop:"3px" }}></span>
                 <div>
-                  <div style={{ color:"#F5F5F5",fontSize:"13px",marginBottom:"4px" }}>Joint Tax Returns — Last 3 Years</div>
+                  <div style={{ color:"#F5F5F5",fontSize:"13px",marginBottom:"4px" }}>{t("mkDoc2Name")}</div>
                   <div style={{ color:"#888",fontSize:"11px",lineHeight:1.6,marginBottom:"4px" }}><span style={{ color:"#C9A84C",fontSize:"9px",letterSpacing:"2px" }}>WHERE:</span> IRS.gov/transcripts — free if you do not have copies</div>
                   <div style={{ color:"#888",fontSize:"11px",lineHeight:1.6 }}><span style={{ color:"#C9A84C",fontSize:"9px",letterSpacing:"2px" }}>WHY:</span> You marked married to a US citizen — required for 3-year path</div>
                 </div>
@@ -949,7 +1293,7 @@ function App() {
               <div style={{ display:"flex",gap:"14px",padding:"12px 0" }}>
                 <span style={{ width:"14px",height:"14px",border:"1px solid #444",display:"inline-block",marginTop:"3px" }}></span>
                 <div>
-                  <div style={{ color:"#F5F5F5",fontSize:"13px",marginBottom:"4px" }}>Certified Court Records — DUI 2019</div>
+                  <div style={{ color:"#F5F5F5",fontSize:"13px",marginBottom:"4px" }}>{t("mkDoc3Name")}</div>
                   <div style={{ color:"#888",fontSize:"11px",lineHeight:1.6 }}><span style={{ color:"#e05555",fontSize:"9px",letterSpacing:"2px" }}>CRITICAL:</span> You disclosed a 2019 DUI — bring original disposition</div>
                 </div>
               </div>
@@ -959,21 +1303,21 @@ function App() {
           {/* Module 2 — Form */}
           <div style={{ display:"grid",gridTemplateColumns:"1.2fr 1fr",gap:"60px",alignItems:"center",marginBottom:"100px" }} className="inside-row">
             <div style={{ background:"#0d0d0d",border:"1px solid #2a2a2a",padding:"24px",fontFamily:"'DM Sans',sans-serif" }}>
-              <div style={{ color:"#C9A84C",fontSize:"10px",letterSpacing:"4px",marginBottom:"12px",paddingBottom:"12px",borderBottom:"1px solid #1a1a1a" }}>PART 9 — TIME OUTSIDE THE U.S.</div>
-              <div style={{ color:"#F5F5F5",fontSize:"14px",marginBottom:"14px",lineHeight:1.6 }}>Have you taken any trip of 6 months or more outside the United States in the past 5 years?</div>
+              <div style={{ color:"#C9A84C",fontSize:"10px",letterSpacing:"4px",marginBottom:"12px",paddingBottom:"12px",borderBottom:"1px solid #1a1a1a" }}>{t("mkPart9")}</div>
+              <div style={{ color:"#F5F5F5",fontSize:"14px",marginBottom:"14px",lineHeight:1.6 }}>{t("mkPart9Q")}</div>
               <div style={{ background:"#0a0a0a",border:"1px solid #1a1a1a",padding:"12px 14px",marginBottom:"14px" }}>
-                <div style={{ marginBottom:"6px" }}><span style={{ color:"#C9A84C",fontSize:"9px",letterSpacing:"2px" }}>WHAT IT MEANS:</span><span style={{ color:"#aaa",fontSize:"11px",marginLeft:"6px" }}>Any single trip — not cumulative.</span></div>
-                <div style={{ marginBottom:"6px" }}><span style={{ color:"#C9A84C",fontSize:"9px",letterSpacing:"2px" }}>EXAMPLE:</span><span style={{ color:"#888",fontSize:"11px",marginLeft:"6px" }}>1 trip of 7 months = YES. Two 4-month trips = NO.</span></div>
-                <div><span style={{ color:"#e05555",fontSize:"9px",letterSpacing:"2px" }}>COMMON MISTAKE:</span><span style={{ color:"#888",fontSize:"11px",marginLeft:"6px" }}>Not counting return travel days.</span></div>
+                <div style={{ marginBottom:"6px" }}><span style={{ color:"#C9A84C",fontSize:"9px",letterSpacing:"2px" }}>{t("mkMeansLbl")}</span><span style={{ color:"#aaa",fontSize:"11px",marginLeft:"6px" }}>{t("mkMeansTxt")}</span></div>
+                <div style={{ marginBottom:"6px" }}><span style={{ color:"#C9A84C",fontSize:"9px",letterSpacing:"2px" }}>{t("mkExampleLbl")}</span><span style={{ color:"#888",fontSize:"11px",marginLeft:"6px" }}>{t("mkExampleTxt")}</span></div>
+                <div><span style={{ color:"#e05555",fontSize:"9px",letterSpacing:"2px" }}>{t("mkMistakeLbl")}</span><span style={{ color:"#888",fontSize:"11px",marginLeft:"6px" }}>{t("mkMistakeTxt")}</span></div>
               </div>
-              <div style={{ background:"#0a0a0a",border:"1px solid #2a2a2a",padding:"12px",marginBottom:"10px",color:"#bbb",fontSize:"12px",lineHeight:1.6 }}>Yes — visited Brazil from June 2022 to January 2023 to take care of my father</div>
+              <div style={{ background:"#0a0a0a",border:"1px solid #2a2a2a",padding:"12px",marginBottom:"10px",color:"#bbb",fontSize:"12px",lineHeight:1.6 }}>{t("mkExampleAns")}</div>
               <div style={{ borderLeft:"2px solid #C9A84C",paddingLeft:"12px" }}>
-                <div style={{ color:"#C9A84C",fontSize:"9px",letterSpacing:"3px",marginBottom:"4px" }}>AI FEEDBACK</div>
-                <div style={{ color:"#bbb",fontSize:"11px",lineHeight:1.6 }}>Strong answer. Add specific dates and bring family-caregiver evidence to your interview. This explanation supports continuous residence.</div>
+                <div style={{ color:"#C9A84C",fontSize:"9px",letterSpacing:"3px",marginBottom:"4px" }}>{t("mkAIFb")}</div>
+                <div style={{ color:"#bbb",fontSize:"11px",lineHeight:1.6 }}>{t("mkAIFbTxt")}</div>
               </div>
             </div>
             <div>
-              <div style={{ color:"#C9A84C",fontSize:"10px",letterSpacing:"4px",marginBottom:"14px" }}>MODULE 02 — FORM</div>
+              <div style={{ color:"#C9A84C",fontSize:"10px",letterSpacing:"4px",marginBottom:"14px" }}>{t("mkMod02")}</div>
               <h3 style={{ color:"#F5F5F5",fontSize:"26px",letterSpacing:"2px",fontWeight:300,marginBottom:"16px",lineHeight:1.3 }}>{t("m2Title")}</h3>
               <p style={{ color:"#999",fontSize:"14px",letterSpacing:"1px",lineHeight:2,marginBottom:"24px" }}>{t("m2Desc")}</p>
               <ul style={{ listStyle:"none",padding:0,margin:0 }}>
@@ -989,7 +1333,7 @@ function App() {
           {/* Module 3 — Risk */}
           <div style={{ display:"grid",gridTemplateColumns:"1fr 1.2fr",gap:"60px",alignItems:"center",marginBottom:"100px" }} className="inside-row">
             <div>
-              <div style={{ color:"#C9A84C",fontSize:"10px",letterSpacing:"4px",marginBottom:"14px" }}>MODULE 03 — RISK</div>
+              <div style={{ color:"#C9A84C",fontSize:"10px",letterSpacing:"4px",marginBottom:"14px" }}>{t("mkMod03")}</div>
               <h3 style={{ color:"#F5F5F5",fontSize:"26px",letterSpacing:"2px",fontWeight:300,marginBottom:"16px",lineHeight:1.3 }}>{t("m3Title")}</h3>
               <p style={{ color:"#999",fontSize:"14px",letterSpacing:"1px",lineHeight:2,marginBottom:"24px" }}>{t("m3Desc")}</p>
               <ul style={{ listStyle:"none",padding:0,margin:0 }}>
@@ -1002,29 +1346,29 @@ function App() {
             </div>
             <div style={{ background:"#0d0d0d",border:"1px solid #2a2a2a",padding:"24px",fontFamily:"'DM Sans',sans-serif" }}>
               <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:"20px",paddingBottom:"14px",borderBottom:"1px solid #1a1a1a" }}>
-                <span style={{ color:"#F5F5F5",fontSize:"13px",letterSpacing:"3px" }}>YOUR RISK PROFILE</span>
-                <span style={{ color:"#e05555",fontSize:"11px",letterSpacing:"2px" }}>2 ITEMS</span>
+                <span style={{ color:"#F5F5F5",fontSize:"13px",letterSpacing:"3px" }}>{t("mkRiskTitle")}</span>
+                <span style={{ color:"#e05555",fontSize:"11px",letterSpacing:"2px" }}>{t("mkRiskCount")}</span>
               </div>
               <div style={{ background:"#1a0a0a",border:"1px solid #3a1a1a",borderLeft:"3px solid #e05555",padding:"14px 16px",marginBottom:"10px" }}>
                 <div style={{ display:"flex",justifyContent:"space-between",marginBottom:"6px" }}>
-                  <span style={{ color:"#F5F5F5",fontSize:"12px",letterSpacing:"2px" }}>EXTENDED TRAVEL</span>
-                  <span style={{ color:"#e05555",fontSize:"9px",letterSpacing:"2px",fontWeight:700 }}>HIGH</span>
+                  <span style={{ color:"#F5F5F5",fontSize:"12px",letterSpacing:"2px" }}>{t("mkRisk1")}</span>
+                  <span style={{ color:"#e05555",fontSize:"9px",letterSpacing:"2px",fontWeight:700 }}>{t("mkLvlHigh")}</span>
                 </div>
-                <div style={{ color:"#e9a8a8",fontSize:"11px",lineHeight:1.7 }}>7-month trip to Brazil 2022 — USCIS will require continuous residence evidence. Prepare employment records, lease, family-caregiver documentation.</div>
+                <div style={{ color:"#e9a8a8",fontSize:"11px",lineHeight:1.7 }}>{t("mkRisk1Txt")}</div>
               </div>
               <div style={{ background:"#1a1500",border:"1px solid #3a3010",borderLeft:"3px solid #C9A84C",padding:"14px 16px",marginBottom:"10px" }}>
                 <div style={{ display:"flex",justifyContent:"space-between",marginBottom:"6px" }}>
-                  <span style={{ color:"#F5F5F5",fontSize:"12px",letterSpacing:"2px" }}>2019 DUI DISCLOSURE</span>
-                  <span style={{ color:"#C9A84C",fontSize:"9px",letterSpacing:"2px",fontWeight:700 }}>MEDIUM</span>
+                  <span style={{ color:"#F5F5F5",fontSize:"12px",letterSpacing:"2px" }}>{t("mkRisk2")}</span>
+                  <span style={{ color:"#C9A84C",fontSize:"9px",letterSpacing:"2px",fontWeight:700 }}>{t("mkLvlMed")}</span>
                 </div>
-                <div style={{ color:"#d4b87a",fontSize:"11px",lineHeight:1.7 }}>Disclosed in onboarding. Not automatically disqualifying. Bring certified court disposition documents — not personal summaries.</div>
+                <div style={{ color:"#d4b87a",fontSize:"11px",lineHeight:1.7 }}>{t("mkRisk2Txt")}</div>
               </div>
               <div style={{ background:"#0a1a0a",border:"1px solid #1a3a1a",borderLeft:"3px solid #4ade80",padding:"14px 16px" }}>
                 <div style={{ display:"flex",justifyContent:"space-between",marginBottom:"6px" }}>
-                  <span style={{ color:"#F5F5F5",fontSize:"12px",letterSpacing:"2px" }}>TAX COMPLIANCE</span>
-                  <span style={{ color:"#4ade80",fontSize:"9px",letterSpacing:"2px",fontWeight:700 }}>CLEAR</span>
+                  <span style={{ color:"#F5F5F5",fontSize:"12px",letterSpacing:"2px" }}>{t("mkRisk3")}</span>
+                  <span style={{ color:"#4ade80",fontSize:"9px",letterSpacing:"2px",fontWeight:700 }}>{t("mkLvlClear")}</span>
                 </div>
-                <div style={{ color:"#9be9a8",fontSize:"11px",lineHeight:1.7 }}>All 5 years of joint tax returns confirmed. No red flags expected on good moral character.</div>
+                <div style={{ color:"#9be9a8",fontSize:"11px",lineHeight:1.7 }}>{t("mkRisk3Txt")}</div>
               </div>
             </div>
           </div>
@@ -1033,22 +1377,22 @@ function App() {
           <div style={{ display:"grid",gridTemplateColumns:"1.2fr 1fr",gap:"60px",alignItems:"center",marginBottom:"60px" }} className="inside-row">
             <div style={{ background:"#0d0d0d",border:"1px solid #2a2a2a",padding:"24px",fontFamily:"'DM Sans',sans-serif" }}>
               <div style={{ display:"flex",justifyContent:"space-between",marginBottom:"16px",paddingBottom:"12px",borderBottom:"1px solid #1a1a1a" }}>
-                <span style={{ color:"#C9A84C",fontSize:"10px",letterSpacing:"3px" }}>CIVICS QUESTION 47 / 128</span>
-                <span style={{ color:"#777",fontSize:"10px",letterSpacing:"2px" }}>HISTORY · 1800s</span>
+                <span style={{ color:"#C9A84C",fontSize:"10px",letterSpacing:"3px" }}>{t("mkCivicsQ")}</span>
+                <span style={{ color:"#777",fontSize:"10px",letterSpacing:"2px" }}>{t("mkCivicsCat")}</span>
               </div>
-              <div style={{ color:"#F5F5F5",fontSize:"15px",marginBottom:"14px",lineHeight:1.5 }}>Name one war fought by the United States in the 1800s.</div>
-              <div style={{ background:"#0a0a0a",border:"1px solid #2a2a2a",padding:"12px",marginBottom:"12px",color:"#bbb",fontSize:"12px",lineHeight:1.6 }}>The Civil War — between the Union and the Confederate states</div>
+              <div style={{ color:"#F5F5F5",fontSize:"15px",marginBottom:"14px",lineHeight:1.5 }}>{t("mkCivicsQTxt")}</div>
+              <div style={{ background:"#0a0a0a",border:"1px solid #2a2a2a",padding:"12px",marginBottom:"12px",color:"#bbb",fontSize:"12px",lineHeight:1.6 }}>{t("mkCivicsAns")}</div>
               <div style={{ borderLeft:"2px solid #4ade80",paddingLeft:"12px",marginBottom:"14px" }}>
-                <div style={{ color:"#4ade80",fontSize:"9px",letterSpacing:"3px",marginBottom:"4px" }}>✓ CORRECT</div>
-                <div style={{ color:"#9be9a8",fontSize:"11px",lineHeight:1.7 }}>Perfect answer. USCIS accepts: War of 1812, Mexican-American War, Civil War, Spanish-American War.</div>
+                <div style={{ color:"#4ade80",fontSize:"9px",letterSpacing:"3px",marginBottom:"4px" }}>{t("mkCorrect")}</div>
+                <div style={{ color:"#9be9a8",fontSize:"11px",lineHeight:1.7 }}>{t("mkCorrectTxt")}</div>
               </div>
               <div style={{ display:"flex",gap:"8px" }}>
-                <button style={{ flex:1,background:"transparent",border:"1px solid #2a2a2a",color:"#777",padding:"10px",fontSize:"10px",letterSpacing:"2px",cursor:"default",fontFamily:"inherit" }}>← PREVIOUS</button>
-                <button style={{ flex:1,background:"#C9A84C",border:"none",color:"#000",padding:"10px",fontSize:"10px",letterSpacing:"2px",cursor:"default",fontWeight:700,fontFamily:"inherit" }}>NEXT QUESTION →</button>
+                <button style={{ flex:1,background:"transparent",border:"1px solid #2a2a2a",color:"#777",padding:"10px",fontSize:"10px",letterSpacing:"2px",cursor:"default",fontFamily:"inherit" }}>{t("mkPrev")}</button>
+                <button style={{ flex:1,background:"#C9A84C",border:"none",color:"#000",padding:"10px",fontSize:"10px",letterSpacing:"2px",cursor:"default",fontWeight:700,fontFamily:"inherit" }}>{t("mkNextQ")}</button>
               </div>
             </div>
             <div>
-              <div style={{ color:"#C9A84C",fontSize:"10px",letterSpacing:"4px",marginBottom:"14px" }}>MODULE 04 — INTERVIEW</div>
+              <div style={{ color:"#C9A84C",fontSize:"10px",letterSpacing:"4px",marginBottom:"14px" }}>{t("mkMod04")}</div>
               <h3 style={{ color:"#F5F5F5",fontSize:"26px",letterSpacing:"2px",fontWeight:300,marginBottom:"16px",lineHeight:1.3 }}>{t("m4Title")}</h3>
               <p style={{ color:"#999",fontSize:"14px",letterSpacing:"1px",lineHeight:2,marginBottom:"24px" }}>{t("m4Desc")}</p>
               <ul style={{ listStyle:"none",padding:0,margin:0 }}>
