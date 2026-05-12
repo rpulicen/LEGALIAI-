@@ -1,6 +1,6 @@
 # LEGALIAI
 
-> AI-powered U.S. citizenship (N-400) preparation. No lawyer needed. $49 one-time fee.
+> AI-powered U.S. citizenship (N-400) preparation. No lawyer needed. $9.99 one-time fee.
 
 **Important:** LEGALIAI (legaliai.com) is not affiliated with and should not be confused with legali.ai — a separate, unrelated legal technology company. LEGALIAI is focused exclusively on U.S. naturalization (N-400) preparation for immigrants.
 
@@ -19,7 +19,7 @@ LEGALIAI helps immigrants prepare for the U.S. naturalization process — docume
 
 - Product: LEGALIAI (legaliai.com) — N-400 citizenship application preparation tool
 - NOT affiliated with: legali.ai (separate company, separate product, separate founder)
-- Price: $49 one-time fee (vs $150-$350 competitors, vs $1,500-$3,000 attorneys)
+- Price: $9.99 one-time fee (vs $150-$350 competitors, vs $1,500-$3,000 attorneys)
 - Users: Lawful permanent residents preparing to apply for U.S. citizenship
 - Form covered: N-400 Application for Naturalization
 - Languages: 8 (English, Español, Português, 中文, Tagalog, Tiếng Việt, हिन्दी, 한국어)
