@@ -85,7 +85,7 @@ const T = {
     mkNextQ: "NEXT QUESTION →",
     disclaimer: "LEGALIAI provides preparation guidance only. This is not legal advice. For complex situations, consult a licensed immigration attorney.",
     emailTitle: "ENTER YOUR EMAIL TO START", emailSub: "We'll send you a secure login link. No password needed.",
-    sendLink: "SEND MAGIC LINK", checkEmail: "CHECK YOUR EMAIL", checkEmailSub: "Your magic link has been sent. Click the link in your email to continue.",
+    sendLink: "SEND MAGIC LINK", googleBtn: "Continue with Google", checkEmail: "CHECK YOUR EMAIL", checkEmailSub: "Your magic link has been sent. Click the link in your email to continue.",
     q1: "HOW LONG HAVE YOU BEEN A PERMANENT RESIDENT?", q2: "ARE YOU MARRIED TO A U.S. CITIZEN?",
     q3: "HAVE YOU TRAVELED OUTSIDE THE U.S. FOR MORE THAN 6 MONTHS AT A TIME?",
     q4: "ANY CRIMINAL HISTORY INCLUDING MINOR OFFENSES?", q5: "WHAT COUNTRY WERE YOU BORN IN?",
@@ -181,7 +181,7 @@ const T = {
     t1: "GUÍA EN ESPAÑOL CLARO", t2: "PERSONALIZADO A TU SITUACIÓN", t3: "NO ES ASESORÍA LEGAL — SOLO PREPARACIÓN",
     disclaimer: "LEGALIAI proporciona orientación de preparación únicamente. Esto no es asesoramiento legal. Para situaciones complejas, consulta a un abogado de inmigración.",
     emailTitle: "INGRESA TU CORREO PARA COMENZAR", emailSub: "Te enviaremos un enlace de acceso seguro. Sin contraseña.",
-    sendLink: "ENVIAR ENLACE MÁGICO", checkEmail: "REVISA TU CORREO", checkEmailSub: "Tu enlace fue enviado. Haz clic en él para continuar.",
+    sendLink: "ENVIAR ENLACE MÁGICO", googleBtn: "Continuar con Google", checkEmail: "REVISA TU CORREO", checkEmailSub: "Tu enlace fue enviado. Haz clic en él para continuar.",
     q1: "¿CUÁNTO TIEMPO LLEVAS SIENDO RESIDENTE PERMANENTE?", q2: "¿ESTÁS CASADO/A CON UN/A CIUDADANO/A AMERICANO/A?",
     q3: "¿HAS VIAJADO FUERA DE EE.UU. POR MÁS DE 6 MESES SEGUIDOS?",
     q4: "¿TIENES ANTECEDENTES PENALES, INCLUSO INFRACCIONES MENORES?", q5: "¿EN QUÉ PAÍS NACISTE?",
@@ -276,7 +276,7 @@ const T = {
     t1: "简明中文指导", t2: "根据您的情况个性化定制", t3: "非法律建议 — 仅为准备指导",
     disclaimer: "LEGALIAI仅提供准备指导，这不是法律建议。对于复杂情况，请咨询持牌移民律师。",
     emailTitle: "输入您的电子邮件开始", emailSub: "我们将发送安全登录链接，无需密码。",
-    sendLink: "发送魔法链接", checkEmail: "查看您的邮件", checkEmailSub: "魔法链接已发送，请点击邮件中的链接继续。",
+    sendLink: "发送魔法链接", googleBtn: "使用 Google 继续", checkEmail: "查看您的邮件", checkEmailSub: "魔法链接已发送，请点击邮件中的链接继续。",
     q1: "您成为永久居民多久了？", q2: "您是否与美国公民结婚？",
     q3: "您是否曾在美国境外旅行超过6个月？",
     q4: "是否有犯罪记录，包括轻微违规？", q5: "您出生在哪个国家？",
@@ -371,7 +371,7 @@ const T = {
     t1: "GABAY SA SIMPLENG TAGALOG", t2: "INANGKOP SA IYONG SITWASYON", t3: "HINDI LEGAL NA PAYO — PAGHAHANDA LAMANG",
     disclaimer: "Ang LEGALIAI ay nagbibigay lamang ng gabay sa paghahanda. Hindi ito legal na payo. Para sa mga kumplikadong sitwasyon, kumonsulta sa isang lisensyadong abogado.",
     emailTitle: "ILAGAY ANG IYONG EMAIL PARA MAGSIMULA", emailSub: "Magpapadala kami ng secure na link. Walang password.",
-    sendLink: "MAGPADALA NG MAGIC LINK", checkEmail: "SURIIN ANG IYONG EMAIL", checkEmailSub: "Naipadala na ang iyong magic link. I-click ang link sa email mo para magpatuloy.",
+    sendLink: "MAGPADALA NG MAGIC LINK", googleBtn: "Magpatuloy gamit ang Google", checkEmail: "SURIIN ANG IYONG EMAIL", checkEmailSub: "Naipadala na ang iyong magic link. I-click ang link sa email mo para magpatuloy.",
     q1: "GAANO KATAGAL KA NANG PERMANENTENG RESIDENTE?", q2: "IKA'Y KASAL BA SA ISANG MAMAMAYANG AMERIKANO?",
     q3: "NAGLAKBAY KA BA SA LABAS NG U.S. NG HIGIT SA 6 NA BUWAN?",
     q4: "MAY KASAYSAYAN BA NG KRIMEN, KASAMA ANG MALILIIT NA PAGKAKASALA?", q5: "SA ANONG BANSA KA IPINANGANAK?",
@@ -466,7 +466,7 @@ const T = {
     t1: "HƯỚNG DẪN TIẾNG VIỆT RÕ RÀNG", t2: "CÁ NHÂN HÓA THEO TÌNH HUỐNG CỦA BẠN", t3: "KHÔNG PHẢI TƯ VẤN PHÁP LÝ — CHỈ CHUẨN BỊ",
     disclaimer: "LEGALIAI chỉ cung cấp hướng dẫn chuẩn bị. Đây không phải tư vấn pháp lý. Với các trường hợp phức tạp, hãy tham khảo luật sư di trú có giấy phép.",
     emailTitle: "NHẬP EMAIL ĐỂ BẮT ĐẦU", emailSub: "Chúng tôi sẽ gửi liên kết đăng nhập bảo mật. Không cần mật khẩu.",
-    sendLink: "GỬI LIÊN KẾT MAGIC", checkEmail: "KIỂM TRA EMAIL CỦA BẠN", checkEmailSub: "Liên kết magic đã được gửi. Nhấp vào liên kết trong email để tiếp tục.",
+    sendLink: "GỬI LIÊN KẾT MAGIC", googleBtn: "Tiếp tục với Google", checkEmail: "KIỂM TRA EMAIL CỦA BẠN", checkEmailSub: "Liên kết magic đã được gửi. Nhấp vào liên kết trong email để tiếp tục.",
     q1: "BẠN LÀ THƯỜNG TRÚ NHÂN ĐƯỢC BAO LÂU RỒI?", q2: "BẠN CÓ KẾT HÔN VỚI CÔNG DÂN MỸ KHÔNG?",
     q3: "BẠN CÓ ĐI DU LỊCH NGOÀI HOA KỲ HƠN 6 THÁNG LIÊN TIẾP KHÔNG?",
     q4: "CÓ TIỀN SỬ HÌNH SỰ NÀO, KỂ CẢ VI PHẠM NHỎ KHÔNG?", q5: "BẠN SINH RA Ở QUỐC GIA NÀO?",
@@ -561,7 +561,7 @@ const T = {
     t1: "सरल हिंदी में मार्गदर्शन", t2: "आपकी स्थिति के अनुसार व्यक्तिगत", t3: "कानूनी सलाह नहीं — केवल तैयारी",
     disclaimer: "LEGALIAI केवल तैयारी मार्गदर्शन प्रदान करता है। यह कानूनी सलाह नहीं है। जटिल मामलों के लिए लाइसेंस प्राप्त वकील से परामर्श करें।",
     emailTitle: "शुरू करने के लिए अपना ईमेल दर्ज करें", emailSub: "हम एक सुरक्षित लॉगिन लिंक भेजेंगे। कोई पासवर्ड नहीं।",
-    sendLink: "मैजिक लिंक भेजें", checkEmail: "अपना ईमेल जांचें", checkEmailSub: "आपका मैजिक लिंक भेज दिया गया है। जारी रखने के लिए ईमेल में लिंक पर क्लिक करें।",
+    sendLink: "मैजिक लिंक भेजें", googleBtn: "Google के साथ जारी रखें", checkEmail: "अपना ईमेल जांचें", checkEmailSub: "आपका मैजिक लिंक भेज दिया गया है। जारी रखने के लिए ईमेल में लिंक पर क्लिक करें।",
     q1: "आप कितने समय से स्थायी निवासी हैं?", q2: "क्या आप किसी अमेरिकी नागरिक से विवाहित हैं?",
     q3: "क्या आप एक बार में 6 महीने से अधिक अमेरिका से बाहर गए हैं?",
     q4: "क्या कोई आपराधिक इतिहास है, जिसमें छोटे अपराध भी शामिल हैं?", q5: "आप किस देश में पैदा हुए थे?",
@@ -656,7 +656,7 @@ const T = {
     t1: "쉬운 한국어 안내", t2: "내 상황에 맞게 맞춤화", t3: "법률 조언 아님 — 준비만",
     disclaimer: "LEGALIAI는 준비 안내만 제공합니다. 법률 조언이 아닙니다. 복잡한 상황에서는 변호사와 상담하세요.",
     emailTitle: "시작하려면 이메일을 입력하세요", emailSub: "보안 로그인 링크를 보내드립니다. 비밀번호 불필요.",
-    sendLink: "매직 링크 보내기", checkEmail: "이메일을 확인하세요", checkEmailSub: "매직 링크가 전송되었습니다. 이메일의 링크를 클릭하여 계속하세요.",
+    sendLink: "매직 링크 보내기", googleBtn: "Google로 계속하기", checkEmail: "이메일을 확인하세요", checkEmailSub: "매직 링크가 전송되었습니다. 이메일의 링크를 클릭하여 계속하세요.",
     q1: "영주권자로 얼마나 되셨나요?", q2: "미국 시민권자와 결혼하셨나요?",
     q3: "6개월 이상 미국을 떠난 적이 있나요?",
     q4: "경미한 위반을 포함한 범죄 기록이 있나요?", q5: "어느 나라에서 태어났나요?",
@@ -751,7 +751,7 @@ const T = {
     t1: "ORIENTAÇÃO EM PORTUGUÊS CLARO", t2: "PERSONALIZADO PARA SUA SITUAÇÃO", t3: "NÃO É ASSESSORIA JURÍDICA — APENAS PREPARAÇÃO",
     disclaimer: "LEGALIAI fornece apenas orientação de preparação. Isso não é assessoria jurídica. Para situações complexas, consulte um advogado de imigração licenciado.",
     emailTitle: "INSIRA SEU EMAIL PARA COMEÇAR", emailSub: "Enviaremos um link de acesso seguro. Sem senha.",
-    sendLink: "ENVIAR LINK MÁGICO", checkEmail: "VERIFIQUE SEU EMAIL", checkEmailSub: "Seu link mágico foi enviado. Clique no link no seu email para continuar.",
+    sendLink: "ENVIAR LINK MÁGICO", googleBtn: "Continuar com o Google", checkEmail: "VERIFIQUE SEU EMAIL", checkEmailSub: "Seu link mágico foi enviado. Clique no link no seu email para continuar.",
     q1: "HÁ QUANTO TEMPO VOCÊ É RESIDENTE PERMANENTE?", q2: "VOCÊ É CASADO/A COM UM/A CIDADÃO/Ã AMERICANO/A?",
     q3: "VOCÊ VIAJOU PARA FORA DOS EUA POR MAIS DE 6 MESES CONSECUTIVOS?",
     q4: "TEM ALGUM HISTÓRICO CRIMINAL, INCLUINDO INFRAÇÕES MENORES?", q5: "EM QUAL PAÍS VOCÊ NASCEU?",
@@ -1245,7 +1245,7 @@ function App() {
               <p style={{ color:"#888",fontSize:"13px",letterSpacing:"1px",marginBottom:"32px",lineHeight:1.8 }}>{t("emailSub")}</p>
               <button onClick={handleGoogleSignIn} style={{ width:"100%",background:"#fff",color:"#1f1f1f",border:"none",padding:"15px",fontSize:"14px",fontWeight:600,fontFamily:"inherit",cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",gap:"12px",marginBottom:"20px" }}>
                 <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z"/><path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332z"/><path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z"/></svg>
-                Continue with Google
+                {t("googleBtn")}
               </button>
               <div style={{ display:"flex",alignItems:"center",gap:"12px",marginBottom:"20px" }}>
                 <div style={{ flex:1,height:"1px",background:"#2a2a2a" }}></div>
