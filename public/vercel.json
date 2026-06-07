@@ -1,7 +1,7 @@
 {
   "redirects": [
     {
-      "source": "/:s((?:brazilian|chinese|cuban|dominican|filipino|guatemalan|indian|mexican|salvadoran|vietnamese)-immigrants-[a-z-]+-n-400).html",
+      "source": "/:slug(.*-immigrants-.*-n-400.html)",
       "destination": "/n-400-processing-time-by-state.html",
       "permanent": true
     },
