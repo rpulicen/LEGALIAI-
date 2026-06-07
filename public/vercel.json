@@ -1,6 +1,11 @@
 {
   "redirects": [
     {
+      "source": "/:s((?:brazilian|chinese|cuban|dominican|filipino|guatemalan|indian|mexican|salvadoran|vietnamese)-immigrants-[a-z-]+-n-400).html",
+      "destination": "/n-400-processing-time-by-state.html",
+      "permanent": true
+    },
+    {
       "source": "/n-400-common-mistakes.html",
       "destination": "/n-400-tips.html",
       "permanent": true
